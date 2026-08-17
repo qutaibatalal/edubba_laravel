@@ -1,0 +1,35 @@
+<?php
+
+return [
+    'index' => [
+        'title' => 'البرامج الدراسية',
+        'page' => 'إدارة البرامج الدراسية',
+        'subtitle' => 'إدارة البرامج الدراسية وربطها بالأقسام',
+        'add_program' => 'برنامج جديد',
+        'add_short' => 'جديد',
+        'header' => 'البرامج',
+        'col_name' => 'الاسم',
+        'col_code' => 'الكود',
+        'col_department' => 'القسم',
+        'col_duration' => 'المدة (سنوات)',
+        'col_batches' => 'الصفوف',
+        'confirm_delete' => 'حذف البرنامج؟',
+        'empty' => 'لا توجد برامج',
+    ],
+    'form' => [
+        'edit_program' => 'تعديل برنامج',
+        'new_program' => 'برنامج جديد',
+        'page_edit' => 'تعديل البرنامج',
+        'page_create' => 'إضافة برنامج دراسي',
+        'h1_edit' => 'تعديل البرنامج: :name',
+        'h1_create' => 'إضافة برنامج دراسي',
+        'subtitle' => 'أدخل بيانات البرنامج الدراسي',
+        'label_name' => 'الاسم *',
+        'label_code' => 'الكود',
+        'label_department' => 'القسم',
+        'label_duration' => 'المدة (بالسنوات)',
+        'label_description' => 'الوصف',
+        'save' => 'حفظ',
+        'cancel' => 'إلغاء',
+    ],
+];

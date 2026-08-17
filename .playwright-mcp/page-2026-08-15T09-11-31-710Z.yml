@@ -1,0 +1,226 @@
+- generic [ref=f4e1]:
+  - generic [ref=f4e2]:
+    - link "مدرسة إدبة مدرسة إدبةملف الطالب" [ref=f4e3] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "مدرسة إدبة" [ref=f4e4]
+      - generic [ref=f4e5]: مدرسة إدبةملف الطالب
+    - generic [ref=f4e6]:
+      - generic [ref=f4e7]: الرئيسية
+      - link " لوحة الإحصائيات" [ref=f4e8] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - generic [ref=f4e9]: 
+        - generic [ref=f4e10]: لوحة الإحصائيات
+      - generic [ref=f4e11]: إدارة المدرسة
+      - link " الطلاب" [ref=f4e12] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/students
+        - generic [ref=f4e13]: 
+        - generic [ref=f4e14]: الطلاب
+      - link " القبول" [ref=f4e15] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/admissions
+        - generic [ref=f4e16]: 
+        - generic [ref=f4e17]: القبول
+      - link " أولياء الأمور" [ref=f4e18] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/parents
+        - generic [ref=f4e19]: 
+        - generic [ref=f4e20]: أولياء الأمور
+      - link " الهيئة التدريسية" [ref=f4e21] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/faculty
+        - generic [ref=f4e22]: 
+        - generic [ref=f4e23]: الهيئة التدريسية
+      - link " المقررات" [ref=f4e24] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/courses
+        - generic [ref=f4e25]: 
+        - generic [ref=f4e26]: المقررات
+      - link " الصفوف الدراسية" [ref=f4e27] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/batches
+        - generic [ref=f4e28]: 
+        - generic [ref=f4e29]: الصفوف الدراسية
+      - link " البرامج الدراسية" [ref=f4e30] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/programs
+        - generic [ref=f4e31]: 
+        - generic [ref=f4e32]: البرامج الدراسية
+      - link " السنوات الدراسية" [ref=f4e33] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/academic-years
+        - generic [ref=f4e34]: 
+        - generic [ref=f4e35]: السنوات الدراسية
+      - generic [ref=f4e36]: العمليات
+      - link " الرسوم والفواتير" [ref=f4e37] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/fees/structures
+        - generic [ref=f4e38]: 
+        - generic [ref=f4e39]: الرسوم والفواتير
+      - link " الحضور" [ref=f4e40] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/attendance
+        - generic [ref=f4e41]: 
+        - generic [ref=f4e42]: الحضور
+      - link " الجدول الدراسي" [ref=f4e43] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/timetable
+        - generic [ref=f4e44]: 
+        - generic [ref=f4e45]: الجدول الدراسي
+      - link " التقويم والعطل" [ref=f4e46] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/calendar
+        - generic [ref=f4e47]: 
+        - generic [ref=f4e48]: التقويم والعطل
+      - link " التدريس الخصوصي" [ref=f4e49] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/tutoring
+        - generic [ref=f4e50]: 
+        - generic [ref=f4e51]: التدريس الخصوصي
+      - link " الامتحانات" [ref=f4e52] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/exams
+        - generic [ref=f4e53]: 
+        - generic [ref=f4e54]: الامتحانات
+      - link " تقارير الوزارة" [ref=f4e55] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/reports
+        - generic [ref=f4e56]: 
+        - generic [ref=f4e57]: تقارير الوزارة
+      - generic [ref=f4e58]: النظام
+      - link " الإعدادات" [ref=f4e59] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/settings
+        - generic [ref=f4e60]: 
+        - generic [ref=f4e61]: الإعدادات
+    - generic [ref=f4e63]:
+      - generic [ref=f4e64]: S
+      - generic [ref=f4e65]:
+        - generic [ref=f4e66]: System Admin
+        - generic [ref=f4e67]: مدير النظام
+  - generic [ref=f4e68]:
+    - navigation [ref=f4e69]:
+      - text: 
+      - button "" [ref=f4e70] [cursor=pointer]
+      - navigation "breadcrumb" [ref=f4e73]:
+        - list [ref=f4e74]:
+          - listitem [ref=f4e75]:
+            - link " الرئيسية" [ref=f4e76] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin
+              - generic [ref=f4e77]: 
+              - text: الرئيسية
+          - listitem [ref=f4e78]: "/ ملف الطالب: Ali H Ahmed"
+      - generic [ref=f4e79]:
+        - generic [ref=f4e80]:
+          - generic [ref=f4e81]: 
+          - textbox "ابحث في النظام..." [ref=f4e82]
+        - button "" [ref=f4e84] [cursor=pointer]
+        - button "" [ref=f4e86] [cursor=pointer]
+        - generic [ref=f4e88]:
+          - button "" [ref=f4e89] [cursor=pointer]
+          - text: 
+        - generic [ref=f4e92]:
+          - button "S" [ref=f4e93] [cursor=pointer]
+          - text:  
+    - generic [ref=f4e95]:
+      - generic [ref=f4e96]:
+        - generic [ref=f4e97]:
+          - heading "Ali H Ahmed" [level=1] [ref=f4e98]
+          - paragraph [ref=f4e99]: "كود الطالب: STU/00001 — عرض بيانات الطالب وسجلاته"
+        - generic [ref=f4e100]:
+          - link " البطاقة" [ref=f4e101] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/students/2/card
+            - generic [ref=f4e102]: 
+            - text: البطاقة
+          - link " شهادة" [active] [ref=f4e103] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/students/2/certificate
+            - generic [ref=f4e104]: 
+            - text: شهادة
+          - link " تعديل" [ref=f4e105] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/students/2/edit
+            - generic [ref=f4e106]: 
+            - text: تعديل
+      - generic [ref=f4e107]:
+        - generic [ref=f4e110]:
+          - generic [ref=f4e111]: A
+          - heading "Ali H Ahmed" [level=5] [ref=f4e112]
+          - generic [ref=f4e113]: STU/00001
+          - generic [ref=f4e114]: admitted
+          - separator [ref=f4e115]
+          - generic [ref=f4e116]:
+            - generic [ref=f4e117]:
+              - generic [ref=f4e118]: الصف
+              - generic [ref=f4e119]: Grade 6 A
+            - generic [ref=f4e120]:
+              - generic [ref=f4e121]: البرنامج
+              - generic [ref=f4e122]: —
+            - generic [ref=f4e123]:
+              - generic [ref=f4e124]: السنة
+              - generic [ref=f4e125]: 2025-2026
+            - generic [ref=f4e126]:
+              - generic [ref=f4e127]: الجنس
+              - generic [ref=f4e128]: male
+            - generic [ref=f4e129]:
+              - generic [ref=f4e130]: تاريخ الميلاد
+              - generic [ref=f4e131]: 2014-01-01
+            - generic [ref=f4e132]:
+              - generic [ref=f4e133]: الهاتف
+              - generic [ref=f4e134]: —
+            - generic [ref=f4e135]:
+              - generic [ref=f4e136]: البريد
+              - generic [ref=f4e137]: —
+        - generic [ref=f4e138]:
+          - generic [ref=f4e139]:
+            - generic [ref=f4e140]: أولياء الأمور
+            - generic [ref=f4e142]:
+              - generic [ref=f4e143]: 
+              - paragraph [ref=f4e144]: لا يوجد أولياء أمور مرتبطون.
+          - generic [ref=f4e145]:
+            - generic [ref=f4e146]: المقررات
+            - generic [ref=f4e147]: English Grade 6 A
+          - generic [ref=f4e149]:
+            - generic [ref=f4e150]: الفواتير
+            - table [ref=f4e152]:
+              - rowgroup [ref=f4e153]:
+                - row [ref=f4e154]:
+                  - columnheader "الرقم" [ref=f4e155]
+                  - columnheader "التاريخ" [ref=f4e156]
+                  - columnheader "الإجمالي" [ref=f4e157]
+                  - columnheader "المتبقي" [ref=f4e158]
+                  - columnheader "الحالة" [ref=f4e159]
+              - rowgroup [ref=f4e160]:
+                - row [ref=f4e161]:
+                  - cell "INV/00002" [ref=f4e162]
+                  - cell "2026-08-13" [ref=f4e163]
+                  - cell "0" [ref=f4e164]
+                  - cell "0" [ref=f4e165]
+                  - cell "open" [ref=f4e166]
+                - row [ref=f4e168]:
+                  - cell "INV/00010" [ref=f4e169]
+                  - cell "2026-08-13" [ref=f4e170]
+                  - cell "0" [ref=f4e171]
+                  - cell "0" [ref=f4e172]
+                  - cell "open" [ref=f4e173]
+                - row [ref=f4e175]:
+                  - cell "INV/00018" [ref=f4e176]
+                  - cell "2026-08-13" [ref=f4e177]
+                  - cell "0" [ref=f4e178]
+                  - cell "0" [ref=f4e179]
+                  - cell "open" [ref=f4e180]
+                - row [ref=f4e182]:
+                  - cell "INV/00026" [ref=f4e183]
+                  - cell "2026-08-13" [ref=f4e184]
+                  - cell "0" [ref=f4e185]
+                  - cell "0" [ref=f4e186]
+                  - cell "open" [ref=f4e187]
+                - row [ref=f4e189]:
+                  - cell "INV/00034" [ref=f4e190]
+                  - cell "2026-08-14" [ref=f4e191]
+                  - cell "0" [ref=f4e192]
+                  - cell "0" [ref=f4e193]
+                  - cell "open" [ref=f4e194]
+          - generic [ref=f4e196]:
+            - generic [ref=f4e197]:
+              - generic [ref=f4e198]: سجل الحضور
+              - generic [ref=f4e199]: "نسبة الحضور: 0%"
+            - table [ref=f4e201]:
+              - rowgroup [ref=f4e202]:
+                - row [ref=f4e203]:
+                  - columnheader "التاريخ" [ref=f4e204]
+                  - columnheader "المادة" [ref=f4e205]
+                  - columnheader "الحالة" [ref=f4e206]
+              - rowgroup [ref=f4e207]:
+                - row [ref=f4e208]:
+                  - cell " لا توجد سجلات حضور" [ref=f4e209]:
+                    - generic [ref=f4e210]:
+                      - generic [ref=f4e211]: 
+                      - paragraph [ref=f4e212]: لا توجد سجلات حضور
+    - contentinfo [ref=f4e213]: مدرسة إدبة © 2026 — نظام إدارة المدارس
+  - text: 
+  - generic [ref=f4e214]:
+    - text:    
+    - button "" [ref=f4e215] [cursor=pointer]

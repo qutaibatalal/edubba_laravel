@@ -1,0 +1,239 @@
+- generic [active] [ref=f28e1]:
+  - generic [ref=f28e2]:
+    - link "مدرسة إدبة مدرسة إدبةالرسوم والفواتير" [ref=f28e3] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "مدرسة إدبة" [ref=f28e4]
+      - generic [ref=f28e5]: مدرسة إدبةالرسوم والفواتير
+    - generic [ref=f28e6]:
+      - generic [ref=f28e7]: الرئيسية
+      - link " لوحة الإحصائيات" [ref=f28e8] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - generic [ref=f28e9]: 
+        - generic [ref=f28e10]: لوحة الإحصائيات
+      - generic [ref=f28e11]: إدارة المدرسة
+      - link " الطلاب" [ref=f28e12] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/students
+        - generic [ref=f28e13]: 
+        - generic [ref=f28e14]: الطلاب
+      - link " القبول" [ref=f28e15] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/admissions
+        - generic [ref=f28e16]: 
+        - generic [ref=f28e17]: القبول
+      - link " أولياء الأمور" [ref=f28e18] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/parents
+        - generic [ref=f28e19]: 
+        - generic [ref=f28e20]: أولياء الأمور
+      - link " الهيئة التدريسية" [ref=f28e21] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/faculty
+        - generic [ref=f28e22]: 
+        - generic [ref=f28e23]: الهيئة التدريسية
+      - link " المقررات" [ref=f28e24] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/courses
+        - generic [ref=f28e25]: 
+        - generic [ref=f28e26]: المقررات
+      - link " الصفوف الدراسية" [ref=f28e27] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/batches
+        - generic [ref=f28e28]: 
+        - generic [ref=f28e29]: الصفوف الدراسية
+      - link " البرامج الدراسية" [ref=f28e30] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/programs
+        - generic [ref=f28e31]: 
+        - generic [ref=f28e32]: البرامج الدراسية
+      - link " السنوات الدراسية" [ref=f28e33] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/academic-years
+        - generic [ref=f28e34]: 
+        - generic [ref=f28e35]: السنوات الدراسية
+      - generic [ref=f28e36]: العمليات
+      - link " الرسوم والفواتير" [ref=f28e37] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/fees/structures
+        - generic [ref=f28e38]: 
+        - generic [ref=f28e39]: الرسوم والفواتير
+      - link " الحضور" [ref=f28e40] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/attendance
+        - generic [ref=f28e41]: 
+        - generic [ref=f28e42]: الحضور
+      - link " الجدول الدراسي" [ref=f28e43] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/timetable
+        - generic [ref=f28e44]: 
+        - generic [ref=f28e45]: الجدول الدراسي
+      - link " التقويم والعطل" [ref=f28e46] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/calendar
+        - generic [ref=f28e47]: 
+        - generic [ref=f28e48]: التقويم والعطل
+      - link " التدريس الخصوصي" [ref=f28e49] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/tutoring
+        - generic [ref=f28e50]: 
+        - generic [ref=f28e51]: التدريس الخصوصي
+      - link " الامتحانات" [ref=f28e52] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/exams
+        - generic [ref=f28e53]: 
+        - generic [ref=f28e54]: الامتحانات
+      - link " تقارير الوزارة" [ref=f28e55] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/reports
+        - generic [ref=f28e56]: 
+        - generic [ref=f28e57]: تقارير الوزارة
+      - generic [ref=f28e58]: النظام
+      - link " الإعدادات" [ref=f28e59] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/settings
+        - generic [ref=f28e60]: 
+        - generic [ref=f28e61]: الإعدادات
+    - generic [ref=f28e63]:
+      - generic [ref=f28e64]: S
+      - generic [ref=f28e65]:
+        - generic [ref=f28e66]: System Admin
+        - generic [ref=f28e67]: مدير النظام
+  - generic [ref=f28e68]:
+    - navigation [ref=f28e69]:
+      - text: 
+      - button "" [ref=f28e70] [cursor=pointer]
+      - navigation "breadcrumb" [ref=f28e73]:
+        - list [ref=f28e74]:
+          - listitem [ref=f28e75]:
+            - link " الرئيسية" [ref=f28e76] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin
+              - generic [ref=f28e77]: 
+              - text: الرئيسية
+          - listitem [ref=f28e78]: / إدارة الرسوم والفواتير
+      - generic [ref=f28e79]:
+        - generic [ref=f28e80]:
+          - generic [ref=f28e81]: 
+          - textbox "ابحث في النظام..." [ref=f28e82]
+        - button "" [ref=f28e84] [cursor=pointer]
+        - button "" [ref=f28e86] [cursor=pointer]
+        - generic [ref=f28e88]:
+          - button "" [ref=f28e89] [cursor=pointer]
+          - text: 
+        - generic [ref=f28e92]:
+          - button "S" [ref=f28e93] [cursor=pointer]
+          - text:  
+    - generic [ref=f28e95]:
+      - generic [ref=f28e96]:
+        - generic [ref=f28e97]:
+          - heading "هياكل الرسوم" [level=1] [ref=f28e98]
+          - paragraph [ref=f28e99]: إدارة هياكل الرسوم الدراسية وتوليد الفواتير
+        - link " هيكل رسوم جديد" [ref=f28e101] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/fees/structures/create
+          - generic [ref=f28e102]: 
+          - text: هيكل رسوم جديد
+      - generic [ref=f28e103]:
+        - generic [ref=f28e104]:
+          - generic [ref=f28e105]:
+            - generic [ref=f28e106]: T
+            - generic [ref=f28e107]:
+              - generic [ref=f28e108]: Test Fees
+              - generic [ref=f28e109]: Grade 6 A · كل البرامج · 2025-2026
+          - button " توليد الفواتير" [ref=f28e111] [cursor=pointer]:
+            - generic [ref=f28e112]: 
+            - text: توليد الفواتير
+        - table [ref=f28e114]:
+          - rowgroup [ref=f28e115]:
+            - row [ref=f28e116]:
+              - columnheader "البند" [ref=f28e117]
+              - columnheader "النوع" [ref=f28e118]
+              - columnheader "المبلغ" [ref=f28e119]
+          - rowgroup [ref=f28e120]:
+            - row [ref=f28e121]:
+              - cell "Tuition" [ref=f28e122]
+              - cell "one_time" [ref=f28e123]
+              - cell "1,000" [ref=f28e125]
+      - generic [ref=f28e126]:
+        - generic [ref=f28e127]:
+          - generic [ref=f28e128]:
+            - generic [ref=f28e129]: T
+            - generic [ref=f28e130]:
+              - generic [ref=f28e131]: Test Fees
+              - generic [ref=f28e132]: Grade 6 A · كل البرامج · 2025-2026
+          - button " توليد الفواتير" [ref=f28e134] [cursor=pointer]:
+            - generic [ref=f28e135]: 
+            - text: توليد الفواتير
+        - table [ref=f28e137]:
+          - rowgroup [ref=f28e138]:
+            - row [ref=f28e139]:
+              - columnheader "البند" [ref=f28e140]
+              - columnheader "النوع" [ref=f28e141]
+              - columnheader "المبلغ" [ref=f28e142]
+          - rowgroup [ref=f28e143]:
+            - row [ref=f28e144]:
+              - cell "Tuition" [ref=f28e145]
+              - cell "one_time" [ref=f28e146]
+              - cell "1,000" [ref=f28e148]
+      - generic [ref=f28e149]:
+        - generic [ref=f28e150]:
+          - generic [ref=f28e151]:
+            - generic [ref=f28e152]: T
+            - generic [ref=f28e153]:
+              - generic [ref=f28e154]: Test Fees
+              - generic [ref=f28e155]: Grade 6 A · كل البرامج · 2025-2026
+          - button " توليد الفواتير" [ref=f28e157] [cursor=pointer]:
+            - generic [ref=f28e158]: 
+            - text: توليد الفواتير
+        - table [ref=f28e160]:
+          - rowgroup [ref=f28e161]:
+            - row [ref=f28e162]:
+              - columnheader "البند" [ref=f28e163]
+              - columnheader "النوع" [ref=f28e164]
+              - columnheader "المبلغ" [ref=f28e165]
+          - rowgroup [ref=f28e166]:
+            - row [ref=f28e167]:
+              - cell "Tuition" [ref=f28e168]
+              - cell "one_time" [ref=f28e169]
+              - cell "1,000" [ref=f28e171]
+      - generic [ref=f28e172]:
+        - generic [ref=f28e173]:
+          - generic [ref=f28e174]:
+            - generic [ref=f28e175]: F
+            - generic [ref=f28e176]:
+              - generic [ref=f28e177]: FinalFees
+              - generic [ref=f28e178]: Grade 6 A · كل البرامج · 2025-2026
+          - button " توليد الفواتير" [ref=f28e180] [cursor=pointer]:
+            - generic [ref=f28e181]: 
+            - text: توليد الفواتير
+        - table [ref=f28e183]:
+          - rowgroup [ref=f28e184]:
+            - row [ref=f28e185]:
+              - columnheader "البند" [ref=f28e186]
+              - columnheader "النوع" [ref=f28e187]
+              - columnheader "المبلغ" [ref=f28e188]
+          - rowgroup [ref=f28e189]:
+            - row [ref=f28e190]:
+              - cell "Tuition" [ref=f28e191]
+              - cell "one_time" [ref=f28e192]
+              - cell "1,000" [ref=f28e194]
+      - generic [ref=f28e195]:
+        - generic [ref=f28e196]:
+          - generic [ref=f28e197]:
+            - generic [ref=f28e198]: U
+            - generic [ref=f28e199]:
+              - generic [ref=f28e200]: UI Fees
+              - generic [ref=f28e201]: Grade 6 A · كل البرامج · 2025-2026
+          - button " توليد الفواتير" [ref=f28e203] [cursor=pointer]:
+            - generic [ref=f28e204]: 
+            - text: توليد الفواتير
+        - table [ref=f28e206]:
+          - rowgroup [ref=f28e207]:
+            - row [ref=f28e208]:
+              - columnheader "البند" [ref=f28e209]
+              - columnheader "النوع" [ref=f28e210]
+              - columnheader "المبلغ" [ref=f28e211]
+          - rowgroup [ref=f28e212]:
+            - row [ref=f28e213]:
+              - cell "Tuition" [ref=f28e214]
+              - cell "one_time" [ref=f28e215]
+              - cell "1,000" [ref=f28e217]
+            - row [ref=f28e218]:
+              - cell "Books" [ref=f28e219]
+              - cell "one_time" [ref=f28e220]
+              - cell "500" [ref=f28e222]
+      - generic [ref=f28e224]:
+        - generic [ref=f28e225]:
+          - generic [ref=f28e226]: 
+          - text: الفواتير
+        - link " عرض الكل" [ref=f28e227] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/fees/invoices
+          - generic [ref=f28e228]: 
+          - text: عرض الكل
+    - contentinfo [ref=f28e229]: مدرسة إدبة © 2026 — نظام إدارة المدارس
+  - text: 
+  - generic [ref=f28e230]:
+    - text:    
+    - button "" [ref=f28e231] [cursor=pointer]

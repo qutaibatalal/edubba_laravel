@@ -1,0 +1,296 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - link "مدرسة إدبة مدرسة إدبةالطلاب" [ref=f3e3] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "مدرسة إدبة" [ref=f3e4]
+      - generic [ref=f3e5]: مدرسة إدبةالطلاب
+    - generic [ref=f3e6]:
+      - generic [ref=f3e7]: الرئيسية
+      - link " لوحة الإحصائيات" [ref=f3e8] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - generic [ref=f3e9]: 
+        - generic [ref=f3e10]: لوحة الإحصائيات
+      - generic [ref=f3e11]: إدارة المدرسة
+      - link " الطلاب" [ref=f3e12] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/students
+        - generic [ref=f3e13]: 
+        - generic [ref=f3e14]: الطلاب
+      - link " القبول" [ref=f3e15] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/admissions
+        - generic [ref=f3e16]: 
+        - generic [ref=f3e17]: القبول
+      - link " أولياء الأمور" [ref=f3e18] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/parents
+        - generic [ref=f3e19]: 
+        - generic [ref=f3e20]: أولياء الأمور
+      - link " الهيئة التدريسية" [ref=f3e21] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/faculty
+        - generic [ref=f3e22]: 
+        - generic [ref=f3e23]: الهيئة التدريسية
+      - link " المقررات" [ref=f3e24] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/courses
+        - generic [ref=f3e25]: 
+        - generic [ref=f3e26]: المقررات
+      - link " الصفوف الدراسية" [ref=f3e27] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/batches
+        - generic [ref=f3e28]: 
+        - generic [ref=f3e29]: الصفوف الدراسية
+      - link " البرامج الدراسية" [ref=f3e30] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/programs
+        - generic [ref=f3e31]: 
+        - generic [ref=f3e32]: البرامج الدراسية
+      - link " السنوات الدراسية" [ref=f3e33] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/academic-years
+        - generic [ref=f3e34]: 
+        - generic [ref=f3e35]: السنوات الدراسية
+      - generic [ref=f3e36]: العمليات
+      - link " الرسوم والفواتير" [ref=f3e37] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/fees/structures
+        - generic [ref=f3e38]: 
+        - generic [ref=f3e39]: الرسوم والفواتير
+      - link " الحضور" [ref=f3e40] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/attendance
+        - generic [ref=f3e41]: 
+        - generic [ref=f3e42]: الحضور
+      - link " الجدول الدراسي" [ref=f3e43] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/timetable
+        - generic [ref=f3e44]: 
+        - generic [ref=f3e45]: الجدول الدراسي
+      - link " التقويم والعطل" [ref=f3e46] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/calendar
+        - generic [ref=f3e47]: 
+        - generic [ref=f3e48]: التقويم والعطل
+      - link " التدريس الخصوصي" [ref=f3e49] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/tutoring
+        - generic [ref=f3e50]: 
+        - generic [ref=f3e51]: التدريس الخصوصي
+      - link " الامتحانات" [ref=f3e52] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/exams
+        - generic [ref=f3e53]: 
+        - generic [ref=f3e54]: الامتحانات
+      - link " تقارير الوزارة" [ref=f3e55] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/reports
+        - generic [ref=f3e56]: 
+        - generic [ref=f3e57]: تقارير الوزارة
+      - generic [ref=f3e58]: النظام
+      - link " الإعدادات" [ref=f3e59] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/settings
+        - generic [ref=f3e60]: 
+        - generic [ref=f3e61]: الإعدادات
+    - generic [ref=f3e63]:
+      - generic [ref=f3e64]: S
+      - generic [ref=f3e65]:
+        - generic [ref=f3e66]: System Admin
+        - generic [ref=f3e67]: مدير النظام
+  - generic [ref=f3e68]:
+    - navigation [ref=f3e69]:
+      - text: 
+      - button "" [ref=f3e70] [cursor=pointer]
+      - navigation "breadcrumb" [ref=f3e73]:
+        - list [ref=f3e74]:
+          - listitem [ref=f3e75]:
+            - link " الرئيسية" [ref=f3e76] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin
+              - generic [ref=f3e77]: 
+              - text: الرئيسية
+          - listitem [ref=f3e78]: / إدارة الطلاب
+      - generic [ref=f3e79]:
+        - generic [ref=f3e80]:
+          - generic [ref=f3e81]: 
+          - textbox "ابحث في النظام..." [ref=f3e82]
+        - button "" [ref=f3e84] [cursor=pointer]
+        - button "" [ref=f3e86] [cursor=pointer]
+        - generic [ref=f3e88]:
+          - button "" [ref=f3e89] [cursor=pointer]
+          - text: 
+        - generic [ref=f3e92]:
+          - button "S" [ref=f3e93] [cursor=pointer]
+          - text:  
+    - generic [ref=f3e95]:
+      - generic [ref=f3e96]:
+        - generic [ref=f3e97]:
+          - heading "إدارة الطلاب" [level=1] [ref=f3e98]
+          - paragraph [ref=f3e99]: سجّل طلاب المدرسة ومتابعة حالاتهم
+        - link " طالب جديد" [ref=f3e101] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/students/create
+          - generic [ref=f3e102]: 
+          - text: طالب جديد
+      - generic [ref=f3e103]:
+        - generic [ref=f3e105]:
+          - textbox "بحث بالاسم أو الكود..." [ref=f3e106]
+          - combobox [ref=f3e107]:
+            - option "كل الصفوف" [selected]
+            - option "Grade 6 A"
+            - option "Test Batch"
+          - button " بحث" [ref=f3e108] [cursor=pointer]:
+            - generic [ref=f3e109]: 
+            - text: بحث
+        - table [ref=f3e111]:
+          - rowgroup [ref=f3e112]:
+            - row [ref=f3e113]:
+              - columnheader "الكود" [ref=f3e114]
+              - columnheader "الاسم" [ref=f3e115]
+              - columnheader "الصف" [ref=f3e116]
+              - columnheader "السنة" [ref=f3e117]
+              - columnheader "ولي الأمر" [ref=f3e118]
+              - columnheader "الحالة" [ref=f3e119]
+              - columnheader "إجراءات" [ref=f3e120]
+          - rowgroup [ref=f3e121]:
+            - row [ref=f3e122]:
+              - cell "STU/00008" [ref=f3e123]
+              - cell "F Flow Test" [ref=f3e125]:
+                - generic [ref=f3e126]:
+                  - generic [ref=f3e127]: F
+                  - generic [ref=f3e128]: Flow Test
+              - cell "Grade 6 A" [ref=f3e129]
+              - cell "2025-2026" [ref=f3e130]
+              - cell "—" [ref=f3e131]
+              - cell "admitted" [ref=f3e132]
+              - cell [ref=f3e134]:
+                - generic [ref=f3e135]:
+                  - link "" [ref=f3e136] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/9
+                  - link "" [ref=f3e138] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/9/edit
+                  - button "" [ref=f3e141] [cursor=pointer]
+            - row [ref=f3e143]:
+              - cell "STU/00007" [ref=f3e144]
+              - cell "F Final Applicant" [ref=f3e146]:
+                - generic [ref=f3e147]:
+                  - generic [ref=f3e148]: F
+                  - generic [ref=f3e149]: Final Applicant
+              - cell "Grade 6 A" [ref=f3e150]
+              - cell "2025-2026" [ref=f3e151]
+              - cell "Parent One" [ref=f3e152]
+              - cell "admitted" [ref=f3e153]
+              - cell [ref=f3e155]:
+                - generic [ref=f3e156]:
+                  - link "" [ref=f3e157] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/8
+                  - link "" [ref=f3e159] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/8/edit
+                  - button "" [ref=f3e162] [cursor=pointer]
+            - row [ref=f3e164]:
+              - cell "STU/00006" [ref=f3e165]
+              - cell "W Web Test" [ref=f3e167]:
+                - generic [ref=f3e168]:
+                  - generic [ref=f3e169]: W
+                  - generic [ref=f3e170]: Web Test
+              - cell "Grade 6 A" [ref=f3e171]
+              - cell "2025-2026" [ref=f3e172]
+              - cell "Parent One" [ref=f3e173]
+              - cell "admitted" [ref=f3e174]
+              - cell [ref=f3e176]:
+                - generic [ref=f3e177]:
+                  - link "" [ref=f3e178] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/7
+                  - link "" [ref=f3e180] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/7/edit
+                  - button "" [ref=f3e183] [cursor=pointer]
+            - row [ref=f3e185]:
+              - cell "STU/00005" [ref=f3e186]
+              - cell "F Flow Test" [ref=f3e188]:
+                - generic [ref=f3e189]:
+                  - generic [ref=f3e190]: F
+                  - generic [ref=f3e191]: Flow Test
+              - cell "Grade 6 A" [ref=f3e192]
+              - cell "2025-2026" [ref=f3e193]
+              - cell "—" [ref=f3e194]
+              - cell "admitted" [ref=f3e195]
+              - cell [ref=f3e197]:
+                - generic [ref=f3e198]:
+                  - link "" [ref=f3e199] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/6
+                  - link "" [ref=f3e201] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/6/edit
+                  - button "" [ref=f3e204] [cursor=pointer]
+            - row [ref=f3e206]:
+              - cell "STU/00004" [ref=f3e207]
+              - cell "T Test A Student" [ref=f3e209]:
+                - generic [ref=f3e210]:
+                  - generic [ref=f3e211]: T
+                  - generic [ref=f3e212]: Test A Student
+              - cell "Grade 6 A" [ref=f3e213]
+              - cell "2025-2026" [ref=f3e214]
+              - cell "Parent One" [ref=f3e215]
+              - cell "admitted" [ref=f3e216]
+              - cell [ref=f3e218]:
+                - generic [ref=f3e219]:
+                  - link "" [ref=f3e220] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/5
+                  - link "" [ref=f3e222] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/5/edit
+                  - button "" [ref=f3e225] [cursor=pointer]
+            - row [ref=f3e227]:
+              - cell "STU/00003" [ref=f3e228]
+              - cell "T Test A Student" [ref=f3e230]:
+                - generic [ref=f3e231]:
+                  - generic [ref=f3e232]: T
+                  - generic [ref=f3e233]: Test A Student
+              - cell "Grade 6 A" [ref=f3e234]
+              - cell "2025-2026" [ref=f3e235]
+              - cell "Parent One" [ref=f3e236]
+              - cell "admitted" [ref=f3e237]
+              - cell [ref=f3e239]:
+                - generic [ref=f3e240]:
+                  - link "" [ref=f3e241] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/4
+                  - link "" [ref=f3e243] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/4/edit
+                  - button "" [ref=f3e246] [cursor=pointer]
+            - row [ref=f3e248]:
+              - cell "STU/00002" [ref=f3e249]
+              - cell "T Test A Student" [ref=f3e251]:
+                - generic [ref=f3e252]:
+                  - generic [ref=f3e253]: T
+                  - generic [ref=f3e254]: Test A Student
+              - cell "Grade 6 A" [ref=f3e255]
+              - cell "2025-2026" [ref=f3e256]
+              - cell "Parent One" [ref=f3e257]
+              - cell "admitted" [ref=f3e258]
+              - cell [ref=f3e260]:
+                - generic [ref=f3e261]:
+                  - link "" [ref=f3e262] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/3
+                  - link "" [ref=f3e264] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/3/edit
+                  - button "" [ref=f3e267] [cursor=pointer]
+            - row [ref=f3e269]:
+              - cell "STU/00001" [ref=f3e270]
+              - cell "A Ali H Ahmed" [ref=f3e272]:
+                - generic [ref=f3e273]:
+                  - generic [ref=f3e274]: A
+                  - generic [ref=f3e275]: Ali H Ahmed
+              - cell "Grade 6 A" [ref=f3e276]
+              - cell "2025-2026" [ref=f3e277]
+              - cell "—" [ref=f3e278]
+              - cell "admitted" [ref=f3e279]
+              - cell [ref=f3e281]:
+                - generic [ref=f3e282]:
+                  - link "" [ref=f3e283] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/2
+                  - link "" [ref=f3e285] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/2/edit
+                  - button "" [ref=f3e288] [cursor=pointer]
+            - row [ref=f3e290]:
+              - cell "STU00001" [ref=f3e291]
+              - cell "S Student A One" [ref=f3e293]:
+                - generic [ref=f3e294]:
+                  - generic [ref=f3e295]: S
+                  - generic [ref=f3e296]: Student A One
+              - cell "Grade 6 A" [ref=f3e297]
+              - cell "2025-2026" [ref=f3e298]
+              - cell "Parent One" [ref=f3e299]
+              - cell "admitted" [ref=f3e300]
+              - cell [ref=f3e302]:
+                - generic [ref=f3e303]:
+                  - link "" [ref=f3e304] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/1
+                  - link "" [ref=f3e306] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/students/1/edit
+                  - button "" [ref=f3e309] [cursor=pointer]
+    - contentinfo [ref=f3e311]: مدرسة إدبة © 2026 — نظام إدارة المدارس
+  - text: 
+  - generic [ref=f3e312]:
+    - text:    
+    - button "" [ref=f3e313] [cursor=pointer]

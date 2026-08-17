@@ -1,0 +1,329 @@
+- generic [active] [ref=f16e1]:
+  - generic [ref=f16e2]:
+    - link "مدرسة إدبة مدرسة إدبةلوحة الإحصائيات" [ref=f16e3] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "مدرسة إدبة" [ref=f16e4]
+      - generic [ref=f16e5]: مدرسة إدبةلوحة الإحصائيات
+    - generic [ref=f16e6]:
+      - generic [ref=f16e7]: الرئيسية
+      - link " لوحة الإحصائيات" [ref=f16e8] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - generic [ref=f16e9]: 
+        - generic [ref=f16e10]: لوحة الإحصائيات
+      - generic [ref=f16e11]: إدارة المدرسة
+      - link " الطلاب" [ref=f16e12] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/students
+        - generic [ref=f16e13]: 
+        - generic [ref=f16e14]: الطلاب
+      - link " القبول" [ref=f16e15] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/admissions
+        - generic [ref=f16e16]: 
+        - generic [ref=f16e17]: القبول
+      - link " أولياء الأمور" [ref=f16e18] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/parents
+        - generic [ref=f16e19]: 
+        - generic [ref=f16e20]: أولياء الأمور
+      - link " الهيئة التدريسية" [ref=f16e21] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/faculty
+        - generic [ref=f16e22]: 
+        - generic [ref=f16e23]: الهيئة التدريسية
+      - link " المقررات" [ref=f16e24] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/courses
+        - generic [ref=f16e25]: 
+        - generic [ref=f16e26]: المقررات
+      - link " الصفوف الدراسية" [ref=f16e27] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/batches
+        - generic [ref=f16e28]: 
+        - generic [ref=f16e29]: الصفوف الدراسية
+      - link " البرامج الدراسية" [ref=f16e30] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/programs
+        - generic [ref=f16e31]: 
+        - generic [ref=f16e32]: البرامج الدراسية
+      - link " السنوات الدراسية" [ref=f16e33] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/academic-years
+        - generic [ref=f16e34]: 
+        - generic [ref=f16e35]: السنوات الدراسية
+      - generic [ref=f16e36]: العمليات
+      - link " الرسوم والفواتير" [ref=f16e37] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/fees/structures
+        - generic [ref=f16e38]: 
+        - generic [ref=f16e39]: الرسوم والفواتير
+      - link " الحضور" [ref=f16e40] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/attendance
+        - generic [ref=f16e41]: 
+        - generic [ref=f16e42]: الحضور
+      - link " الجدول الدراسي" [ref=f16e43] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/timetable
+        - generic [ref=f16e44]: 
+        - generic [ref=f16e45]: الجدول الدراسي
+      - link " التقويم والعطل" [ref=f16e46] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/calendar
+        - generic [ref=f16e47]: 
+        - generic [ref=f16e48]: التقويم والعطل
+      - link " التدريس الخصوصي" [ref=f16e49] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/tutoring
+        - generic [ref=f16e50]: 
+        - generic [ref=f16e51]: التدريس الخصوصي
+      - link " الامتحانات" [ref=f16e52] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/exams
+        - generic [ref=f16e53]: 
+        - generic [ref=f16e54]: الامتحانات
+      - link " تقارير الوزارة" [ref=f16e55] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/reports
+        - generic [ref=f16e56]: 
+        - generic [ref=f16e57]: تقارير الوزارة
+      - generic [ref=f16e58]: النظام
+      - link " الإعدادات" [ref=f16e59] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/settings
+        - generic [ref=f16e60]: 
+        - generic [ref=f16e61]: الإعدادات
+    - generic [ref=f16e63]:
+      - generic [ref=f16e64]: S
+      - generic [ref=f16e65]:
+        - generic [ref=f16e66]: System Admin
+        - generic [ref=f16e67]: مدير النظام
+  - generic [ref=f16e68]:
+    - navigation [ref=f16e69]:
+      - text: 
+      - button "" [ref=f16e70] [cursor=pointer]
+      - navigation "breadcrumb" [ref=f16e73]:
+        - list [ref=f16e74]:
+          - listitem [ref=f16e75]:
+            - link " الرئيسية" [ref=f16e76] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin
+              - generic [ref=f16e77]: 
+              - text: الرئيسية
+          - listitem [ref=f16e78]: / لوحة الإحصائيات
+      - generic [ref=f16e79]:
+        - generic [ref=f16e80]:
+          - generic [ref=f16e81]: 
+          - textbox "ابحث في النظام..." [ref=f16e82]
+        - button "" [ref=f16e84] [cursor=pointer]
+        - button "" [ref=f16e86] [cursor=pointer]
+        - generic [ref=f16e88]:
+          - button "" [ref=f16e89] [cursor=pointer]
+          - text: 
+        - generic [ref=f16e92]:
+          - button "S" [ref=f16e93] [cursor=pointer]
+          - text:  
+    - generic [ref=f16e95]:
+      - generic [ref=f16e96]:
+        - generic [ref=f16e97]:
+          - heading "لوحة الإحصائيات" [level=1] [ref=f16e98]
+          - paragraph [ref=f16e99]: مرحباً، System Admin — إليك أبرز مؤشرات المدرسة اليوم
+        - generic [ref=f16e100]:
+          - link " طلب قبول" [ref=f16e101] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/admissions/create
+            - generic [ref=f16e102]: 
+            - text: طلب قبول
+          - link " طالب جديد" [ref=f16e103] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/students/create
+            - generic [ref=f16e104]: 
+            - text: طالب جديد
+      - generic [ref=f16e105]:
+        - generic [ref=f16e108]:
+          - generic [ref=f16e109]: 
+          - generic [ref=f16e111]:
+            - generic [ref=f16e112]: "1"
+            - generic [ref=f16e113]: الطلاب المقيدون
+        - generic [ref=f16e116]:
+          - generic [ref=f16e117]: 
+          - generic [ref=f16e119]:
+            - generic [ref=f16e120]: "0"
+            - generic [ref=f16e121]: الهيئة التدريسية
+        - generic [ref=f16e124]:
+          - generic [ref=f16e125]: 
+          - generic [ref=f16e127]:
+            - generic [ref=f16e128]: "0"
+            - generic [ref=f16e129]: إجمالي المستحقات
+        - generic [ref=f16e132]:
+          - generic [ref=f16e133]: 
+          - generic [ref=f16e135]:
+            - generic [ref=f16e136]: "1"
+            - generic [ref=f16e137]: قبول قيد الانتظار
+      - generic [ref=f16e138]:
+        - generic [ref=f16e141]:
+          - generic [ref=f16e142]: توزيع الطلاب على الصفوف
+          - generic [ref=f16e143]: 1 صف
+        - generic [ref=f16e146]: ملخص النظام
+        - generic [ref=f16e152]:
+          - generic [ref=f16e153]: إجراءات سريعة
+          - generic [ref=f16e154]:
+            - link " طالب" [ref=f16e155] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/students/create
+              - generic [ref=f16e156]: 
+              - text: طالب
+            - link " قبول" [ref=f16e157] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/admissions/create
+              - generic [ref=f16e158]: 
+              - text: قبول
+            - link " هيكل رسوم" [ref=f16e159] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/fees/structures/create
+              - generic [ref=f16e160]: 
+              - text: هيكل رسوم
+            - link " تقرير" [ref=f16e161] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/reports
+              - generic [ref=f16e162]: 
+              - text: تقرير
+      - generic [ref=f16e163]:
+        - generic [ref=f16e165]:
+          - generic [ref=f16e166]:
+            - generic [ref=f16e167]:
+              - generic [ref=f16e168]: 
+              - text: يحتاج انتباهك
+            - generic [ref=f16e169]: "2"
+          - generic [ref=f16e170]:
+            - link " امتحان قادم —" [ref=f16e171] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/exams/1
+              - generic [ref=f16e172]: 
+              - generic [ref=f16e174]:
+                - generic [ref=f16e175]: امتحان قادم
+                - generic [ref=f16e176]: —
+            - link " امتحان قادم —" [ref=f16e177] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/exams/3
+              - generic [ref=f16e178]: 
+              - generic [ref=f16e180]:
+                - generic [ref=f16e181]: امتحان قادم
+                - generic [ref=f16e182]: —
+        - generic [ref=f16e184]:
+          - generic [ref=f16e186]:
+            - generic [ref=f16e187]: 
+            - text: نشاط اليوم
+          - generic [ref=f16e189]:
+            - generic [ref=f16e190]: 
+            - paragraph [ref=f16e191]: لا نشاط اليوم بعد
+      - generic [ref=f16e192]:
+        - generic [ref=f16e194]:
+          - generic [ref=f16e195]:
+            - generic [ref=f16e196]: أحدث الفواتير
+            - link "إدارة الرسوم" [ref=f16e197] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/fees/structures
+          - table [ref=f16e199]:
+            - rowgroup [ref=f16e200]:
+              - row [ref=f16e201]:
+                - columnheader "رقم الفاتورة" [ref=f16e202]
+                - columnheader "الطالب" [ref=f16e203]
+                - columnheader "الإجمالي" [ref=f16e204]
+                - columnheader "المتبقي" [ref=f16e205]
+                - columnheader "الحالة" [ref=f16e206]
+            - rowgroup [ref=f16e207]:
+              - row [ref=f16e208]:
+                - cell "INV/00061" [ref=f16e209]
+                - cell "F Flow Test" [ref=f16e211]:
+                  - generic [ref=f16e212]:
+                    - generic [ref=f16e213]: F
+                    - generic [ref=f16e214]: Flow Test
+                - cell "0" [ref=f16e215]
+                - cell "0" [ref=f16e216]
+                - cell "open" [ref=f16e217]
+              - row [ref=f16e219]:
+                - cell "INV/00060" [ref=f16e220]
+                - cell "F Flow Test" [ref=f16e222]:
+                  - generic [ref=f16e223]:
+                    - generic [ref=f16e224]: F
+                    - generic [ref=f16e225]: Flow Test
+                - cell "0" [ref=f16e226]
+                - cell "0" [ref=f16e227]
+                - cell "open" [ref=f16e228]
+              - row [ref=f16e230]:
+                - cell "INV/00059" [ref=f16e231]
+                - cell "F Final Applicant" [ref=f16e233]:
+                  - generic [ref=f16e234]:
+                    - generic [ref=f16e235]: F
+                    - generic [ref=f16e236]: Final Applicant
+                - cell "0" [ref=f16e237]
+                - cell "0" [ref=f16e238]
+                - cell "open" [ref=f16e239]
+              - row [ref=f16e241]:
+                - cell "INV/00058" [ref=f16e242]
+                - cell "W Web Test" [ref=f16e244]:
+                  - generic [ref=f16e245]:
+                    - generic [ref=f16e246]: W
+                    - generic [ref=f16e247]: Web Test
+                - cell "0" [ref=f16e248]
+                - cell "0" [ref=f16e249]
+                - cell "open" [ref=f16e250]
+              - row [ref=f16e252]:
+                - cell "INV/00057" [ref=f16e253]
+                - cell "F Flow Test" [ref=f16e255]:
+                  - generic [ref=f16e256]:
+                    - generic [ref=f16e257]: F
+                    - generic [ref=f16e258]: Flow Test
+                - cell "0" [ref=f16e259]
+                - cell "0" [ref=f16e260]
+                - cell "open" [ref=f16e261]
+              - row [ref=f16e263]:
+                - cell "INV/00056" [ref=f16e264]
+                - cell "T Test A Student" [ref=f16e266]:
+                  - generic [ref=f16e267]:
+                    - generic [ref=f16e268]: T
+                    - generic [ref=f16e269]: Test A Student
+                - cell "0" [ref=f16e270]
+                - cell "0" [ref=f16e271]
+                - cell "open" [ref=f16e272]
+        - generic [ref=f16e275]:
+          - generic [ref=f16e276]:
+            - generic [ref=f16e277]: أحدث طلبات القبول
+            - link "الكل" [ref=f16e278] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/admissions
+          - table [ref=f16e280]:
+            - rowgroup [ref=f16e281]:
+              - row [ref=f16e282]:
+                - columnheader "الرقم" [ref=f16e283]
+                - columnheader "الاسم" [ref=f16e284]
+                - columnheader "الصف" [ref=f16e285]
+                - columnheader "الحالة" [ref=f16e286]
+            - rowgroup [ref=f16e287]:
+              - row [ref=f16e288]:
+                - cell "ADM/00010" [ref=f16e289]
+                - cell "N New Admission HeavyTest" [ref=f16e291]:
+                  - generic [ref=f16e292]:
+                    - generic [ref=f16e293]: "N"
+                    - generic [ref=f16e294]: New Admission HeavyTest
+                - cell "Grade 6 A" [ref=f16e295]
+                - cell "draft" [ref=f16e296]
+              - row [ref=f16e298]:
+                - cell "ADM/00009" [ref=f16e299]
+                - cell "F Final Applicant" [ref=f16e301]:
+                  - generic [ref=f16e302]:
+                    - generic [ref=f16e303]: F
+                    - generic [ref=f16e304]: Final Applicant
+                - cell "Grade 6 A" [ref=f16e305]
+                - cell "admitted" [ref=f16e306]
+              - row [ref=f16e308]:
+                - cell "ADM/00008" [ref=f16e309]
+                - cell "F Flow Test" [ref=f16e311]:
+                  - generic [ref=f16e312]:
+                    - generic [ref=f16e313]: F
+                    - generic [ref=f16e314]: Flow Test
+                - cell "Grade 6 A" [ref=f16e315]
+                - cell "admitted" [ref=f16e316]
+              - row [ref=f16e318]:
+                - cell "ADM/00007" [ref=f16e319]
+                - cell "F Flow Test" [ref=f16e321]:
+                  - generic [ref=f16e322]:
+                    - generic [ref=f16e323]: F
+                    - generic [ref=f16e324]: Flow Test
+                - cell "Grade 6 A" [ref=f16e325]
+                - cell "admitted" [ref=f16e326]
+              - row [ref=f16e328]:
+                - cell "ADM/00006" [ref=f16e329]
+                - cell "F Flow Test" [ref=f16e331]:
+                  - generic [ref=f16e332]:
+                    - generic [ref=f16e333]: F
+                    - generic [ref=f16e334]: Flow Test
+                - cell "Grade 6 A" [ref=f16e335]
+                - cell "admitted" [ref=f16e336]
+              - row [ref=f16e338]:
+                - cell "ADM/00005" [ref=f16e339]
+                - cell "F Flow Test" [ref=f16e341]:
+                  - generic [ref=f16e342]:
+                    - generic [ref=f16e343]: F
+                    - generic [ref=f16e344]: Flow Test
+                - cell "Grade 6 A" [ref=f16e345]
+                - cell "draft" [ref=f16e346]
+    - contentinfo [ref=f16e348]: مدرسة إدبة © 2026 — نظام إدارة المدارس
+  - text: 
+  - generic [ref=f16e349]:
+    - text:    
+    - button "" [ref=f16e350] [cursor=pointer]

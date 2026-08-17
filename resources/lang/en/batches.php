@@ -1,0 +1,37 @@
+<?php
+
+return [
+    'index' => [
+        'title' => 'Classes',
+        'page' => 'Classes Management',
+        'subtitle' => 'Manage classes and link them to programs and academic years',
+        'add_batch' => 'New Class',
+        'add_short' => 'New',
+        'header' => 'Classes',
+        'col_name' => 'Name',
+        'col_program' => 'Program',
+        'col_year' => 'Year',
+        'col_class_teacher' => 'Class Teacher',
+        'col_capacity' => 'Capacity',
+        'col_students' => 'Students',
+        'confirm_delete' => 'Delete class?',
+        'empty' => 'No classes',
+    ],
+    'form' => [
+        'edit_batch' => 'Edit Class',
+        'new_batch' => 'New Class',
+        'page_edit' => 'Edit Class',
+        'page_create' => 'Add Class',
+        'h1_edit' => 'Edit class: :name',
+        'h1_create' => 'Add Class',
+        'subtitle' => 'Enter class details',
+        'label_name' => 'Name *',
+        'label_capacity' => 'Capacity',
+        'label_program' => 'Program *',
+        'label_academic_year' => 'Academic Year *',
+        'label_class_teacher' => 'Responsible Teacher',
+        'active' => 'Active',
+        'save' => 'Save',
+        'cancel' => 'Cancel',
+    ],
+];

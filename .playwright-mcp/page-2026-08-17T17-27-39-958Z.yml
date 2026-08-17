@@ -1,0 +1,201 @@
+- generic [ref=f4e2]:
+  - generic [ref=f4e4]:
+    - generic [ref=f4e5]: Internal Server Error
+    - button "Copy as Markdown" [ref=f4e11] [cursor=pointer]
+  - generic [ref=f4e18]:
+    - generic [ref=f4e19]:
+      - heading "TypeError" [level=1] [ref=f4e20]
+      - generic [ref=f4e21]: vendor\laravel\framework\src\Illuminate\Support\helpers.php:138
+      - paragraph [ref=f4e23]: "htmlspecialchars(): Argument #1 ($string) must be of type string, array given"
+    - generic [ref=f4e24]:
+      - generic [ref=f4e25]:
+        - generic [ref=f4e26]:
+          - generic [ref=f4e27]: LARAVEL
+          - generic [ref=f4e28]: 12.66.0
+        - generic [ref=f4e29]:
+          - generic [ref=f4e30]: PHP
+          - generic [ref=f4e31]: 8.2.12
+      - generic [ref=f4e32]: UNHANDLED
+      - generic [ref=f4e36]: CODE 0
+    - generic [ref=f4e38]:
+      - generic [ref=f4e39]: "500"
+      - generic [ref=f4e43]: GET
+      - generic [ref=f4e47]: http://127.0.0.1:8000/admin/login
+      - button [ref=f4e48] [cursor=pointer]
+  - generic [ref=f4e53]:
+    - generic [ref=f4e54]:
+      - heading "Exception trace" [level=3] [ref=f4e60]
+      - generic [ref=f4e61]:
+        - generic [ref=f4e63] [cursor=pointer]:
+          - generic [ref=f4e68]: 2 vendor frames
+          - button [ref=f4e69]
+        - generic [ref=f4e74]:
+          - generic [ref=f4e75] [cursor=pointer]:
+            - generic [ref=f4e78]:
+              - code [ref=f4e82]:
+                - generic [ref=f4e83]: e(array)
+              - generic [ref=f4e84]: resources\views\admin\auth\login.blade.php:10
+            - button [ref=f4e87]
+          - code [ref=f4e96]:
+            - generic [ref=f4e97]: 5<!DOCTYPE html>
+            - generic [ref=f4e98]: "6<html lang=\"{{ app()->getLocale() }}\" dir=\"{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}\">"
+            - generic [ref=f4e99]: 7<head>
+            - generic [ref=f4e100]: 8 <meta charset="utf-8">
+            - generic [ref=f4e101]: 9 <meta name="viewport" content="width=device-width, initial-scale=1">
+            - generic [ref=f4e102]: "10 <title>@lang('login') — {{ $schoolName }}</title>"
+            - generic [ref=f4e103]: "11 <link rel=\"icon\" type=\"image/png\" href=\"{{ asset('images/edubba_app_icon.png') }}\">"
+            - generic [ref=f4e104]: 12 <link rel="preconnect" href="https://fonts.googleapis.com">
+            - generic [ref=f4e105]: 13 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            - generic [ref=f4e106]: 14 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+            - generic [ref=f4e107]: 15 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+            - generic [ref=f4e108]: 16 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            - generic [ref=f4e109]: 17 <style>
+            - generic [ref=f4e110]: "18 * { font-family: 'Tajawal', system-ui, sans-serif; }"
+            - generic [ref=f4e111]: "19 body { min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #f8fafc; }"
+            - generic [ref=f4e112]: "20 .bg-decor {"
+            - generic [ref=f4e113]: "21 position: fixed; inset: 0; z-index: -2;"
+            - generic [ref=f4e114]: "22"
+        - generic [ref=f4e116] [cursor=pointer]:
+          - generic [ref=f4e121]: 13 vendor frames
+          - button [ref=f4e122]
+        - generic [ref=f4e128] [cursor=pointer]:
+          - generic [ref=f4e131]:
+            - code [ref=f4e135]:
+              - generic [ref=f4e136]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+            - generic [ref=f4e137]: app\Http\Middleware\SetLocale.php:23
+          - button [ref=f4e140]
+        - generic [ref=f4e146] [cursor=pointer]:
+          - generic [ref=f4e151]: 14 vendor frames
+          - button [ref=f4e152]
+        - generic [ref=f4e158] [cursor=pointer]:
+          - generic [ref=f4e161]:
+            - code [ref=f4e165]:
+              - generic [ref=f4e166]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+            - generic [ref=f4e167]: app\Http\Middleware\SecurityHeaders.php:20
+          - button [ref=f4e170]
+        - generic [ref=f4e176] [cursor=pointer]:
+          - generic [ref=f4e181]: 1 vendor frame
+          - button [ref=f4e182]
+        - generic [ref=f4e188] [cursor=pointer]:
+          - generic [ref=f4e191]:
+            - code [ref=f4e195]:
+              - generic [ref=f4e196]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+            - generic [ref=f4e197]: app\Http\Middleware\SanitizeInput.php:34
+          - button [ref=f4e200]
+        - generic [ref=f4e206] [cursor=pointer]:
+          - generic [ref=f4e211]: 30 vendor frames
+          - button [ref=f4e212]
+        - generic [ref=f4e218] [cursor=pointer]:
+          - generic [ref=f4e221]:
+            - code [ref=f4e225]:
+              - generic [ref=f4e226]: Illuminate\Foundation\Application->handleRequest(object(Illuminate\Http\Request))
+            - generic [ref=f4e227]: public\index.php:20
+          - button [ref=f4e230]
+    - generic [ref=f4e235]:
+      - generic [ref=f4e236]:
+        - heading "Queries" [level=3] [ref=f4e241]
+        - generic [ref=f4e242]: 1-6 of 6
+      - generic [ref=f4e244]:
+        - generic [ref=f4e245]:
+          - generic [ref=f4e246]:
+            - generic [ref=f4e247]: sqlite
+            - code [ref=f4e254]:
+              - generic [ref=f4e255]: select * from "cache" where "key" in ('edubba-cache-telescope:dump-watcher')
+          - generic [ref=f4e256]: 4.83ms
+        - generic [ref=f4e257]:
+          - generic [ref=f4e258]:
+            - generic [ref=f4e259]: sqlite
+            - code [ref=f4e266]:
+              - generic [ref=f4e267]: select * from "cache" where "key" in ('edubba-cache-telescope:pause-recording')
+          - generic [ref=f4e268]: 0.22ms
+        - generic [ref=f4e269]:
+          - generic [ref=f4e270]:
+            - generic [ref=f4e271]: sqlite
+            - code [ref=f4e278]:
+              - generic [ref=f4e279]: select * from "sessions" where "id" = 'thFTjz9Pp1lJyYH0bIwML2r9Q2sq7ywPNteDYy3J' limit 1
+          - generic [ref=f4e280]: 0.43ms
+        - generic [ref=f4e281]:
+          - generic [ref=f4e282]:
+            - generic [ref=f4e283]: sqlite
+            - code [ref=f4e290]:
+              - generic [ref=f4e291]: select * from "cache" where "key" in ('edubba-cache-edubba_admin_school')
+          - generic [ref=f4e292]: 0.33ms
+        - generic [ref=f4e293]:
+          - generic [ref=f4e294]:
+            - generic [ref=f4e295]: sqlite
+            - code [ref=f4e302]:
+              - generic [ref=f4e303]: select * from "cache" where "key" in ('edubba-cache-edubba_admin_primary')
+          - generic [ref=f4e304]: 0.21ms
+        - generic [ref=f4e305]:
+          - generic [ref=f4e306]:
+            - generic [ref=f4e307]: sqlite
+            - code [ref=f4e314]:
+              - generic [ref=f4e315]: select * from "cache" where "key" in ('edubba-cache-edubba_admin_school')
+          - generic [ref=f4e316]: 0.2ms
+  - generic [ref=f4e318]:
+    - generic [ref=f4e319]:
+      - heading "Headers" [level=2] [ref=f4e320]
+      - generic [ref=f4e321]:
+        - generic [ref=f4e322]:
+          - generic [ref=f4e323]: host
+          - generic [ref=f4e325]: 127.0.0.1:8000
+        - generic [ref=f4e326]:
+          - generic [ref=f4e327]: connection
+          - generic [ref=f4e329]: keep-alive
+        - generic [ref=f4e330]:
+          - generic [ref=f4e331]: sec-ch-ua
+          - generic [ref=f4e333]: "\"Not=A?Brand\";v=\"99\", \"Google Chrome\";v=\"151\", \"Chromium\";v=\"151\""
+        - generic [ref=f4e334]:
+          - generic [ref=f4e335]: sec-ch-ua-mobile
+          - generic [ref=f4e337]: "?0"
+        - generic [ref=f4e338]:
+          - generic [ref=f4e339]: sec-ch-ua-platform
+          - generic [ref=f4e341]: "\"Windows\""
+        - generic [ref=f4e342]:
+          - generic [ref=f4e343]: upgrade-insecure-requests
+          - generic [ref=f4e345]: "1"
+        - generic [ref=f4e346]:
+          - generic [ref=f4e347]: user-agent
+          - generic [ref=f4e349]: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36
+        - generic [ref=f4e350]:
+          - generic [ref=f4e351]: accept
+          - generic [ref=f4e353]: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        - generic [ref=f4e354]:
+          - generic [ref=f4e355]: sec-fetch-site
+          - generic [ref=f4e357]: none
+        - generic [ref=f4e358]:
+          - generic [ref=f4e359]: sec-fetch-mode
+          - generic [ref=f4e361]: navigate
+        - generic [ref=f4e362]:
+          - generic [ref=f4e363]: sec-fetch-user
+          - generic [ref=f4e365]: "?1"
+        - generic [ref=f4e366]:
+          - generic [ref=f4e367]: sec-fetch-dest
+          - generic [ref=f4e369]: document
+        - generic [ref=f4e370]:
+          - generic [ref=f4e371]: accept-encoding
+          - generic [ref=f4e373]: gzip, deflate, br, zstd
+        - generic [ref=f4e374]:
+          - generic [ref=f4e375]: accept-language
+          - generic [ref=f4e377]: en-US,en;q=0.9
+        - generic [ref=f4e378]:
+          - generic [ref=f4e379]: cookie
+          - generic [ref=f4e381]: XSRF-TOKEN=eyJpdiI6IjZaY3E2a0ZKdTVkQktDN1ZoOGhvNkE9PSIsInZhbHVlIjoiUDFGa3orQnlSSUJWNStlZ1hsSnpKZnVzVzZFbXJzM3M4c25Ob0pjcTVweHFWY1Z2YVlNa1RxZGxvWlgvSlBlU1ZZMXJvcXhhditWeDM3VzBuc0Yvc3JIQ3N5Tk5MWDV3Y0NyUUt6aHBhR29sQitVRXJaTlVjcVlBYUlNVzJLK2ciLCJtYWMiOiJhNGYzODFhMGRjYTg5NWMxYzcwZmEzN2UyN2VjY2NjMDU5NmY3NDVhZDEzNGExNWViYjU3YWIwYjlhY2MxN2Y0IiwidGFnIjoiIn0%3D; edubba-session=eyJpdiI6Im4yaDAxNXNwL0psaFZrSjVKRWMwMVE9PSIsInZhbHVlIjoiOU1INkV2eWFiMk9QTW8vTU1IWjBFWjBKUWlUSHN0Rkwrd2R4L2VydWdLNkxRSVQzaHRlNktEVkhBOFNvTjhEZzR1OW9GQ1RyN1h4UmpnbW1UbjBGYTR1N0FYS0tSVDdtWGxUUW5XTU05UWpoVWlab2Z6Z2lmOWdqZGZhTjJOTW8iLCJtYWMiOiJkNGI4YTgzZjllMzZmMGQ4ZTBjMWUyYWIyNzk3ZDIzNTRkMjk2YTQzOGVkOTA0MzhhYTA5OWJjNWIyYjI2NGE0IiwidGFnIjoiIn0%3D
+    - generic [ref=f4e382]:
+      - heading "Body" [level=2] [ref=f4e383]
+      - generic [ref=f4e384]: // No request body
+    - generic [ref=f4e385]:
+      - heading "Routing" [level=2] [ref=f4e386]
+      - generic [ref=f4e387]:
+        - generic [ref=f4e388]:
+          - generic [ref=f4e389]: controller
+          - generic [ref=f4e391]: App\Http\Controllers\Admin\AuthController@loginForm
+        - generic [ref=f4e392]:
+          - generic [ref=f4e393]: route name
+          - generic [ref=f4e395]: admin.login
+        - generic [ref=f4e396]:
+          - generic [ref=f4e397]: middleware
+          - generic [ref=f4e399]: web
+    - generic [ref=f4e400]:
+      - heading "Routing parameters" [level=2] [ref=f4e401]
+      - generic [ref=f4e402]: // No routing parameters

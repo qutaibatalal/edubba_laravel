@@ -1,0 +1,38 @@
+<?php
+
+return [
+    'index' => [
+        'title' => 'Courses',
+        'page' => 'Courses Management',
+        'subtitle' => 'Manage courses and link them to classes and teachers',
+        'add_course' => 'New Course',
+        'add_short' => 'New',
+        'all_batches' => 'All Classes',
+        'col_name' => 'Name',
+        'col_code' => 'Code',
+        'col_subject' => 'Subject',
+        'col_batch' => 'Class',
+        'col_year' => 'Year',
+        'col_teacher' => 'Teacher',
+        'confirm_delete' => 'Delete course?',
+        'empty' => 'No courses',
+    ],
+    'form' => [
+        'edit_course' => 'Edit Course',
+        'new_course' => 'New Course',
+        'page_edit' => 'Edit course: :name',
+        'page_create' => 'Add Course',
+        'subtitle' => 'Enter course details',
+        'label_name' => 'Name *',
+        'label_code' => 'Code',
+        'label_subject' => 'Subject',
+        'label_batch' => 'Class',
+        'label_program' => 'Program',
+        'label_academic_year' => 'Academic Year',
+        'label_teacher' => 'Teacher',
+        'label_credit_hours' => 'Credit Hours',
+        'label_syllabus' => 'Syllabus',
+        'save' => 'Save',
+        'cancel' => 'Cancel',
+    ],
+];

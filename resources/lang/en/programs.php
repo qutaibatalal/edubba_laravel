@@ -1,0 +1,35 @@
+<?php
+
+return [
+    'index' => [
+        'title' => 'Academic Programs',
+        'page' => 'Academic Programs Management',
+        'subtitle' => 'Manage academic programs and link them to departments',
+        'add_program' => 'New Program',
+        'add_short' => 'New',
+        'header' => 'Programs',
+        'col_name' => 'Name',
+        'col_code' => 'Code',
+        'col_department' => 'Department',
+        'col_duration' => 'Duration (Years)',
+        'col_batches' => 'Classes',
+        'confirm_delete' => 'Delete program?',
+        'empty' => 'No programs',
+    ],
+    'form' => [
+        'edit_program' => 'Edit Program',
+        'new_program' => 'New Program',
+        'page_edit' => 'Edit Program',
+        'page_create' => 'Add Academic Program',
+        'h1_edit' => 'Edit program: :name',
+        'h1_create' => 'Add Academic Program',
+        'subtitle' => 'Enter program details',
+        'label_name' => 'Name *',
+        'label_code' => 'Code',
+        'label_department' => 'Department',
+        'label_duration' => 'Duration (Years)',
+        'label_description' => 'Description',
+        'save' => 'Save',
+        'cancel' => 'Cancel',
+    ],
+];

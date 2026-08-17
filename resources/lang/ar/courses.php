@@ -1,0 +1,38 @@
+<?php
+
+return [
+    'index' => [
+        'title' => 'المقررات',
+        'page' => 'إدارة المقررات',
+        'subtitle' => 'إدارة المقررات الدراسية وربطها بالصفوف والمعلمين',
+        'add_course' => 'مقرر جديد',
+        'add_short' => 'جديد',
+        'all_batches' => 'كل الصفوف',
+        'col_name' => 'الاسم',
+        'col_code' => 'الكود',
+        'col_subject' => 'المادة',
+        'col_batch' => 'الصف',
+        'col_year' => 'السنة',
+        'col_teacher' => 'المدرّس',
+        'confirm_delete' => 'حذف المقرر؟',
+        'empty' => 'لا توجد مقررات',
+    ],
+    'form' => [
+        'edit_course' => 'تعديل مقرر',
+        'new_course' => 'مقرر جديد',
+        'page_edit' => 'تعديل المقرر: :name',
+        'page_create' => 'إضافة مقرر',
+        'subtitle' => 'أدخل بيانات المقرر الدراسي',
+        'label_name' => 'الاسم *',
+        'label_code' => 'الكود',
+        'label_subject' => 'المادة',
+        'label_batch' => 'الصف',
+        'label_program' => 'البرنامج',
+        'label_academic_year' => 'السنة الدراسية',
+        'label_teacher' => 'المدرّس',
+        'label_credit_hours' => 'الساعات المعتمدة',
+        'label_syllabus' => 'المنهج',
+        'save' => 'حفظ',
+        'cancel' => 'إلغاء',
+    ],
+];

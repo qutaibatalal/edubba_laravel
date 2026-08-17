@@ -1,0 +1,329 @@
+- generic [active] [ref=f44e1]:
+  - generic [ref=f44e2]:
+    - link "مدرسة إدبة مدرسة إدبةStatistics Dashboard" [ref=f44e3] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "مدرسة إدبة" [ref=f44e4]
+      - generic [ref=f44e5]: مدرسة إدبةStatistics Dashboard
+    - generic [ref=f44e6]:
+      - generic [ref=f44e7]: Main
+      - link " Statistics Dashboard" [ref=f44e8] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - generic [ref=f44e9]: 
+        - generic [ref=f44e10]: Statistics Dashboard
+      - generic [ref=f44e11]: School Management
+      - link " Students" [ref=f44e12] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/students
+        - generic [ref=f44e13]: 
+        - generic [ref=f44e14]: Students
+      - link " Admissions" [ref=f44e15] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/admissions
+        - generic [ref=f44e16]: 
+        - generic [ref=f44e17]: Admissions
+      - link " Parents" [ref=f44e18] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/parents
+        - generic [ref=f44e19]: 
+        - generic [ref=f44e20]: Parents
+      - link " Teaching Staff" [ref=f44e21] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/faculty
+        - generic [ref=f44e22]: 
+        - generic [ref=f44e23]: Teaching Staff
+      - link " Subjects" [ref=f44e24] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/courses
+        - generic [ref=f44e25]: 
+        - generic [ref=f44e26]: Subjects
+      - link " Classes" [ref=f44e27] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/batches
+        - generic [ref=f44e28]: 
+        - generic [ref=f44e29]: Classes
+      - link " Academic Programs" [ref=f44e30] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/programs
+        - generic [ref=f44e31]: 
+        - generic [ref=f44e32]: Academic Programs
+      - link " Academic Years" [ref=f44e33] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/academic-years
+        - generic [ref=f44e34]: 
+        - generic [ref=f44e35]: Academic Years
+      - generic [ref=f44e36]: Operations
+      - link " Fees & Invoices" [ref=f44e37] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/fees/structures
+        - generic [ref=f44e38]: 
+        - generic [ref=f44e39]: Fees & Invoices
+      - link " Attendance" [ref=f44e40] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/attendance
+        - generic [ref=f44e41]: 
+        - generic [ref=f44e42]: Attendance
+      - link " Timetable" [ref=f44e43] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/timetable
+        - generic [ref=f44e44]: 
+        - generic [ref=f44e45]: Timetable
+      - link " Calendar & Holidays" [ref=f44e46] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/calendar
+        - generic [ref=f44e47]: 
+        - generic [ref=f44e48]: Calendar & Holidays
+      - link " Private Tutoring" [ref=f44e49] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/tutoring
+        - generic [ref=f44e50]: 
+        - generic [ref=f44e51]: Private Tutoring
+      - link " Exams" [ref=f44e52] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/exams
+        - generic [ref=f44e53]: 
+        - generic [ref=f44e54]: Exams
+      - link " Ministry Reports" [ref=f44e55] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/reports
+        - generic [ref=f44e56]: 
+        - generic [ref=f44e57]: Ministry Reports
+      - generic [ref=f44e58]: System
+      - link " Settings" [ref=f44e59] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/settings
+        - generic [ref=f44e60]: 
+        - generic [ref=f44e61]: Settings
+    - generic [ref=f44e63]:
+      - generic [ref=f44e64]: S
+      - generic [ref=f44e65]:
+        - generic [ref=f44e66]: System Admin
+        - generic [ref=f44e67]: System Admin
+  - generic [ref=f44e68]:
+    - navigation [ref=f44e69]:
+      - text: 
+      - button "" [ref=f44e70] [cursor=pointer]
+      - navigation "breadcrumb" [ref=f44e73]:
+        - list [ref=f44e74]:
+          - listitem [ref=f44e75]:
+            - link " Home" [ref=f44e76] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin
+              - generic [ref=f44e77]: 
+              - text: Home
+          - listitem [ref=f44e78]: / Statistics Dashboard
+      - generic [ref=f44e79]:
+        - generic [ref=f44e80]:
+          - generic [ref=f44e81]: 
+          - textbox "Search the system..." [ref=f44e82]
+        - button "" [ref=f44e84] [cursor=pointer]
+        - button "" [ref=f44e86] [cursor=pointer]
+        - generic [ref=f44e88]:
+          - button "" [ref=f44e89] [cursor=pointer]
+          - text: 
+        - generic [ref=f44e92]:
+          - button "S" [ref=f44e93] [cursor=pointer]
+          - text:  
+    - generic [ref=f44e95]:
+      - generic [ref=f44e96]:
+        - generic [ref=f44e97]:
+          - heading "Statistics Dashboard" [level=1] [ref=f44e98]
+          - paragraph [ref=f44e99]: Welcome, System Admin — here are today's key school indicators
+        - generic [ref=f44e100]:
+          - link " Admission Request" [ref=f44e101] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/admissions/create
+            - generic [ref=f44e102]: 
+            - text: Admission Request
+          - link " New Student" [ref=f44e103] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/students/create
+            - generic [ref=f44e104]: 
+            - text: New Student
+      - generic [ref=f44e105]:
+        - generic [ref=f44e108]:
+          - generic [ref=f44e109]: 
+          - generic [ref=f44e111]:
+            - generic [ref=f44e112]: "1"
+            - generic [ref=f44e113]: Enrolled Students
+        - generic [ref=f44e116]:
+          - generic [ref=f44e117]: 
+          - generic [ref=f44e119]:
+            - generic [ref=f44e120]: "0"
+            - generic [ref=f44e121]: Teaching Staff
+        - generic [ref=f44e124]:
+          - generic [ref=f44e125]: 
+          - generic [ref=f44e127]:
+            - generic [ref=f44e128]: "0"
+            - generic [ref=f44e129]: Total Outstanding
+        - generic [ref=f44e132]:
+          - generic [ref=f44e133]: 
+          - generic [ref=f44e135]:
+            - generic [ref=f44e136]: "1"
+            - generic [ref=f44e137]: Pending Admissions
+      - generic [ref=f44e138]:
+        - generic [ref=f44e141]:
+          - generic [ref=f44e142]: Student Distribution by Class
+          - generic [ref=f44e143]: 1 class
+        - generic [ref=f44e146]: System Summary
+        - generic [ref=f44e152]:
+          - generic [ref=f44e153]: Quick Actions
+          - generic [ref=f44e154]:
+            - link " Student" [ref=f44e155] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/students/create
+              - generic [ref=f44e156]: 
+              - text: Student
+            - link " Admission" [ref=f44e157] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/admissions/create
+              - generic [ref=f44e158]: 
+              - text: Admission
+            - link " Fee Structure" [ref=f44e159] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/fees/structures/create
+              - generic [ref=f44e160]: 
+              - text: Fee Structure
+            - link " Report" [ref=f44e161] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/reports
+              - generic [ref=f44e162]: 
+              - text: Report
+      - generic [ref=f44e163]:
+        - generic [ref=f44e165]:
+          - generic [ref=f44e166]:
+            - generic [ref=f44e167]:
+              - generic [ref=f44e168]: 
+              - text: Needs your attention
+            - generic [ref=f44e169]: "2"
+          - generic [ref=f44e170]:
+            - link " امتحان قادم —" [ref=f44e171] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/exams/1
+              - generic [ref=f44e172]: 
+              - generic [ref=f44e174]:
+                - generic [ref=f44e175]: امتحان قادم
+                - generic [ref=f44e176]: —
+            - link " امتحان قادم —" [ref=f44e177] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/exams/3
+              - generic [ref=f44e178]: 
+              - generic [ref=f44e180]:
+                - generic [ref=f44e181]: امتحان قادم
+                - generic [ref=f44e182]: —
+        - generic [ref=f44e184]:
+          - generic [ref=f44e186]:
+            - generic [ref=f44e187]: 
+            - text: Today's Activity
+          - generic [ref=f44e189]:
+            - generic [ref=f44e190]: 
+            - paragraph [ref=f44e191]: No activity yet today
+      - generic [ref=f44e192]:
+        - generic [ref=f44e194]:
+          - generic [ref=f44e195]:
+            - generic [ref=f44e196]: Recent Invoices
+            - link "Manage Fees" [ref=f44e197] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/fees/structures
+          - table [ref=f44e199]:
+            - rowgroup [ref=f44e200]:
+              - row [ref=f44e201]:
+                - columnheader "Invoice No." [ref=f44e202]
+                - columnheader "Student" [ref=f44e203]
+                - columnheader "Total" [ref=f44e204]
+                - columnheader "Remaining" [ref=f44e205]
+                - columnheader "Status" [ref=f44e206]
+            - rowgroup [ref=f44e207]:
+              - row [ref=f44e208]:
+                - cell "INV/00061" [ref=f44e209]
+                - cell "F Flow Test" [ref=f44e211]:
+                  - generic [ref=f44e212]:
+                    - generic [ref=f44e213]: F
+                    - generic [ref=f44e214]: Flow Test
+                - cell "0" [ref=f44e215]
+                - cell "0" [ref=f44e216]
+                - cell "open" [ref=f44e217]
+              - row [ref=f44e219]:
+                - cell "INV/00060" [ref=f44e220]
+                - cell "F Flow Test" [ref=f44e222]:
+                  - generic [ref=f44e223]:
+                    - generic [ref=f44e224]: F
+                    - generic [ref=f44e225]: Flow Test
+                - cell "0" [ref=f44e226]
+                - cell "0" [ref=f44e227]
+                - cell "open" [ref=f44e228]
+              - row [ref=f44e230]:
+                - cell "INV/00059" [ref=f44e231]
+                - cell "F Final Applicant" [ref=f44e233]:
+                  - generic [ref=f44e234]:
+                    - generic [ref=f44e235]: F
+                    - generic [ref=f44e236]: Final Applicant
+                - cell "0" [ref=f44e237]
+                - cell "0" [ref=f44e238]
+                - cell "open" [ref=f44e239]
+              - row [ref=f44e241]:
+                - cell "INV/00058" [ref=f44e242]
+                - cell "W Web Test" [ref=f44e244]:
+                  - generic [ref=f44e245]:
+                    - generic [ref=f44e246]: W
+                    - generic [ref=f44e247]: Web Test
+                - cell "0" [ref=f44e248]
+                - cell "0" [ref=f44e249]
+                - cell "open" [ref=f44e250]
+              - row [ref=f44e252]:
+                - cell "INV/00057" [ref=f44e253]
+                - cell "F Flow Test" [ref=f44e255]:
+                  - generic [ref=f44e256]:
+                    - generic [ref=f44e257]: F
+                    - generic [ref=f44e258]: Flow Test
+                - cell "0" [ref=f44e259]
+                - cell "0" [ref=f44e260]
+                - cell "open" [ref=f44e261]
+              - row [ref=f44e263]:
+                - cell "INV/00056" [ref=f44e264]
+                - cell "T Test A Student" [ref=f44e266]:
+                  - generic [ref=f44e267]:
+                    - generic [ref=f44e268]: T
+                    - generic [ref=f44e269]: Test A Student
+                - cell "0" [ref=f44e270]
+                - cell "0" [ref=f44e271]
+                - cell "open" [ref=f44e272]
+        - generic [ref=f44e275]:
+          - generic [ref=f44e276]:
+            - generic [ref=f44e277]: Recent Admissions
+            - link "All" [ref=f44e278] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/admissions
+          - table [ref=f44e280]:
+            - rowgroup [ref=f44e281]:
+              - row [ref=f44e282]:
+                - columnheader "No." [ref=f44e283]
+                - columnheader "Name" [ref=f44e284]
+                - columnheader "Class" [ref=f44e285]
+                - columnheader "Status" [ref=f44e286]
+            - rowgroup [ref=f44e287]:
+              - row [ref=f44e288]:
+                - cell "ADM/00010" [ref=f44e289]
+                - cell "N New Admission HeavyTest" [ref=f44e291]:
+                  - generic [ref=f44e292]:
+                    - generic [ref=f44e293]: "N"
+                    - generic [ref=f44e294]: New Admission HeavyTest
+                - cell "Grade 6 A" [ref=f44e295]
+                - cell "draft" [ref=f44e296]
+              - row [ref=f44e298]:
+                - cell "ADM/00009" [ref=f44e299]
+                - cell "F Final Applicant" [ref=f44e301]:
+                  - generic [ref=f44e302]:
+                    - generic [ref=f44e303]: F
+                    - generic [ref=f44e304]: Final Applicant
+                - cell "Grade 6 A" [ref=f44e305]
+                - cell "admitted" [ref=f44e306]
+              - row [ref=f44e308]:
+                - cell "ADM/00008" [ref=f44e309]
+                - cell "F Flow Test" [ref=f44e311]:
+                  - generic [ref=f44e312]:
+                    - generic [ref=f44e313]: F
+                    - generic [ref=f44e314]: Flow Test
+                - cell "Grade 6 A" [ref=f44e315]
+                - cell "admitted" [ref=f44e316]
+              - row [ref=f44e318]:
+                - cell "ADM/00007" [ref=f44e319]
+                - cell "F Flow Test" [ref=f44e321]:
+                  - generic [ref=f44e322]:
+                    - generic [ref=f44e323]: F
+                    - generic [ref=f44e324]: Flow Test
+                - cell "Grade 6 A" [ref=f44e325]
+                - cell "admitted" [ref=f44e326]
+              - row [ref=f44e328]:
+                - cell "ADM/00006" [ref=f44e329]
+                - cell "F Flow Test" [ref=f44e331]:
+                  - generic [ref=f44e332]:
+                    - generic [ref=f44e333]: F
+                    - generic [ref=f44e334]: Flow Test
+                - cell "Grade 6 A" [ref=f44e335]
+                - cell "admitted" [ref=f44e336]
+              - row [ref=f44e338]:
+                - cell "ADM/00005" [ref=f44e339]
+                - cell "F Flow Test" [ref=f44e341]:
+                  - generic [ref=f44e342]:
+                    - generic [ref=f44e343]: F
+                    - generic [ref=f44e344]: Flow Test
+                - cell "Grade 6 A" [ref=f44e345]
+                - cell "draft" [ref=f44e346]
+    - contentinfo [ref=f44e348]: مدرسة إدبة © 2026 — School Management System
+  - text: 
+  - generic [ref=f44e349]:
+    - text:    
+    - button "" [ref=f44e350] [cursor=pointer]

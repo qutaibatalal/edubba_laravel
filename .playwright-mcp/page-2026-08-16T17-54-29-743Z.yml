@@ -1,0 +1,511 @@
+- generic [active] [ref=f26e1]:
+  - generic [ref=f26e2]:
+    - link "مدرسة إدبة مدرسة إدبةالفواتير" [ref=f26e3] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "مدرسة إدبة" [ref=f26e4]
+      - generic [ref=f26e5]: مدرسة إدبةالفواتير
+    - generic [ref=f26e6]:
+      - generic [ref=f26e7]: الرئيسية
+      - link " لوحة الإحصائيات" [ref=f26e8] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - generic [ref=f26e9]: 
+        - generic [ref=f26e10]: لوحة الإحصائيات
+      - generic [ref=f26e11]: إدارة المدرسة
+      - link " الطلاب" [ref=f26e12] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/students
+        - generic [ref=f26e13]: 
+        - generic [ref=f26e14]: الطلاب
+      - link " القبول" [ref=f26e15] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/admissions
+        - generic [ref=f26e16]: 
+        - generic [ref=f26e17]: القبول
+      - link " أولياء الأمور" [ref=f26e18] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/parents
+        - generic [ref=f26e19]: 
+        - generic [ref=f26e20]: أولياء الأمور
+      - link " الهيئة التدريسية" [ref=f26e21] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/faculty
+        - generic [ref=f26e22]: 
+        - generic [ref=f26e23]: الهيئة التدريسية
+      - link " المقررات" [ref=f26e24] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/courses
+        - generic [ref=f26e25]: 
+        - generic [ref=f26e26]: المقررات
+      - link " الصفوف الدراسية" [ref=f26e27] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/batches
+        - generic [ref=f26e28]: 
+        - generic [ref=f26e29]: الصفوف الدراسية
+      - link " البرامج الدراسية" [ref=f26e30] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/programs
+        - generic [ref=f26e31]: 
+        - generic [ref=f26e32]: البرامج الدراسية
+      - link " السنوات الدراسية" [ref=f26e33] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/academic-years
+        - generic [ref=f26e34]: 
+        - generic [ref=f26e35]: السنوات الدراسية
+      - generic [ref=f26e36]: العمليات
+      - link " الرسوم والفواتير" [ref=f26e37] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/fees/structures
+        - generic [ref=f26e38]: 
+        - generic [ref=f26e39]: الرسوم والفواتير
+      - link " الحضور" [ref=f26e40] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/attendance
+        - generic [ref=f26e41]: 
+        - generic [ref=f26e42]: الحضور
+      - link " الجدول الدراسي" [ref=f26e43] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/timetable
+        - generic [ref=f26e44]: 
+        - generic [ref=f26e45]: الجدول الدراسي
+      - link " التقويم والعطل" [ref=f26e46] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/calendar
+        - generic [ref=f26e47]: 
+        - generic [ref=f26e48]: التقويم والعطل
+      - link " التدريس الخصوصي" [ref=f26e49] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/tutoring
+        - generic [ref=f26e50]: 
+        - generic [ref=f26e51]: التدريس الخصوصي
+      - link " الامتحانات" [ref=f26e52] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/exams
+        - generic [ref=f26e53]: 
+        - generic [ref=f26e54]: الامتحانات
+      - link " تقارير الوزارة" [ref=f26e55] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/reports
+        - generic [ref=f26e56]: 
+        - generic [ref=f26e57]: تقارير الوزارة
+      - generic [ref=f26e58]: النظام
+      - link " الإعدادات" [ref=f26e59] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/settings
+        - generic [ref=f26e60]: 
+        - generic [ref=f26e61]: الإعدادات
+    - generic [ref=f26e63]:
+      - generic [ref=f26e64]: S
+      - generic [ref=f26e65]:
+        - generic [ref=f26e66]: System Admin
+        - generic [ref=f26e67]: مدير النظام
+  - generic [ref=f26e68]:
+    - navigation [ref=f26e69]:
+      - text: 
+      - button "" [ref=f26e70] [cursor=pointer]
+      - navigation "breadcrumb" [ref=f26e73]:
+        - list [ref=f26e74]:
+          - listitem [ref=f26e75]:
+            - link " الرئيسية" [ref=f26e76] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin
+              - generic [ref=f26e77]: 
+              - text: الرئيسية
+          - listitem [ref=f26e78]: / الفواتير
+      - generic [ref=f26e79]:
+        - generic [ref=f26e80]:
+          - generic [ref=f26e81]: 
+          - textbox "ابحث في النظام..." [ref=f26e82]
+        - button "" [ref=f26e84] [cursor=pointer]
+        - button "" [ref=f26e86] [cursor=pointer]
+        - generic [ref=f26e88]:
+          - button "" [ref=f26e89] [cursor=pointer]
+          - text: 
+        - generic [ref=f26e92]:
+          - button "S" [ref=f26e93] [cursor=pointer]
+          - text:  
+    - generic [ref=f26e95]:
+      - generic [ref=f26e96]:
+        - generic [ref=f26e97]:
+          - heading "الفواتير" [level=1] [ref=f26e98]
+          - paragraph [ref=f26e99]: تتبع الفواتير الصادرة عن هياكل الرسوم وتسجيل الدفعات
+        - link " هياكل الرسوم" [ref=f26e101] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/fees/structures
+          - generic [ref=f26e102]: 
+          - text: هياكل الرسوم
+      - generic [ref=f26e103]:
+        - generic [ref=f26e105]:
+          - generic [ref=f26e106]: "الحالة:"
+          - combobox [ref=f26e107]:
+            - option "كل الفواتير" [selected]
+            - option "draft"
+            - option "open"
+            - option "paid"
+            - option "cancel"
+        - table [ref=f26e109]:
+          - rowgroup [ref=f26e110]:
+            - row [ref=f26e111]:
+              - columnheader "الرقم" [ref=f26e112]
+              - columnheader "الطالب" [ref=f26e113]
+              - columnheader "التاريخ" [ref=f26e114]
+              - columnheader "الإجمالي" [ref=f26e115]
+              - columnheader "المدفوع" [ref=f26e116]
+              - columnheader "المتبقي" [ref=f26e117]
+              - columnheader "الحالة" [ref=f26e118]
+              - columnheader "إجراءات" [ref=f26e119]
+          - rowgroup [ref=f26e120]:
+            - row [ref=f26e121]:
+              - cell "INV/00061" [ref=f26e122]
+              - cell "F Flow Test" [ref=f26e124]:
+                - generic [ref=f26e125]:
+                  - generic [ref=f26e126]: F
+                  - generic [ref=f26e127]: Flow Test
+              - cell "2026-08-15" [ref=f26e128]
+              - cell "0" [ref=f26e129]
+              - cell "0" [ref=f26e130]
+              - cell "0" [ref=f26e131]
+              - cell "open" [ref=f26e132]
+              - cell [ref=f26e134]:
+                - link "" [ref=f26e136] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/61/pdf
+            - row [ref=f26e138]:
+              - cell "INV/00060" [ref=f26e139]
+              - cell "F Flow Test" [ref=f26e141]:
+                - generic [ref=f26e142]:
+                  - generic [ref=f26e143]: F
+                  - generic [ref=f26e144]: Flow Test
+              - cell "2026-08-15" [ref=f26e145]
+              - cell "0" [ref=f26e146]
+              - cell "0" [ref=f26e147]
+              - cell "0" [ref=f26e148]
+              - cell "open" [ref=f26e149]
+              - cell [ref=f26e151]:
+                - link "" [ref=f26e153] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/60/pdf
+            - row [ref=f26e155]:
+              - cell "INV/00059" [ref=f26e156]
+              - cell "F Final Applicant" [ref=f26e158]:
+                - generic [ref=f26e159]:
+                  - generic [ref=f26e160]: F
+                  - generic [ref=f26e161]: Final Applicant
+              - cell "2026-08-15" [ref=f26e162]
+              - cell "0" [ref=f26e163]
+              - cell "0" [ref=f26e164]
+              - cell "0" [ref=f26e165]
+              - cell "open" [ref=f26e166]
+              - cell [ref=f26e168]:
+                - link "" [ref=f26e170] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/59/pdf
+            - row [ref=f26e172]:
+              - cell "INV/00058" [ref=f26e173]
+              - cell "W Web Test" [ref=f26e175]:
+                - generic [ref=f26e176]:
+                  - generic [ref=f26e177]: W
+                  - generic [ref=f26e178]: Web Test
+              - cell "2026-08-15" [ref=f26e179]
+              - cell "0" [ref=f26e180]
+              - cell "0" [ref=f26e181]
+              - cell "0" [ref=f26e182]
+              - cell "open" [ref=f26e183]
+              - cell [ref=f26e185]:
+                - link "" [ref=f26e187] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/58/pdf
+            - row [ref=f26e189]:
+              - cell "INV/00057" [ref=f26e190]
+              - cell "F Flow Test" [ref=f26e192]:
+                - generic [ref=f26e193]:
+                  - generic [ref=f26e194]: F
+                  - generic [ref=f26e195]: Flow Test
+              - cell "2026-08-15" [ref=f26e196]
+              - cell "0" [ref=f26e197]
+              - cell "0" [ref=f26e198]
+              - cell "0" [ref=f26e199]
+              - cell "open" [ref=f26e200]
+              - cell [ref=f26e202]:
+                - link "" [ref=f26e204] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/57/pdf
+            - row [ref=f26e206]:
+              - cell "INV/00056" [ref=f26e207]
+              - cell "T Test A Student" [ref=f26e209]:
+                - generic [ref=f26e210]:
+                  - generic [ref=f26e211]: T
+                  - generic [ref=f26e212]: Test A Student
+              - cell "2026-08-15" [ref=f26e213]
+              - cell "0" [ref=f26e214]
+              - cell "0" [ref=f26e215]
+              - cell "0" [ref=f26e216]
+              - cell "open" [ref=f26e217]
+              - cell [ref=f26e219]:
+                - link "" [ref=f26e221] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/56/pdf
+            - row [ref=f26e223]:
+              - cell "INV/00055" [ref=f26e224]
+              - cell "T Test A Student" [ref=f26e226]:
+                - generic [ref=f26e227]:
+                  - generic [ref=f26e228]: T
+                  - generic [ref=f26e229]: Test A Student
+              - cell "2026-08-15" [ref=f26e230]
+              - cell "0" [ref=f26e231]
+              - cell "0" [ref=f26e232]
+              - cell "0" [ref=f26e233]
+              - cell "open" [ref=f26e234]
+              - cell [ref=f26e236]:
+                - link "" [ref=f26e238] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/55/pdf
+            - row [ref=f26e240]:
+              - cell "INV/00054" [ref=f26e241]
+              - cell "T Test A Student" [ref=f26e243]:
+                - generic [ref=f26e244]:
+                  - generic [ref=f26e245]: T
+                  - generic [ref=f26e246]: Test A Student
+              - cell "2026-08-15" [ref=f26e247]
+              - cell "0" [ref=f26e248]
+              - cell "0" [ref=f26e249]
+              - cell "0" [ref=f26e250]
+              - cell "open" [ref=f26e251]
+              - cell [ref=f26e253]:
+                - link "" [ref=f26e255] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/54/pdf
+            - row [ref=f26e257]:
+              - cell "INV/00053" [ref=f26e258]
+              - cell "A Ali H Ahmed" [ref=f26e260]:
+                - generic [ref=f26e261]:
+                  - generic [ref=f26e262]: A
+                  - generic [ref=f26e263]: Ali H Ahmed
+              - cell "2026-08-15" [ref=f26e264]
+              - cell "0" [ref=f26e265]
+              - cell "0" [ref=f26e266]
+              - cell "0" [ref=f26e267]
+              - cell "open" [ref=f26e268]
+              - cell [ref=f26e270]:
+                - link "" [ref=f26e272] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/53/pdf
+            - row [ref=f26e274]:
+              - cell "INV/00052" [ref=f26e275]
+              - cell "S Student A One" [ref=f26e277]:
+                - generic [ref=f26e278]:
+                  - generic [ref=f26e279]: S
+                  - generic [ref=f26e280]: Student A One
+              - cell "2026-08-15" [ref=f26e281]
+              - cell "0" [ref=f26e282]
+              - cell "0" [ref=f26e283]
+              - cell "0" [ref=f26e284]
+              - cell "open" [ref=f26e285]
+              - cell [ref=f26e287]:
+                - link "" [ref=f26e289] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/52/pdf
+            - row [ref=f26e291]:
+              - cell "INV/00051" [ref=f26e292]
+              - cell "F Flow Test" [ref=f26e294]:
+                - generic [ref=f26e295]:
+                  - generic [ref=f26e296]: F
+                  - generic [ref=f26e297]: Flow Test
+              - cell "2026-08-15" [ref=f26e298]
+              - cell "0" [ref=f26e299]
+              - cell "0" [ref=f26e300]
+              - cell "0" [ref=f26e301]
+              - cell "open" [ref=f26e302]
+              - cell [ref=f26e304]:
+                - link "" [ref=f26e306] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/51/pdf
+            - row [ref=f26e308]:
+              - cell "INV/00050" [ref=f26e309]
+              - cell "F Flow Test" [ref=f26e311]:
+                - generic [ref=f26e312]:
+                  - generic [ref=f26e313]: F
+                  - generic [ref=f26e314]: Flow Test
+              - cell "2026-08-15" [ref=f26e315]
+              - cell "0" [ref=f26e316]
+              - cell "0" [ref=f26e317]
+              - cell "0" [ref=f26e318]
+              - cell "open" [ref=f26e319]
+              - cell [ref=f26e321]:
+                - link "" [ref=f26e323] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/50/pdf
+            - row [ref=f26e325]:
+              - cell "INV/00049" [ref=f26e326]
+              - cell "F Final Applicant" [ref=f26e328]:
+                - generic [ref=f26e329]:
+                  - generic [ref=f26e330]: F
+                  - generic [ref=f26e331]: Final Applicant
+              - cell "2026-08-15" [ref=f26e332]
+              - cell "0" [ref=f26e333]
+              - cell "0" [ref=f26e334]
+              - cell "0" [ref=f26e335]
+              - cell "open" [ref=f26e336]
+              - cell [ref=f26e338]:
+                - link "" [ref=f26e340] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/49/pdf
+            - row [ref=f26e342]:
+              - cell "INV/00048" [ref=f26e343]
+              - cell "W Web Test" [ref=f26e345]:
+                - generic [ref=f26e346]:
+                  - generic [ref=f26e347]: W
+                  - generic [ref=f26e348]: Web Test
+              - cell "2026-08-15" [ref=f26e349]
+              - cell "0" [ref=f26e350]
+              - cell "0" [ref=f26e351]
+              - cell "0" [ref=f26e352]
+              - cell "open" [ref=f26e353]
+              - cell [ref=f26e355]:
+                - link "" [ref=f26e357] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/48/pdf
+            - row [ref=f26e359]:
+              - cell "INV/00047" [ref=f26e360]
+              - cell "F Flow Test" [ref=f26e362]:
+                - generic [ref=f26e363]:
+                  - generic [ref=f26e364]: F
+                  - generic [ref=f26e365]: Flow Test
+              - cell "2026-08-15" [ref=f26e366]
+              - cell "0" [ref=f26e367]
+              - cell "0" [ref=f26e368]
+              - cell "0" [ref=f26e369]
+              - cell "open" [ref=f26e370]
+              - cell [ref=f26e372]:
+                - link "" [ref=f26e374] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/47/pdf
+            - row [ref=f26e376]:
+              - cell "INV/00046" [ref=f26e377]
+              - cell "T Test A Student" [ref=f26e379]:
+                - generic [ref=f26e380]:
+                  - generic [ref=f26e381]: T
+                  - generic [ref=f26e382]: Test A Student
+              - cell "2026-08-15" [ref=f26e383]
+              - cell "0" [ref=f26e384]
+              - cell "0" [ref=f26e385]
+              - cell "0" [ref=f26e386]
+              - cell "open" [ref=f26e387]
+              - cell [ref=f26e389]:
+                - link "" [ref=f26e391] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/46/pdf
+            - row [ref=f26e393]:
+              - cell "INV/00045" [ref=f26e394]
+              - cell "T Test A Student" [ref=f26e396]:
+                - generic [ref=f26e397]:
+                  - generic [ref=f26e398]: T
+                  - generic [ref=f26e399]: Test A Student
+              - cell "2026-08-15" [ref=f26e400]
+              - cell "0" [ref=f26e401]
+              - cell "0" [ref=f26e402]
+              - cell "0" [ref=f26e403]
+              - cell "open" [ref=f26e404]
+              - cell [ref=f26e406]:
+                - link "" [ref=f26e408] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/45/pdf
+            - row [ref=f26e410]:
+              - cell "INV/00044" [ref=f26e411]
+              - cell "T Test A Student" [ref=f26e413]:
+                - generic [ref=f26e414]:
+                  - generic [ref=f26e415]: T
+                  - generic [ref=f26e416]: Test A Student
+              - cell "2026-08-15" [ref=f26e417]
+              - cell "0" [ref=f26e418]
+              - cell "0" [ref=f26e419]
+              - cell "0" [ref=f26e420]
+              - cell "open" [ref=f26e421]
+              - cell [ref=f26e423]:
+                - link "" [ref=f26e425] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/44/pdf
+            - row [ref=f26e427]:
+              - cell "INV/00043" [ref=f26e428]
+              - cell "A Ali H Ahmed" [ref=f26e430]:
+                - generic [ref=f26e431]:
+                  - generic [ref=f26e432]: A
+                  - generic [ref=f26e433]: Ali H Ahmed
+              - cell "2026-08-15" [ref=f26e434]
+              - cell "0" [ref=f26e435]
+              - cell "0" [ref=f26e436]
+              - cell "0" [ref=f26e437]
+              - cell "open" [ref=f26e438]
+              - cell [ref=f26e440]:
+                - link "" [ref=f26e442] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/43/pdf
+            - row [ref=f26e444]:
+              - cell "INV/00042" [ref=f26e445]
+              - cell "S Student A One" [ref=f26e447]:
+                - generic [ref=f26e448]:
+                  - generic [ref=f26e449]: S
+                  - generic [ref=f26e450]: Student A One
+              - cell "2026-08-15" [ref=f26e451]
+              - cell "0" [ref=f26e452]
+              - cell "0" [ref=f26e453]
+              - cell "0" [ref=f26e454]
+              - cell "open" [ref=f26e455]
+              - cell [ref=f26e457]:
+                - link "" [ref=f26e459] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/42/pdf
+            - row [ref=f26e461]:
+              - cell "INV/00041" [ref=f26e462]
+              - cell "F Flow Test" [ref=f26e464]:
+                - generic [ref=f26e465]:
+                  - generic [ref=f26e466]: F
+                  - generic [ref=f26e467]: Flow Test
+              - cell "2026-08-14" [ref=f26e468]
+              - cell "0" [ref=f26e469]
+              - cell "0" [ref=f26e470]
+              - cell "0" [ref=f26e471]
+              - cell "open" [ref=f26e472]
+              - cell [ref=f26e474]:
+                - link "" [ref=f26e476] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/41/pdf
+            - row [ref=f26e478]:
+              - cell "INV/00040" [ref=f26e479]
+              - cell "F Final Applicant" [ref=f26e481]:
+                - generic [ref=f26e482]:
+                  - generic [ref=f26e483]: F
+                  - generic [ref=f26e484]: Final Applicant
+              - cell "2026-08-14" [ref=f26e485]
+              - cell "0" [ref=f26e486]
+              - cell "0" [ref=f26e487]
+              - cell "0" [ref=f26e488]
+              - cell "open" [ref=f26e489]
+              - cell [ref=f26e491]:
+                - link "" [ref=f26e493] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/40/pdf
+            - row [ref=f26e495]:
+              - cell "INV/00039" [ref=f26e496]
+              - cell "W Web Test" [ref=f26e498]:
+                - generic [ref=f26e499]:
+                  - generic [ref=f26e500]: W
+                  - generic [ref=f26e501]: Web Test
+              - cell "2026-08-14" [ref=f26e502]
+              - cell "0" [ref=f26e503]
+              - cell "0" [ref=f26e504]
+              - cell "0" [ref=f26e505]
+              - cell "open" [ref=f26e506]
+              - cell [ref=f26e508]:
+                - link "" [ref=f26e510] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/39/pdf
+            - row [ref=f26e512]:
+              - cell "INV/00038" [ref=f26e513]
+              - cell "F Flow Test" [ref=f26e515]:
+                - generic [ref=f26e516]:
+                  - generic [ref=f26e517]: F
+                  - generic [ref=f26e518]: Flow Test
+              - cell "2026-08-14" [ref=f26e519]
+              - cell "0" [ref=f26e520]
+              - cell "0" [ref=f26e521]
+              - cell "0" [ref=f26e522]
+              - cell "open" [ref=f26e523]
+              - cell [ref=f26e525]:
+                - link "" [ref=f26e527] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/38/pdf
+            - row [ref=f26e529]:
+              - cell "INV/00037" [ref=f26e530]
+              - cell "T Test A Student" [ref=f26e532]:
+                - generic [ref=f26e533]:
+                  - generic [ref=f26e534]: T
+                  - generic [ref=f26e535]: Test A Student
+              - cell "2026-08-14" [ref=f26e536]
+              - cell "0" [ref=f26e537]
+              - cell "0" [ref=f26e538]
+              - cell "0" [ref=f26e539]
+              - cell "open" [ref=f26e540]
+              - cell [ref=f26e542]:
+                - link "" [ref=f26e544] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/fees/invoices/37/pdf
+        - navigation "Pagination Navigation" [ref=f26e547]:
+          - generic [ref=f26e548]:
+            - text: pagination.previous
+            - link "pagination.next" [ref=f26e549] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/fees/invoices?page=2
+          - generic [ref=f26e550]:
+            - paragraph [ref=f26e552]: Showing 1 to 25 of 61 results
+            - generic [ref=f26e554]:
+              - generic "pagination.previous" [ref=f26e555]
+              - generic [ref=f26e559]: "1"
+              - link "Go to page 2" [ref=f26e560] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/fees/invoices?page=2
+                - text: "2"
+              - link "Go to page 3" [ref=f26e561] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/fees/invoices?page=3
+                - text: "3"
+              - link "pagination.next" [ref=f26e562] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/fees/invoices?page=2
+    - contentinfo [ref=f26e565]: مدرسة إدبة © 2026 — نظام إدارة المدارس
+  - text: 
+  - generic [ref=f26e566]:
+    - text:    
+    - button "" [ref=f26e567] [cursor=pointer]

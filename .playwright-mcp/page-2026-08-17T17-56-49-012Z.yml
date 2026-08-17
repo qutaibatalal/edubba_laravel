@@ -1,0 +1,15 @@
+- generic [ref=f105e4]:
+  - generic [ref=f105e5]:
+    - generic [ref=f105e6]: 
+    - heading "التحقق الثنائي" [level=1] [ref=f105e8]
+    - paragraph [ref=f105e9]: أرسلنا رمزاً من 6 أرقام إلى هاتفك.أدخله لإكمال تسجيل الدخول.
+  - generic [ref=f105e10]:
+    - textbox "••••••" [active] [ref=f105e11]
+    - button " تحقق" [ref=f105e12] [cursor=pointer]:
+      - generic [ref=f105e13]: 
+      - text: تحقق
+  - button " إعادة إرسال الرمز" [ref=f105e16] [cursor=pointer]:
+    - generic [ref=f105e17]: 
+    - text: إعادة إرسال الرمز
+  - link "العودة لصفحة الدخول" [ref=f105e19] [cursor=pointer]:
+    - /url: http://127.0.0.1:8000/admin/login

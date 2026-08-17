@@ -1,0 +1,210 @@
+- generic [ref=f29e2]:
+  - generic [ref=f29e4]:
+    - generic [ref=f29e5]: Internal Server Error
+    - button "Copy as Markdown" [ref=f29e11] [cursor=pointer]
+  - generic [ref=f29e18]:
+    - generic [ref=f29e19]:
+      - heading "Illuminate\\Database\\QueryException" [level=1] [ref=f29e20]
+      - generic [ref=f29e21]: vendor\laravel\framework\src\Illuminate\Database\Connection.php:838
+      - paragraph [ref=f29e23]: "SQLSTATE[HY000]: General error: 1 no such column: transport_routes.transport_vehicle_id (Connection: sqlite, Database: C:\\Users\\qut10\\Desktop\\edubba_laravel\\database\\database.sqlite, SQL: select * from \"transport_routes\" where \"transport_routes\".\"transport_vehicle_id\" in (1))"
+    - generic [ref=f29e24]:
+      - generic [ref=f29e25]:
+        - generic [ref=f29e26]:
+          - generic [ref=f29e27]: LARAVEL
+          - generic [ref=f29e28]: 12.66.0
+        - generic [ref=f29e29]:
+          - generic [ref=f29e30]: PHP
+          - generic [ref=f29e31]: 8.2.12
+      - generic [ref=f29e32]: UNHANDLED
+      - generic [ref=f29e36]: CODE HY000
+    - generic [ref=f29e38]:
+      - generic [ref=f29e39]: "500"
+      - generic [ref=f29e43]: GET
+      - generic [ref=f29e47]: http://127.0.0.1:8000/admin/transport
+      - button [ref=f29e48] [cursor=pointer]
+  - generic [ref=f29e53]:
+    - generic [ref=f29e54]:
+      - heading "Exception trace" [level=3] [ref=f29e60]
+      - generic [ref=f29e61]:
+        - generic [ref=f29e63] [cursor=pointer]:
+          - generic [ref=f29e68]: 14 vendor frames
+          - button [ref=f29e69]
+        - generic [ref=f29e74]:
+          - generic [ref=f29e75] [cursor=pointer]:
+            - generic [ref=f29e78]:
+              - code [ref=f29e82]:
+                - generic [ref=f29e83]: Illuminate\Database\Eloquent\Builder->get()
+              - generic [ref=f29e84]: app\Http\Controllers\Admin\TransportController.php:17
+            - button [ref=f29e87]
+          - code [ref=f29e96]:
+            - generic [ref=f29e97]: "12"
+            - generic [ref=f29e98]: 13class TransportController extends Controller
+            - generic [ref=f29e99]: "14{"
+            - generic [ref=f29e100]: "15 public function index(): View"
+            - generic [ref=f29e101]: "16 {"
+            - generic [ref=f29e102]: 17 $vehicles = TransportVehicle::with('routes')->get();
+            - generic [ref=f29e103]: 18 $routes = TransportRoute::with('vehicle', 'stops')->get();
+            - generic [ref=f29e104]: "19"
+            - generic [ref=f29e105]: 20 return view('admin.transport.index', compact('vehicles', 'routes'));
+            - generic [ref=f29e106]: "21 }"
+            - generic [ref=f29e107]: "22"
+            - generic [ref=f29e108]: "23 public function create(): View"
+            - generic [ref=f29e109]: "24 {"
+            - generic [ref=f29e110]: 25 return view('admin.transport.create_vehicle');
+            - generic [ref=f29e111]: "26 }"
+            - generic [ref=f29e112]: "27"
+            - generic [ref=f29e113]: "28 public function storeVehicle(Request $request): RedirectResponse"
+            - generic [ref=f29e114]: "29"
+        - generic [ref=f29e116] [cursor=pointer]:
+          - generic [ref=f29e121]: 5 vendor frames
+          - button [ref=f29e122]
+        - generic [ref=f29e128] [cursor=pointer]:
+          - generic [ref=f29e131]:
+            - code [ref=f29e135]:
+              - generic [ref=f29e136]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+            - generic [ref=f29e137]: app\Http\Middleware\EnsureAdmin.php:18
+          - button [ref=f29e140]
+        - generic [ref=f29e146] [cursor=pointer]:
+          - generic [ref=f29e151]: 16 vendor frames
+          - button [ref=f29e152]
+        - generic [ref=f29e158] [cursor=pointer]:
+          - generic [ref=f29e161]:
+            - code [ref=f29e165]:
+              - generic [ref=f29e166]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+            - generic [ref=f29e167]: app\Http\Middleware\SecurityHeaders.php:20
+          - button [ref=f29e170]
+        - generic [ref=f29e176] [cursor=pointer]:
+          - generic [ref=f29e181]: 1 vendor frame
+          - button [ref=f29e182]
+        - generic [ref=f29e188] [cursor=pointer]:
+          - generic [ref=f29e191]:
+            - code [ref=f29e195]:
+              - generic [ref=f29e196]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+            - generic [ref=f29e197]: app\Http\Middleware\SanitizeInput.php:34
+          - button [ref=f29e200]
+        - generic [ref=f29e206] [cursor=pointer]:
+          - generic [ref=f29e211]: 1 vendor frame
+          - button [ref=f29e212]
+        - generic [ref=f29e218] [cursor=pointer]:
+          - generic [ref=f29e221]:
+            - code [ref=f29e225]:
+              - generic [ref=f29e226]: "Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(object(Illuminate\\Http\\Request))"
+            - generic [ref=f29e227]: app\Http\Middleware\SetLocale.php:23
+          - button [ref=f29e230]
+        - generic [ref=f29e236] [cursor=pointer]:
+          - generic [ref=f29e241]: 30 vendor frames
+          - button [ref=f29e242]
+        - generic [ref=f29e248] [cursor=pointer]:
+          - generic [ref=f29e251]:
+            - code [ref=f29e255]:
+              - generic [ref=f29e256]: Illuminate\Foundation\Application->handleRequest(object(Illuminate\Http\Request))
+            - generic [ref=f29e257]: public\index.php:20
+          - button [ref=f29e260]
+    - generic [ref=f29e265]:
+      - generic [ref=f29e266]:
+        - heading "Queries" [level=3] [ref=f29e271]
+        - generic [ref=f29e272]: 1-6 of 6
+      - generic [ref=f29e274]:
+        - generic [ref=f29e275]:
+          - generic [ref=f29e276]:
+            - generic [ref=f29e277]: sqlite
+            - code [ref=f29e284]:
+              - generic [ref=f29e285]: select * from "cache" where "key" in ('edubba-cache-telescope:dump-watcher')
+          - generic [ref=f29e286]: 4.25ms
+        - generic [ref=f29e287]:
+          - generic [ref=f29e288]:
+            - generic [ref=f29e289]: sqlite
+            - code [ref=f29e296]:
+              - generic [ref=f29e297]: select * from "cache" where "key" in ('edubba-cache-telescope:pause-recording')
+          - generic [ref=f29e298]: 0.16ms
+        - generic [ref=f29e299]:
+          - generic [ref=f29e300]:
+            - generic [ref=f29e301]: sqlite
+            - code [ref=f29e308]:
+              - generic [ref=f29e309]: select * from "sessions" where "id" = 'yuPzIkGxLxemWe2vlAnaHYLzVRPHjgRMRMQYq0Zv' limit 1
+          - generic [ref=f29e310]: 0.18ms
+        - generic [ref=f29e311]:
+          - generic [ref=f29e312]:
+            - generic [ref=f29e313]: sqlite
+            - code [ref=f29e320]:
+              - generic [ref=f29e321]: select * from "users" where "id" = 1 limit 1
+          - generic [ref=f29e322]: 0.2ms
+        - generic [ref=f29e323]:
+          - generic [ref=f29e324]:
+            - generic [ref=f29e325]: sqlite
+            - code [ref=f29e332]:
+              - generic [ref=f29e333]: select "roles".*, "model_has_roles"."model_id" as "pivot_model_id", "model_has_roles"."role_id" as "pivot_role_id", "model_has_roles"."model_type" as "pivot_model_type" from "roles" inner join "model_has_roles" on "roles"."id" = "model_has_roles"."role_id" where "model_has_roles"."model_id" in (1) and "model_has_roles"."model_type" = 'App\Models\User'
+          - generic [ref=f29e334]: 0.24ms
+        - generic [ref=f29e335]:
+          - generic [ref=f29e336]:
+            - generic [ref=f29e337]: sqlite
+            - code [ref=f29e344]:
+              - generic [ref=f29e345]: select * from "transport_vehicles"
+          - generic [ref=f29e346]: 0.28ms
+  - generic [ref=f29e348]:
+    - generic [ref=f29e349]:
+      - heading "Headers" [level=2] [ref=f29e350]
+      - generic [ref=f29e351]:
+        - generic [ref=f29e352]:
+          - generic [ref=f29e353]: host
+          - generic [ref=f29e355]: 127.0.0.1:8000
+        - generic [ref=f29e356]:
+          - generic [ref=f29e357]: connection
+          - generic [ref=f29e359]: keep-alive
+        - generic [ref=f29e360]:
+          - generic [ref=f29e361]: sec-ch-ua
+          - generic [ref=f29e363]: "\"Not=A?Brand\";v=\"99\", \"Google Chrome\";v=\"151\", \"Chromium\";v=\"151\""
+        - generic [ref=f29e364]:
+          - generic [ref=f29e365]: sec-ch-ua-mobile
+          - generic [ref=f29e367]: "?0"
+        - generic [ref=f29e368]:
+          - generic [ref=f29e369]: sec-ch-ua-platform
+          - generic [ref=f29e371]: "\"Windows\""
+        - generic [ref=f29e372]:
+          - generic [ref=f29e373]: upgrade-insecure-requests
+          - generic [ref=f29e375]: "1"
+        - generic [ref=f29e376]:
+          - generic [ref=f29e377]: user-agent
+          - generic [ref=f29e379]: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36
+        - generic [ref=f29e380]:
+          - generic [ref=f29e381]: accept
+          - generic [ref=f29e383]: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        - generic [ref=f29e384]:
+          - generic [ref=f29e385]: sec-fetch-site
+          - generic [ref=f29e387]: none
+        - generic [ref=f29e388]:
+          - generic [ref=f29e389]: sec-fetch-mode
+          - generic [ref=f29e391]: navigate
+        - generic [ref=f29e392]:
+          - generic [ref=f29e393]: sec-fetch-user
+          - generic [ref=f29e395]: "?1"
+        - generic [ref=f29e396]:
+          - generic [ref=f29e397]: sec-fetch-dest
+          - generic [ref=f29e399]: document
+        - generic [ref=f29e400]:
+          - generic [ref=f29e401]: accept-encoding
+          - generic [ref=f29e403]: gzip, deflate, br, zstd
+        - generic [ref=f29e404]:
+          - generic [ref=f29e405]: accept-language
+          - generic [ref=f29e407]: en-US,en;q=0.9
+        - generic [ref=f29e408]:
+          - generic [ref=f29e409]: cookie
+          - generic [ref=f29e411]: XSRF-TOKEN=eyJpdiI6ImpRY0Q1SmNPSFo3N3BmSmRmVU0wN3c9PSIsInZhbHVlIjoibFVEb0xHKzkwV2FmWmZnb3M1dWxpbVVRS0pLQ1JrcEJrRThQQkZiTzlLb3dmR3krbGpPTEpxNG5qT2E3Zi85cDhzK0JiRGV4WEpBN202aGY3TXpNK2dYRytJcjlnYXkxQjRYQXRJNkxLRHEyTUZ4VzM5SERBcjdBbFcvTkpOUWgiLCJtYWMiOiJlODVjNzlhZTk0ODdkZmY1OTRhOGFlMGY1YTY0OWU1ZGI4MDRkYjY4ZDE3Yjg5YmRmMGFjMWM2YTQ1NWExOGNlIiwidGFnIjoiIn0%3D; edubba-session=eyJpdiI6ImxYQWRMWjVTclZjRHVOb1hmNlp3Y3c9PSIsInZhbHVlIjoiSkpOOHR3M213WnRtazhaWmJkVkdpc05XODMxeDRaM1NXVTlhV1hmNngyckF1WGJaaFlZZW1IMVlUS1UvQTRDaUNoVklGK2dxbmp3Zk9jLzNjZ0VBUERJNmhRM2FXbGRnL3poUlJTQVZXUHJjYU5LU3NpUUdxdU05NEEwQnhIM1oiLCJtYWMiOiI2MGIyMTZjMjk2ZDBhZDU4Njk4OTM4MDc0YjE5N2E0NjczN2Q0OWIwZTY3YWQ5YzA5NDY4NzY0NGE5N2I5ZWQ3IiwidGFnIjoiIn0%3D
+    - generic [ref=f29e412]:
+      - heading "Body" [level=2] [ref=f29e413]
+      - generic [ref=f29e414]: // No request body
+    - generic [ref=f29e415]:
+      - heading "Routing" [level=2] [ref=f29e416]
+      - generic [ref=f29e417]:
+        - generic [ref=f29e418]:
+          - generic [ref=f29e419]: controller
+          - generic [ref=f29e421]: App\Http\Controllers\Admin\TransportController@index
+        - generic [ref=f29e422]:
+          - generic [ref=f29e423]: route name
+          - generic [ref=f29e425]: admin.transport.index
+        - generic [ref=f29e426]:
+          - generic [ref=f29e427]: middleware
+          - generic [ref=f29e429]: web, auth, admin.web
+    - generic [ref=f29e430]:
+      - heading "Routing parameters" [level=2] [ref=f29e431]
+      - generic [ref=f29e432]: // No routing parameters

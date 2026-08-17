@@ -1,0 +1,136 @@
+- generic [active] [ref=f37e1]:
+  - generic [ref=f37e2]:
+    - link "مدرسة إدبة مدرسة إدبةإضافة سكن جديد" [ref=f37e3] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "مدرسة إدبة" [ref=f37e4]
+      - generic [ref=f37e5]: مدرسة إدبةإضافة سكن جديد
+    - generic [ref=f37e6]:
+      - generic [ref=f37e7]: الرئيسية
+      - link " لوحة الإحصائيات" [ref=f37e8] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - generic [ref=f37e9]: 
+        - generic [ref=f37e10]: لوحة الإحصائيات
+      - generic [ref=f37e11]: إدارة المدرسة
+      - link " الطلاب" [ref=f37e12] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/students
+        - generic [ref=f37e13]: 
+        - generic [ref=f37e14]: الطلاب
+      - link " القبول" [ref=f37e15] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/admissions
+        - generic [ref=f37e16]: 
+        - generic [ref=f37e17]: القبول
+      - link " أولياء الأمور" [ref=f37e18] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/parents
+        - generic [ref=f37e19]: 
+        - generic [ref=f37e20]: أولياء الأمور
+      - link " الهيئة التدريسية" [ref=f37e21] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/faculty
+        - generic [ref=f37e22]: 
+        - generic [ref=f37e23]: الهيئة التدريسية
+      - link " المقررات" [ref=f37e24] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/courses
+        - generic [ref=f37e25]: 
+        - generic [ref=f37e26]: المقررات
+      - link " الصفوف الدراسية" [ref=f37e27] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/batches
+        - generic [ref=f37e28]: 
+        - generic [ref=f37e29]: الصفوف الدراسية
+      - link " البرامج الدراسية" [ref=f37e30] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/programs
+        - generic [ref=f37e31]: 
+        - generic [ref=f37e32]: البرامج الدراسية
+      - link " السنوات الدراسية" [ref=f37e33] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/academic-years
+        - generic [ref=f37e34]: 
+        - generic [ref=f37e35]: السنوات الدراسية
+      - generic [ref=f37e36]: العمليات
+      - link " الرسوم والفواتير" [ref=f37e37] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/fees/structures
+        - generic [ref=f37e38]: 
+        - generic [ref=f37e39]: الرسوم والفواتير
+      - link " الحضور" [ref=f37e40] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/attendance
+        - generic [ref=f37e41]: 
+        - generic [ref=f37e42]: الحضور
+      - link " الجدول الدراسي" [ref=f37e43] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/timetable
+        - generic [ref=f37e44]: 
+        - generic [ref=f37e45]: الجدول الدراسي
+      - link " التقويم والعطل" [ref=f37e46] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/calendar
+        - generic [ref=f37e47]: 
+        - generic [ref=f37e48]: التقويم والعطل
+      - link " التدريس الخصوصي" [ref=f37e49] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/tutoring
+        - generic [ref=f37e50]: 
+        - generic [ref=f37e51]: التدريس الخصوصي
+      - link " الامتحانات" [ref=f37e52] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/exams
+        - generic [ref=f37e53]: 
+        - generic [ref=f37e54]: الامتحانات
+      - link " تقارير الوزارة" [ref=f37e55] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/reports
+        - generic [ref=f37e56]: 
+        - generic [ref=f37e57]: تقارير الوزارة
+      - generic [ref=f37e58]: النظام
+      - link " الإعدادات" [ref=f37e59] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/settings
+        - generic [ref=f37e60]: 
+        - generic [ref=f37e61]: الإعدادات
+    - generic [ref=f37e63]:
+      - generic [ref=f37e64]: S
+      - generic [ref=f37e65]:
+        - generic [ref=f37e66]: System Admin
+        - generic [ref=f37e67]: مدير النظام
+  - generic [ref=f37e68]:
+    - navigation [ref=f37e69]:
+      - text: 
+      - button "" [ref=f37e70] [cursor=pointer]
+      - navigation "breadcrumb" [ref=f37e73]:
+        - list [ref=f37e74]:
+          - listitem [ref=f37e75]:
+            - link " الرئيسية" [ref=f37e76] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin
+              - generic [ref=f37e77]: 
+              - text: الرئيسية
+          - listitem [ref=f37e78]: / إضافة سكن
+      - generic [ref=f37e79]:
+        - generic [ref=f37e80]:
+          - generic [ref=f37e81]: 
+          - textbox "ابحث في النظام..." [ref=f37e82]
+        - button "" [ref=f37e84] [cursor=pointer]
+        - button "" [ref=f37e86] [cursor=pointer]
+        - generic [ref=f37e88]:
+          - button "" [ref=f37e89] [cursor=pointer]
+          - text: 
+        - generic [ref=f37e92]:
+          - button "S" [ref=f37e93] [cursor=pointer]
+          - text:  
+    - generic [ref=f37e98]:
+      - heading "إضافة سكن جديد" [level=2] [ref=f37e99]
+      - generic [ref=f37e100]:
+        - generic [ref=f37e101]:
+          - generic [ref=f37e102]:
+            - generic [ref=f37e103]: اسم السكن
+            - textbox [ref=f37e104]
+          - generic [ref=f37e105]:
+            - generic [ref=f37e106]: عنوان السكن
+            - textbox [ref=f37e107]
+          - generic [ref=f37e108]:
+            - generic [ref=f37e109]: اسم المشرف
+            - textbox [ref=f37e110]
+          - generic [ref=f37e111]:
+            - generic [ref=f37e112]: تفعيل
+            - checkbox [checked] [ref=f37e113]
+          - generic [ref=f37e114]:
+            - generic [ref=f37e115]: عدد الغرف (اختياري)
+            - spinbutton "اترك فارغاً لتتخطى هذه الخطوة" [ref=f37e116]
+        - generic [ref=f37e117]:
+          - button "حفظ السكن" [ref=f37e118] [cursor=pointer]
+          - link "الغاء" [ref=f37e119] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/hostels
+    - contentinfo [ref=f37e120]: مدرسة إدبة © 2026 — نظام إدارة المدارس
+  - text: 
+  - generic [ref=f37e121]:
+    - text:    
+    - button "" [ref=f37e122] [cursor=pointer]

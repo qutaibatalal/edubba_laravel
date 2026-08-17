@@ -1,0 +1,38 @@
+<?php
+
+return [
+    'index' => [
+        'title' => 'Parents',
+        'page' => 'Manage Parents',
+        'heading' => 'Parents',
+        'subtitle' => 'Manage parents and their registered children',
+        'add_new' => 'New Parent',
+        'search_placeholder' => 'Search by name/phone...',
+        'search' => 'Search',
+        'th_name' => 'Name',
+        'th_national_id' => 'National ID',
+        'th_phone' => 'Phone',
+        'th_children_count' => 'No. of Children',
+        'th_status' => 'Status',
+        'delete_confirm' => 'Delete parent?',
+        'empty' => 'No parents',
+    ],
+    'form' => [
+        'title_edit' => 'Edit Parent',
+        'title_new' => 'New Parent',
+        'page_edit' => 'Edit Parent',
+        'page_new' => 'Add Parent',
+        'subtitle' => 'Fill in parent data and contact information',
+        'back_to_list' => 'Back to list',
+        'full_name' => 'Full Name *',
+        'national_id' => 'National ID',
+        'phone' => 'Phone',
+        'mobile' => 'Mobile',
+        'email' => 'Email',
+        'occupation' => 'Occupation',
+        'relation' => 'Relationship',
+        'address' => 'Address',
+        'save' => 'Save',
+        'cancel' => 'Cancel',
+    ],
+];

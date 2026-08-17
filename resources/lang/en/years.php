@@ -1,0 +1,35 @@
+<?php
+
+return [
+    'index' => [
+        'title' => 'Academic Years',
+        'page' => 'Academic Years Management',
+        'subtitle' => 'Manage academic years and set the current year',
+        'add_year' => 'New Year',
+        'add_short' => 'New',
+        'header' => 'Academic Years',
+        'col_name' => 'Name',
+        'col_start' => 'Start',
+        'col_end' => 'End',
+        'col_batches' => 'Classes',
+        'col_admissions' => 'Admissions',
+        'col_current' => 'Current',
+        'yes' => 'Yes',
+        'confirm_delete' => 'Delete year?',
+        'empty' => 'No academic years',
+    ],
+    'form' => [
+        'edit_year' => 'Edit Year',
+        'new_year' => 'New Year',
+        'page_edit' => 'Edit year: :name',
+        'page_create' => 'Add Academic Year',
+        'subtitle' => 'Enter academic year details',
+        'label_name' => 'Name *',
+        'label_start_date' => 'Start Date',
+        'label_end_date' => 'End Date',
+        'current' => 'Current Year',
+        'active' => 'Active',
+        'save' => 'Save',
+        'cancel' => 'Cancel',
+    ],
+];

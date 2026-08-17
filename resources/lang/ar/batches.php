@@ -1,0 +1,37 @@
+<?php
+
+return [
+    'index' => [
+        'title' => 'الصفوف الدراسية',
+        'page' => 'إدارة الصفوف الدراسية',
+        'subtitle' => 'إدارة الصفوف وربطها بالبرامج والسنوات الدراسية',
+        'add_batch' => 'صف جديد',
+        'add_short' => 'جديد',
+        'header' => 'الصفوف',
+        'col_name' => 'الاسم',
+        'col_program' => 'البرنامج',
+        'col_year' => 'السنة',
+        'col_class_teacher' => 'مربي الصف',
+        'col_capacity' => 'السعة',
+        'col_students' => 'الطلاب',
+        'confirm_delete' => 'حذف الصف؟',
+        'empty' => 'لا توجد صفوف',
+    ],
+    'form' => [
+        'edit_batch' => 'تعديل صف',
+        'new_batch' => 'صف جديد',
+        'page_edit' => 'تعديل الصف',
+        'page_create' => 'إضافة صف',
+        'h1_edit' => 'تعديل الصف: :name',
+        'h1_create' => 'إضافة صف',
+        'subtitle' => 'أدخل بيانات الصف الدراسي',
+        'label_name' => 'الاسم *',
+        'label_capacity' => 'السعة',
+        'label_program' => 'البرنامج *',
+        'label_academic_year' => 'السنة الدراسية *',
+        'label_class_teacher' => 'المعلم المسؤول',
+        'active' => 'نشط',
+        'save' => 'حفظ',
+        'cancel' => 'إلغاء',
+    ],
+];

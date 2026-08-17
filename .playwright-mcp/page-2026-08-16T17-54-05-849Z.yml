@@ -1,0 +1,170 @@
+- generic [active] [ref=f22e1]:
+  - generic [ref=f22e2]:
+    - link "مدرسة إدبة مدرسة إدبةالتدريس الخصوصي" [ref=f22e3] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "مدرسة إدبة" [ref=f22e4]
+      - generic [ref=f22e5]: مدرسة إدبةالتدريس الخصوصي
+    - generic [ref=f22e6]:
+      - generic [ref=f22e7]: الرئيسية
+      - link " لوحة الإحصائيات" [ref=f22e8] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - generic [ref=f22e9]: 
+        - generic [ref=f22e10]: لوحة الإحصائيات
+      - generic [ref=f22e11]: إدارة المدرسة
+      - link " الطلاب" [ref=f22e12] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/students
+        - generic [ref=f22e13]: 
+        - generic [ref=f22e14]: الطلاب
+      - link " القبول" [ref=f22e15] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/admissions
+        - generic [ref=f22e16]: 
+        - generic [ref=f22e17]: القبول
+      - link " أولياء الأمور" [ref=f22e18] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/parents
+        - generic [ref=f22e19]: 
+        - generic [ref=f22e20]: أولياء الأمور
+      - link " الهيئة التدريسية" [ref=f22e21] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/faculty
+        - generic [ref=f22e22]: 
+        - generic [ref=f22e23]: الهيئة التدريسية
+      - link " المقررات" [ref=f22e24] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/courses
+        - generic [ref=f22e25]: 
+        - generic [ref=f22e26]: المقررات
+      - link " الصفوف الدراسية" [ref=f22e27] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/batches
+        - generic [ref=f22e28]: 
+        - generic [ref=f22e29]: الصفوف الدراسية
+      - link " البرامج الدراسية" [ref=f22e30] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/programs
+        - generic [ref=f22e31]: 
+        - generic [ref=f22e32]: البرامج الدراسية
+      - link " السنوات الدراسية" [ref=f22e33] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/academic-years
+        - generic [ref=f22e34]: 
+        - generic [ref=f22e35]: السنوات الدراسية
+      - generic [ref=f22e36]: العمليات
+      - link " الرسوم والفواتير" [ref=f22e37] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/fees/structures
+        - generic [ref=f22e38]: 
+        - generic [ref=f22e39]: الرسوم والفواتير
+      - link " الحضور" [ref=f22e40] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/attendance
+        - generic [ref=f22e41]: 
+        - generic [ref=f22e42]: الحضور
+      - link " الجدول الدراسي" [ref=f22e43] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/timetable
+        - generic [ref=f22e44]: 
+        - generic [ref=f22e45]: الجدول الدراسي
+      - link " التقويم والعطل" [ref=f22e46] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/calendar
+        - generic [ref=f22e47]: 
+        - generic [ref=f22e48]: التقويم والعطل
+      - link " التدريس الخصوصي" [ref=f22e49] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/tutoring
+        - generic [ref=f22e50]: 
+        - generic [ref=f22e51]: التدريس الخصوصي
+      - link " الامتحانات" [ref=f22e52] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/exams
+        - generic [ref=f22e53]: 
+        - generic [ref=f22e54]: الامتحانات
+      - link " تقارير الوزارة" [ref=f22e55] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/reports
+        - generic [ref=f22e56]: 
+        - generic [ref=f22e57]: تقارير الوزارة
+      - generic [ref=f22e58]: النظام
+      - link " الإعدادات" [ref=f22e59] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin/settings
+        - generic [ref=f22e60]: 
+        - generic [ref=f22e61]: الإعدادات
+    - generic [ref=f22e63]:
+      - generic [ref=f22e64]: S
+      - generic [ref=f22e65]:
+        - generic [ref=f22e66]: System Admin
+        - generic [ref=f22e67]: مدير النظام
+  - generic [ref=f22e68]:
+    - navigation [ref=f22e69]:
+      - text: 
+      - button "" [ref=f22e70] [cursor=pointer]
+      - navigation "breadcrumb" [ref=f22e73]:
+        - list [ref=f22e74]:
+          - listitem [ref=f22e75]:
+            - link " الرئيسية" [ref=f22e76] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin
+              - generic [ref=f22e77]: 
+              - text: الرئيسية
+          - listitem [ref=f22e78]: / إدارة التدريس الخصوصي
+      - generic [ref=f22e79]:
+        - generic [ref=f22e80]:
+          - generic [ref=f22e81]: 
+          - textbox "ابحث في النظام..." [ref=f22e82]
+        - button "" [ref=f22e84] [cursor=pointer]
+        - button "" [ref=f22e86] [cursor=pointer]
+        - generic [ref=f22e88]:
+          - button "" [ref=f22e89] [cursor=pointer]
+          - text: 
+        - generic [ref=f22e92]:
+          - button "S" [ref=f22e93] [cursor=pointer]
+          - text:  
+    - generic [ref=f22e95]:
+      - generic [ref=f22e97]:
+        - heading "التدريس الخصوصي" [level=1] [ref=f22e98]
+        - paragraph [ref=f22e99]: مجموعات الدراسة والباقات والاشتراكات
+      - generic [ref=f22e100]:
+        - generic [ref=f22e102]:
+          - generic [ref=f22e103]:
+            - generic [ref=f22e104]: 
+            - text: مجموعات الدراسة
+          - table [ref=f22e106]:
+            - rowgroup [ref=f22e107]:
+              - row [ref=f22e108]:
+                - columnheader "الاسم" [ref=f22e109]
+                - columnheader "المادة" [ref=f22e110]
+                - columnheader "المدرّس" [ref=f22e111]
+                - columnheader "الطلاب" [ref=f22e112]
+                - columnheader "الحالة" [ref=f22e113]
+            - rowgroup [ref=f22e114]:
+              - row [ref=f22e115]:
+                - cell " لا توجد مجموعات" [ref=f22e116]:
+                  - generic [ref=f22e117]:
+                    - generic [ref=f22e118]: 
+                    - paragraph [ref=f22e119]: لا توجد مجموعات
+        - generic [ref=f22e120]:
+          - generic [ref=f22e121]:
+            - generic [ref=f22e122]:
+              - generic [ref=f22e123]: 
+              - text: الباقات
+            - table [ref=f22e125]:
+              - rowgroup [ref=f22e126]:
+                - row [ref=f22e127]:
+                  - columnheader "الاسم" [ref=f22e128]
+                  - columnheader "الحصص" [ref=f22e129]
+                  - columnheader "السعر" [ref=f22e130]
+              - rowgroup [ref=f22e131]:
+                - row [ref=f22e132]:
+                  - cell " لا توجد باقات" [ref=f22e133]:
+                    - generic [ref=f22e134]:
+                      - generic [ref=f22e135]: 
+                      - paragraph [ref=f22e136]: لا توجد باقات
+          - generic [ref=f22e137]:
+            - generic [ref=f22e138]:
+              - generic [ref=f22e139]: 
+              - text: أحدث الاشتراكات
+            - table [ref=f22e141]:
+              - rowgroup [ref=f22e142]:
+                - row [ref=f22e143]:
+                  - columnheader "الطالب" [ref=f22e144]
+                  - columnheader "المدرّس" [ref=f22e145]
+                  - columnheader "المتبقي" [ref=f22e146]
+                  - columnheader "الحالة" [ref=f22e147]
+              - rowgroup [ref=f22e148]:
+                - row [ref=f22e149]:
+                  - cell " لا توجد اشتراكات" [ref=f22e150]:
+                    - generic [ref=f22e151]:
+                      - generic [ref=f22e152]: 
+                      - paragraph [ref=f22e153]: لا توجد اشتراكات
+    - contentinfo [ref=f22e154]: مدرسة إدبة © 2026 — نظام إدارة المدارس
+  - text: 
+  - generic [ref=f22e155]:
+    - text:    
+    - button "" [ref=f22e156] [cursor=pointer]
