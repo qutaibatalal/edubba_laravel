@@ -22,3 +22,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+.playwright-mcp/
+test-results/
+.github/
+/storage/framework/views/
