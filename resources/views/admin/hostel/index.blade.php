@@ -1,3 +1,4 @@
+@php use App\Models\HostelRoom; @endphp
 @extends('admin.layouts.app')
 
 @section('title', __('hostel.index.title'))

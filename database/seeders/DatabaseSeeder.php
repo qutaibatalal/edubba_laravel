@@ -44,6 +44,7 @@ class DatabaseSeeder extends Seeder
             ApiUserSeeder::class,
             DemoDataSeeder::class,
             IraqiCalendarSeeder::class,
+            BigDataSeeder::class,
         ]);
     }
 }
