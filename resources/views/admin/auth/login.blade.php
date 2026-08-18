@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" href="{{ asset('images/edubba_app_icon.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Noto+Kufi+Arabic:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Noto+Kufi+Arabic:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     @if(app()->getLocale() === 'ar')
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
     @else
@@ -25,457 +25,379 @@
         :root {
             --primary: {{ $primaryColor }};
             --primary-rgb: {{ $primaryRgb }};
-            --surface: rgba(255,255,255,0.03);
-            --surface-hover: rgba(255,255,255,0.06);
+            --surface: rgba(255,255,255,0.04);
+            --surface-hover: rgba(255,255,255,0.07);
             --border: rgba(255,255,255,0.08);
             --border-focus: rgba(255,255,255,0.2);
-            --text-primary: #f0f0f5;
+            --text-primary: #f1f1f6;
             --text-secondary: rgba(255,255,255,0.55);
-            --text-tertiary: rgba(255,255,255,0.35);
-            --radius-sm: 10px;
-            --radius-md: 16px;
+            --text-tertiary: rgba(255,255,255,0.32);
+            --radius-sm: 12px;
+            --radius-md: 18px;
             --radius-lg: 24px;
             --radius-xl: 32px;
-            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-spring: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
         }
+        html { height: 100%; }
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            [dir="rtl"] & { font-family: 'Noto Kufi Arabic', 'Inter', system-ui, sans-serif; }
-            min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            background: #0a0a0f; color: var(--text-primary);
+            min-height: 100%; display: flex; align-items: center; justify-content: center;
+            background: #08080d; color: var(--text-primary);
             -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
             overflow: hidden; position: relative;
         }
+        [dir="rtl"] body,
+        [dir="rtl"] * { font-family: 'Noto Kufi Arabic', 'Inter', system-ui, sans-serif; }
 
-        /* ── Ambient Background ── */
-        .ambient-bg {
+        /* ═══ Ambient Atmosphere ═══ */
+        .atmosphere {
             position: fixed; inset: 0; z-index: 0; overflow: hidden;
+            background: #08080d;
         }
-        .ambient-bg::before {
-            content: ''; position: absolute; width: 140%; height: 140%;
-            top: -20%; left: -20%;
+        .atmo-gradient {
+            position: absolute; width: 160%; height: 160%;
+            top: -30%; left: -30%;
             background:
-                radial-gradient(ellipse 800px 600px at 20% 30%, rgba(var(--primary-rgb), 0.15), transparent),
-                radial-gradient(ellipse 600px 800px at 80% 70%, rgba(139, 92, 246, 0.1), transparent),
-                radial-gradient(ellipse 500px 500px at 50% 50%, rgba(236, 72, 153, 0.06), transparent);
-            animation: ambientShift 25s ease-in-out infinite alternate;
+                radial-gradient(ellipse 900px 700px at 18% 28%, rgba(var(--primary-rgb), 0.18), transparent 70%),
+                radial-gradient(ellipse 700px 900px at 82% 72%, rgba(124, 58, 237, 0.12), transparent 70%),
+                radial-gradient(ellipse 600px 600px at 55% 45%, rgba(236, 72, 153, 0.06), transparent 60%);
+            animation: atmoDrift 30s ease-in-out infinite alternate;
         }
-        @keyframes ambientShift {
-            0% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(3%, -2%) scale(1.02); }
-            66% { transform: translate(-2%, 3%) scale(0.98); }
-            100% { transform: translate(1%, -1%) scale(1.01); }
+        @keyframes atmoDrift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(2%, -1.5%) rotate(0.5deg); }
+            100% { transform: translate(-1%, 1%) rotate(-0.3deg); }
         }
-
-        /* ── Grid Texture ── */
-        .grid-texture {
-            position: fixed; inset: 0; z-index: 1; opacity: 0.03;
+        .atmo-grid {
+            position: absolute; inset: 0; opacity: 0.025;
             background-image:
-                linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
-            -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
+                linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
+            background-size: 72px 72px;
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+        }
+        .atmo-orb {
+            position: absolute; border-radius: 50%;
+            filter: blur(100px); will-change: transform;
+        }
+        .atmo-orb--a {
+            width: 600px; height: 600px; top: -18%; left: -8%;
+            background: rgba(var(--primary-rgb), 0.22);
+            animation: orbA 22s ease-in-out infinite;
+        }
+        .atmo-orb--b {
+            width: 480px; height: 480px; bottom: -12%; right: -4%;
+            background: rgba(124, 58, 237, 0.18);
+            animation: orbB 26s ease-in-out infinite;
+        }
+        .atmo-orb--c {
+            width: 320px; height: 320px; top: 45%; left: 55%;
+            background: rgba(236, 72, 153, 0.08);
+            animation: orbC 20s ease-in-out infinite;
+        }
+        @keyframes orbA { 0%,100% { transform: translate(0,0); } 50% { transform: translate(30px,25px); } }
+        @keyframes orbB { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-25px,-35px); } }
+        @keyframes orbC { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-15px,20px) scale(1.08); } }
+        .atmo-noise {
+            position: absolute; inset: 0; opacity: 0.018; pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
         }
 
-        /* ── Floating Orbs ── */
-        .orb {
-            position: fixed; border-radius: 50%; z-index: 1;
-            filter: blur(80px); opacity: 0.4;
-        }
-        .orb-1 {
-            width: 500px; height: 500px; top: -15%; left: -10%;
-            background: rgba(var(--primary-rgb), 0.25);
-            animation: orbFloat1 20s ease-in-out infinite;
-        }
-        .orb-2 {
-            width: 400px; height: 400px; bottom: -10%; right: -5%;
-            background: rgba(139, 92, 246, 0.2);
-            animation: orbFloat2 24s ease-in-out infinite;
-        }
-        .orb-3 {
-            width: 300px; height: 300px; top: 50%; left: 60%;
-            background: rgba(236, 72, 153, 0.12);
-            animation: orbFloat3 18s ease-in-out infinite;
-        }
-        @keyframes orbFloat1 {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(40px, 30px); }
-        }
-        @keyframes orbFloat2 {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(-30px, -40px); }
-        }
-        @keyframes orbFloat3 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(-20px, 20px) scale(1.1); }
-        }
-
-        /* ── Noise Overlay ── */
-        .noise-overlay {
-            position: fixed; inset: 0; z-index: 2; opacity: 0.015;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-            background-size: 128px 128px; pointer-events: none;
-        }
-
-        /* ── Main Layout ── */
-        .login-portal {
+        /* ═══ Login Shell ═══ */
+        .login-shell {
             position: relative; z-index: 10;
-            width: min(1080px, 94vw); min-height: 620px;
-            display: grid; grid-template-columns: 1fr 1fr;
+            width: min(1120px, 92vw); min-height: 640px;
+            display: grid; grid-template-columns: 1.2fr 1fr;
             border-radius: var(--radius-xl); overflow: hidden;
-            border: 1px solid var(--border);
-            animation: portalReveal 0.8s cubic-bezier(0.22, 0.68, 0.31, 1);
-            backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow:
+                0 0 0 1px rgba(255,255,255,0.03),
+                0 40px 100px -20px rgba(0,0,0,0.6),
+                0 80px 160px -40px rgba(0,0,0,0.4);
+            animation: shellReveal 0.9s cubic-bezier(0.22, 0.68, 0.31, 1) both;
         }
-        @keyframes portalReveal {
-            from { opacity: 0; transform: translateY(40px) scale(0.96); filter: blur(8px); }
+        @keyframes shellReveal {
+            from { opacity: 0; transform: translateY(50px) scale(0.95); filter: blur(12px); }
             to { opacity: 1; transform: none; filter: blur(0); }
         }
 
-        /* ── Brand Panel ── */
-        .brand-panel {
-            position: relative; padding: 56px; display: flex;
-            flex-direction: column; justify-content: space-between;
-            background: linear-gradient(165deg,
-                rgba(var(--primary-rgb), 0.12) 0%,
-                rgba(139, 92, 246, 0.08) 50%,
-                rgba(236, 72, 153, 0.05) 100%);
-            border-right: 1px solid var(--border);
+        /* ═══ Brand Side ═══ */
+        .side-brand {
+            position: relative; padding: 60px;
+            display: flex; flex-direction: column; justify-content: space-between;
+            background:
+                linear-gradient(170deg,
+                    rgba(var(--primary-rgb), 0.1) 0%,
+                    rgba(124, 58, 237, 0.06) 40%,
+                    rgba(236, 72, 153, 0.03) 80%,
+                    transparent 100%);
+            border-right: 1px solid rgba(255,255,255,0.05);
             overflow: hidden;
         }
-        .brand-panel::before {
+        .side-brand::before {
             content: ''; position: absolute; inset: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
-        }
-        .brand-panel::after {
-            content: ''; position: absolute;
-            width: 500px; height: 500px; border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.04);
-            bottom: -180px; right: -120px;
-        }
-        .brand-content { position: relative; z-index: 2; }
-
-        /* ── Decorative Geometry ── */
-        .brand-deco {
-            position: absolute; z-index: 1; opacity: 0.06;
-        }
-        .brand-deco-circle-1 {
-            width: 200px; height: 200px; border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.3);
-            top: 40px; right: -60px;
-        }
-        .brand-deco-circle-2 {
-            width: 120px; height: 120px; border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            bottom: 80px; left: -30px;
-        }
-        .brand-deco-line {
-            width: 1px; height: 160px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.15), transparent);
-            top: 20px; left: 56px;
-        }
-        .brand-deco-dots {
-            display: grid; grid-template-columns: repeat(4, 4px); gap: 12px;
-            bottom: 140px; right: 40px;
-        }
-        .brand-deco-dots span {
-            width: 4px; height: 4px; border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-        }
-
-        /* ── Brand Typography ── */
-        .brand-logo-wrap {
-            margin-bottom: 48px;
-        }
-        .brand-logo {
-            width: min(240px, 85%); height: auto; display: block;
-            filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
-            transition: transform var(--transition-smooth);
-        }
-        .brand-panel:hover .brand-logo {
-            transform: scale(1.03) translateY(-2px);
-        }
-        .brand-title {
-            font-size: 2rem; font-weight: 800; letter-spacing: -0.03em;
-            line-height: 1.15; color: var(--text-primary);
-            margin-bottom: 12px;
-        }
-        .brand-subtitle {
-            font-size: 0.9rem; font-weight: 300; line-height: 1.7;
-            color: var(--text-secondary); max-width: 320px;
-        }
-
-        /* ── Feature Cards ── */
-        .brand-features {
-            display: flex; flex-direction: column; gap: 10px;
-            margin-top: 40px;
-        }
-        .brand-feat {
-            display: flex; align-items: center; gap: 14px;
-            padding: 12px 16px; border-radius: var(--radius-sm);
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all var(--transition-fast);
-            cursor: default;
-        }
-        .brand-feat:hover {
-            background: rgba(255,255,255,0.06);
-            border-color: rgba(255,255,255,0.1);
-            transform: translateX(4px);
-        }
-        [dir="rtl"] .brand-feat:hover { transform: translateX(-4px); }
-        .brand-feat-icon {
-            width: 36px; height: 36px; border-radius: 10px;
-            background: rgba(var(--primary-rgb), 0.15);
-            display: grid; place-items: center; flex-shrink: 0;
-            color: rgba(var(--primary-rgb), 0.9); font-size: 0.85rem;
-        }
-        .brand-feat-text {
-            font-size: 0.82rem; font-weight: 500;
-            color: var(--text-secondary); letter-spacing: 0.01em;
-        }
-
-        .brand-footer {
-            position: relative; z-index: 2;
-            font-size: 0.72rem; font-weight: 400;
-            color: var(--text-tertiary); letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-
-        /* ── Form Panel ── */
-        .form-panel {
-            padding: 56px; display: flex; flex-direction: column;
-            justify-content: center; position: relative;
-            background: rgba(10, 10, 18, 0.6);
-        }
-        .form-panel::before {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.02), transparent);
+            background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.2) 100%);
             pointer-events: none;
         }
 
-        .form-header { margin-bottom: 40px; position: relative; }
-        .form-header-top {
+        /* Decorative elements */
+        .deco { position: absolute; pointer-events: none; }
+        .deco-ring-1 {
+            width: 280px; height: 280px; border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.04);
+            bottom: -100px; right: -80px;
+        }
+        .deco-ring-2 {
+            width: 160px; height: 160px; border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.03);
+            top: 60px; left: -50px;
+        }
+        .deco-line-v {
+            width: 1px; height: 180px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.08), transparent);
+            top: 0; left: 60px;
+        }
+        .deco-dots {
+            display: grid; grid-template-columns: repeat(5, 3px); gap: 14px;
+            bottom: 120px; right: 48px; opacity: 0.15;
+        }
+        .deco-dots i {
+            width: 3px; height: 3px; border-radius: 50%;
+            background: rgba(255,255,255,0.8); display: block;
+        }
+        .deco-cross {
+            width: 20px; height: 20px; top: 100px; right: 80px; opacity: 0.08;
+        }
+        .deco-cross::before, .deco-cross::after {
+            content: ''; position: absolute; background: rgba(255,255,255,0.6);
+        }
+        .deco-cross::before { width: 100%; height: 1px; top: 50%; }
+        .deco-cross::after { width: 1px; height: 100%; left: 50%; }
+
+        .brand-content { position: relative; z-index: 2; display: flex; flex-direction: column; height: 100%; }
+        .brand-top { flex: 1; }
+        .brand-logo {
+            width: min(220px, 80%); height: auto; display: block;
+            filter: drop-shadow(0 6px 30px rgba(0,0,0,0.4));
+            transition: transform 0.5s var(--ease);
+            margin-bottom: 44px;
+        }
+        .side-brand:hover .brand-logo { transform: scale(1.03) translateY(-3px); }
+        .brand-heading {
+            font-size: 1.85rem; font-weight: 800; letter-spacing: -0.03em;
+            line-height: 1.2; color: var(--text-primary); margin-bottom: 14px;
+        }
+        .brand-desc {
+            font-size: 0.88rem; font-weight: 300; line-height: 1.75;
+            color: var(--text-secondary); max-width: 340px;
+        }
+
+        .brand-features {
+            display: flex; flex-direction: column; gap: 8px;
+            margin-top: 44px;
+        }
+        .bf {
+            display: flex; align-items: center; gap: 14px;
+            padding: 11px 16px; border-radius: var(--radius-sm);
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.04);
+            transition: all 0.25s var(--ease);
+        }
+        .bf:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.08);
+            transform: translateX(4px);
+        }
+        [dir="rtl"] .bf:hover { transform: translateX(-4px); }
+        .bf-icon {
+            width: 34px; height: 34px; border-radius: 9px;
+            background: rgba(var(--primary-rgb), 0.12);
+            display: grid; place-items: center; flex-shrink: 0;
+            font-size: 0.8rem; color: rgba(var(--primary-rgb), 0.85);
+        }
+        .bf-text { font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); }
+
+        .brand-foot {
+            position: relative; z-index: 2;
+            font-size: 0.7rem; font-weight: 400;
+            color: var(--text-tertiary); letter-spacing: 0.06em;
+            text-transform: uppercase; padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+
+        /* ═══ Form Side ═══ */
+        .side-form {
+            padding: 60px; display: flex; flex-direction: column;
+            justify-content: center; position: relative;
+            background: rgba(12, 12, 20, 0.5);
+        }
+        .side-form::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.015), transparent 60%);
+            pointer-events: none;
+        }
+
+        .form-head { margin-bottom: 36px; position: relative; z-index: 2; }
+        .form-head-row {
             display: flex; justify-content: space-between; align-items: flex-start;
         }
-        .form-title {
-            font-size: 1.75rem; font-weight: 800; letter-spacing: -0.03em;
+        .form-greeting {
+            font-size: 1.65rem; font-weight: 800; letter-spacing: -0.03em;
             color: var(--text-primary); margin-bottom: 8px;
         }
-        .form-subtitle {
-            font-size: 0.88rem; font-weight: 300;
+        .form-sub {
+            font-size: 0.86rem; font-weight: 300;
             color: var(--text-secondary); line-height: 1.6;
         }
 
-        /* ── Language Switcher ── */
-        .lang-btn {
-            width: 40px; height: 40px; border-radius: var(--radius-sm);
+        /* Language */
+        .lang-trigger {
+            width: 38px; height: 38px; border-radius: var(--radius-sm);
             border: 1px solid var(--border); background: var(--surface);
             color: var(--text-secondary); display: grid; place-items: center;
-            cursor: pointer; transition: all var(--transition-fast);
-            font-size: 0.9rem; flex-shrink: 0;
+            cursor: pointer; transition: all 0.2s var(--ease); font-size: 0.88rem;
+            flex-shrink: 0;
         }
-        .lang-btn:hover {
-            background: var(--surface-hover);
-            border-color: var(--border-focus);
+        .lang-trigger:hover {
+            background: var(--surface-hover); border-color: var(--border-focus);
             color: var(--text-primary);
         }
-        .lang-dropdown {
+        .lang-popup {
             display: none; position: fixed;
-            background: rgba(20, 20, 30, 0.95);
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
+            background: rgba(18, 18, 28, 0.96);
+            backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: var(--radius-md); padding: 6px;
-            min-width: 160px; z-index: 9999;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            list-style: none; margin: 0;
+            min-width: 164px; z-index: 9999; list-style: none;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.55);
         }
-        .lang-dropdown a {
+        .lang-popup a {
             display: flex; align-items: center; gap: 10px;
-            padding: 10px 14px; border-radius: var(--radius-sm);
+            padding: 10px 14px; border-radius: 10px;
             text-decoration: none; color: var(--text-secondary);
             font-size: 0.82rem; font-weight: 500;
-            transition: all var(--transition-fast);
+            transition: all 0.15s var(--ease);
         }
-        .lang-dropdown a:hover {
-            background: rgba(255,255,255,0.06);
-            color: var(--text-primary);
+        .lang-popup a:hover {
+            background: rgba(255,255,255,0.06); color: var(--text-primary);
         }
-        .lang-dropdown .active-check {
-            width: 18px; text-align: center;
-            color: var(--primary); font-weight: 700;
-        }
+        .lang-active { width: 18px; text-align: center; color: var(--primary); font-weight: 700; }
 
-        /* ── Error Alert ── */
-        .alert-refined {
-            padding: 14px 18px; border-radius: var(--radius-sm);
-            background: rgba(239, 68, 68, 0.08);
-            border: 1px solid rgba(239, 68, 68, 0.15);
-            color: #fca5a5; font-size: 0.82rem; font-weight: 500;
+        /* Error */
+        .err-alert {
+            padding: 13px 18px; border-radius: var(--radius-sm);
+            background: rgba(239, 68, 68, 0.07);
+            border: 1px solid rgba(239, 68, 68, 0.12);
+            color: #fca5a5; font-size: 0.8rem; font-weight: 500;
             margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
-            animation: alertSlide 0.3s ease;
+            animation: errSlide 0.3s ease;
         }
-        @keyframes alertSlide {
-            from { opacity: 0; transform: translateY(-8px); }
-            to { opacity: 1; transform: none; }
-        }
+        @keyframes errSlide { from { opacity: 0; transform: translateY(-6px); } }
 
-        /* ── Form Fields ── */
-        .field-group { margin-bottom: 20px; }
-        .field-label {
-            display: block; font-size: 0.75rem; font-weight: 600;
-            color: var(--text-secondary); letter-spacing: 0.06em;
+        /* Fields */
+        .fld { margin-bottom: 22px; position: relative; z-index: 2; }
+        .fld-label {
+            display: block; font-size: 0.72rem; font-weight: 600;
+            color: var(--text-secondary); letter-spacing: 0.07em;
             text-transform: uppercase; margin-bottom: 10px;
         }
-        .field-input-wrap {
-            position: relative;
-        }
-        .field-icon {
+        .fld-wrap { position: relative; }
+        .fld-ico {
             position: absolute; top: 50%; transform: translateY(-50%);
             inset-inline-start: 16px;
-            color: var(--text-tertiary); font-size: 0.85rem;
-            transition: color var(--transition-fast);
-            pointer-events: none;
+            color: var(--text-tertiary); font-size: 0.82rem;
+            transition: color 0.2s var(--ease); pointer-events: none;
         }
-        .field-input {
+        .fld-input {
             width: 100%; padding: 14px 16px 14px 48px;
-            [dir="rtl"] & { padding: 14px 48px 14px 16px; }
             border-radius: var(--radius-sm);
             border: 1px solid var(--border);
-            background: rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.025);
             color: var(--text-primary);
             font-size: 0.88rem; font-weight: 400;
             font-family: inherit;
-            transition: all var(--transition-fast);
-            outline: none;
+            transition: all 0.2s var(--ease); outline: none;
         }
-        .field-input::placeholder {
-            color: var(--text-tertiary); font-weight: 300;
+        [dir="rtl"] .fld-input { padding: 14px 48px 14px 16px; }
+        .fld-input::placeholder { color: var(--text-tertiary); font-weight: 300; }
+        .fld-input:hover {
+            border-color: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.035);
         }
-        .field-input:hover {
-            border-color: rgba(255,255,255,0.12);
-            background: rgba(255,255,255,0.04);
-        }
-        .field-input:focus {
+        .fld-input:focus {
             border-color: var(--primary);
-            background: rgba(255,255,255,0.05);
-            box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.12);
+            background: rgba(255,255,255,0.04);
+            box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
         }
-        .field-input:focus ~ .field-icon {
-            color: var(--primary);
-        }
+        .fld-input:focus ~ .fld-ico { color: var(--primary); }
 
-        /* ── Remember & Forgot ── */
-        .form-options {
+        /* Options row */
+        .fld-opts {
             display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 28px;
+            margin-bottom: 28px; position: relative; z-index: 2;
         }
-        .remember-check {
-            display: flex; align-items: center; gap: 10px;
-            cursor: pointer; user-select: none;
-        }
-        .remember-check input[type="checkbox"] {
-            display: none;
-        }
-        .remember-check .check-visual {
-            width: 18px; height: 18px; border-radius: 5px;
+        .chk { display: flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; }
+        .chk input { display: none; }
+        .chk-box {
+            width: 18px; height: 18px; border-radius: 6px;
             border: 1.5px solid var(--border);
-            background: rgba(255,255,255,0.03);
-            display: grid; place-items: center;
-            transition: all var(--transition-fast);
-            flex-shrink: 0;
+            background: rgba(255,255,255,0.025);
+            display: grid; place-items: center; flex-shrink: 0;
+            transition: all 0.2s var(--ease); position: relative;
         }
-        .remember-check .check-visual::after {
+        .chk-box::after {
             content: ''; width: 8px; height: 5px;
             border-left: 1.5px solid #fff; border-bottom: 1.5px solid #fff;
             transform: rotate(-45deg) translateY(-1px);
-            opacity: 0; transition: opacity var(--transition-fast);
+            opacity: 0; transition: opacity 0.15s var(--ease);
         }
-        .remember-check input:checked + .check-visual {
+        .chk input:checked + .chk-box {
             background: var(--primary); border-color: var(--primary);
         }
-        .remember-check input:checked + .check-visual::after {
-            opacity: 1;
-        }
-        .remember-check .check-label {
-            font-size: 0.82rem; font-weight: 500; color: var(--text-secondary);
-        }
-        .forgot-link {
+        .chk input:checked + .chk-box::after { opacity: 1; }
+        .chk-text { font-size: 0.82rem; font-weight: 500; color: var(--text-secondary); }
+        .forgot {
             font-size: 0.82rem; font-weight: 500;
             color: var(--primary); text-decoration: none;
-            transition: all var(--transition-fast);
-            position: relative;
+            transition: opacity 0.2s var(--ease);
         }
-        .forgot-link::after {
-            content: ''; position: absolute; bottom: -2px;
-            inset-inline-start: 0; width: 0; height: 1px;
-            background: var(--primary);
-            transition: width var(--transition-fast);
-        }
-        .forgot-link:hover::after { width: 100%; }
-        .forgot-link:hover { color: rgba(var(--primary-rgb), 0.8); }
+        .forgot:hover { opacity: 0.75; }
 
-        /* ── Submit Button ── */
-        .btn-submit {
-            width: 100%; padding: 15px 24px;
-            border: none; border-radius: var(--radius-sm);
-            font-family: inherit; font-size: 0.88rem; font-weight: 700;
-            letter-spacing: 0.02em; color: #fff;
-            background: linear-gradient(135deg, var(--primary), rgba(139, 92, 246, 0.9));
-            cursor: pointer; position: relative; overflow: hidden;
-            transition: all var(--transition-fast);
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-        }
-        .btn-submit::before {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
-            opacity: 0; transition: opacity var(--transition-fast);
-        }
-        .btn-submit:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 12px 40px -8px rgba(var(--primary-rgb), 0.4);
-        }
-        .btn-submit:hover::before { opacity: 1; }
-        .btn-submit:active {
-            transform: translateY(0);
-            box-shadow: 0 4px 16px -4px rgba(var(--primary-rgb), 0.3);
-        }
-        .btn-submit .btn-arrow {
-            transition: transform var(--transition-fast);
-        }
-        .btn-submit:hover .btn-arrow {
-            transform: translateX(3px);
-        }
-        [dir="rtl"] .btn-submit:hover .btn-arrow {
-            transform: translateX(-3px);
-        }
-
-        /* ── Demo Box ── */
-        .demo-info {
-            margin-top: 24px; padding: 14px 18px;
+        /* Submit */
+        .btn-go {
+            width: 100%; padding: 15px 24px; border: none;
             border-radius: var(--radius-sm);
-            background: rgba(255,255,255,0.02);
-            border: 1px solid var(--border);
-            font-size: 0.78rem; color: var(--text-tertiary);
-            display: flex; align-items: center; gap: 8px;
+            font-family: inherit; font-size: 0.88rem; font-weight: 700;
+            letter-spacing: 0.02em; color: #fff; cursor: pointer;
+            background: linear-gradient(135deg, var(--primary), rgba(124, 58, 237, 0.85));
+            position: relative; overflow: hidden;
+            transition: all 0.25s var(--ease);
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            z-index: 2;
+            box-shadow: 0 8px 32px -6px rgba(var(--primary-rgb), 0.3);
         }
-        .demo-info i { font-size: 0.85rem; opacity: 0.6; }
-        .demo-info code {
-            background: rgba(255,255,255,0.06);
-            padding: 2px 8px; border-radius: 5px;
-            font-weight: 600; font-size: 0.76rem;
-            color: var(--text-secondary);
+        .btn-go::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent 60%);
+            opacity: 0; transition: opacity 0.25s var(--ease);
         }
-
-        /* ── Loading State ── */
-        .btn-submit.loading {
-            pointer-events: none; opacity: 0.7;
+        .btn-go:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 48px -6px rgba(var(--primary-rgb), 0.4);
         }
-        .btn-submit.loading .btn-text { opacity: 0; }
-        .btn-submit.loading .btn-spinner {
+        .btn-go:hover::before { opacity: 1; }
+        .btn-go:active { transform: translateY(0); box-shadow: 0 6px 20px -4px rgba(var(--primary-rgb), 0.3); }
+        .btn-arrow {
+            transition: transform 0.25s var(--ease); font-size: 0.85rem;
+        }
+        .btn-go:hover .btn-arrow { transform: translateX(3px); }
+        [dir="rtl"] .btn-go:hover .btn-arrow { transform: translateX(-3px); }
+        .btn-go.loading { pointer-events: none; opacity: 0.7; }
+        .btn-go.loading .btn-label { opacity: 0; }
+        .btn-go.loading .btn-arrow { display: none; }
+        .btn-go.loading .btn-spin {
             position: absolute; width: 20px; height: 20px;
             border: 2px solid rgba(255,255,255,0.3);
             border-top-color: #fff; border-radius: 50%;
@@ -483,105 +405,108 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* ── Mobile ── */
-        @media (max-width: 820px) {
-            .login-portal {
-                grid-template-columns: 1fr; min-height: 0;
-                border-radius: var(--radius-lg);
-            }
-            .brand-panel { display: none; }
-            .form-panel { padding: 40px 32px; }
-            .form-title { font-size: 1.5rem; }
+        /* Demo */
+        .demo-pill {
+            margin-top: 24px; padding: 13px 18px;
+            border-radius: var(--radius-sm);
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.76rem; color: var(--text-tertiary);
+            display: flex; align-items: center; gap: 8px;
+            position: relative; z-index: 2;
+        }
+        .demo-pill i { font-size: 0.82rem; opacity: 0.5; }
+        .demo-pill code {
+            background: rgba(255,255,255,0.06);
+            padding: 2px 8px; border-radius: 5px;
+            font-weight: 600; font-size: 0.74rem;
+            color: var(--text-secondary);
+        }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 860px) {
+            .login-shell { grid-template-columns: 1fr; min-height: 0; border-radius: var(--radius-lg); }
+            .side-brand { display: none; }
+            .side-form { padding: 44px 36px; }
         }
         @media (max-width: 480px) {
-            .form-panel { padding: 32px 24px; }
-            .form-title { font-size: 1.3rem; }
+            .side-form { padding: 36px 24px; }
+            .form-greeting { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Ambient Background -->
-    <div class="ambient-bg"></div>
-    <div class="grid-texture"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="noise-overlay"></div>
+    <!-- Atmosphere -->
+    <div class="atmosphere">
+        <div class="atmo-gradient"></div>
+        <div class="atmo-grid"></div>
+        <div class="atmo-orb atmo-orb--a"></div>
+        <div class="atmo-orb atmo-orb--b"></div>
+        <div class="atmo-orb atmo-orb--c"></div>
+        <div class="atmo-noise"></div>
+    </div>
 
-    <!-- Login Portal -->
-    <div class="login-portal">
-        <!-- Brand Panel -->
-        <div class="brand-panel">
-            <div class="brand-deco brand-deco-circle-1"></div>
-            <div class="brand-deco brand-deco-circle-2"></div>
-            <div class="brand-deco brand-deco-line"></div>
-            <div class="brand-deco brand-deco-dots">
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
+    <!-- Login Shell -->
+    <div class="login-shell">
+        <!-- Brand Side -->
+        <div class="side-brand">
+            <div class="deco deco-ring-1"></div>
+            <div class="deco deco-ring-2"></div>
+            <div class="deco deco-line-v"></div>
+            <div class="deco deco-dots">
+                <i></i><i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i><i></i>
             </div>
+            <div class="deco deco-cross"></div>
 
             <div class="brand-content">
-                <div class="brand-logo-wrap">
+                <div class="brand-top">
                     <img class="brand-logo" src="{{ asset('images/edubba_app.png') }}" alt="{{ $schoolName }}">
-                </div>
-                <div class="brand-title">@lang('school_management_system')</div>
-                <div class="brand-subtitle">@lang('login_hero_desc')</div>
+                    <div class="brand-heading">@lang('school_management_system')</div>
+                    <div class="brand-desc">@lang('login_hero_desc')</div>
 
-                <div class="brand-features">
-                    <div class="brand-feat">
-                        <div class="brand-feat-icon"><i class="bi bi-people-fill"></i></div>
-                        <div class="brand-feat-text">@lang('login_feat_students')</div>
-                    </div>
-                    <div class="brand-feat">
-                        <div class="brand-feat-icon"><i class="bi bi-cash-stack"></i></div>
-                        <div class="brand-feat-text">@lang('fees_invoices')</div>
-                    </div>
-                    <div class="brand-feat">
-                        <div class="brand-feat-icon"><i class="bi bi-calendar2-week-fill"></i></div>
-                        <div class="brand-feat-text">@lang('smart_timetable')</div>
-                    </div>
-                    <div class="brand-feat">
-                        <div class="brand-feat-icon"><i class="bi bi-graph-up-arrow"></i></div>
-                        <div class="brand-feat-text">@lang('ministry_reports')</div>
+                    <div class="brand-features">
+                        <div class="bf">
+                            <div class="bf-icon"><i class="bi bi-people-fill"></i></div>
+                            <div class="bf-text">@lang('login_feat_students')</div>
+                        </div>
+                        <div class="bf">
+                            <div class="bf-icon"><i class="bi bi-cash-stack"></i></div>
+                            <div class="bf-text">@lang('fees_invoices')</div>
+                        </div>
+                        <div class="bf">
+                            <div class="bf-icon"><i class="bi bi-calendar2-week-fill"></i></div>
+                            <div class="bf-text">@lang('smart_timetable')</div>
+                        </div>
+                        <div class="bf">
+                            <div class="bf-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                            <div class="bf-text">@lang('ministry_reports')</div>
+                        </div>
                     </div>
                 </div>
+                <div class="brand-foot">© {{ date('Y') }} {{ $schoolName }}</div>
             </div>
-
-            <div class="brand-footer">© {{ date('Y') }} {{ $schoolName }}</div>
         </div>
 
-        <!-- Form Panel -->
-        <div class="form-panel">
-            <div class="form-header">
-                <div class="form-header-top">
+        <!-- Form Side -->
+        <div class="side-form">
+            <div class="form-head">
+                <div class="form-head-row">
                     <div>
-                        <div class="form-title">@lang('welcome_back')</div>
-                        <div class="form-subtitle">@lang('login_subtitle')</div>
+                        <div class="form-greeting">@lang('welcome_back')</div>
+                        <div class="form-sub">@lang('login_subtitle')</div>
                     </div>
-                    <div style="position:relative">
-                        <button class="lang-btn" type="button" onclick="toggleLangMenu(event)" title="@lang('language')">
+                    <div>
+                        <button class="lang-trigger" type="button" onclick="toggleLang(event)" title="@lang('language')">
                             <i class="bi bi-globe2"></i>
                         </button>
-                        <ul class="lang-dropdown" id="langMenu">
-                            <li>
-                                <a href="{{ route('language.switch', 'ar') }}">
-                                    <span class="active-check">{{ app()->getLocale() === 'ar' ? '✓' : '' }}</span>
-                                    @lang('arabic')
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('language.switch', 'en') }}">
-                                    <span class="active-check">{{ app()->getLocale() === 'en' ? '✓' : '' }}</span>
-                                    @lang('english')
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
 
             @if ($errors->any())
-                <div class="alert-refined">
+                <div class="err-alert">
                     <i class="bi bi-exclamation-triangle-fill"></i>
                     @foreach ($errors->all() as $error)<span>{{ $error }}</span> @endforeach
                 </div>
@@ -589,72 +514,93 @@
 
             <form method="POST" action="{{ route('admin.login.post') }}" id="loginForm">
                 @csrf
-                <div class="field-group">
-                    <label class="field-label">@lang('email')</label>
-                    <div class="field-input-wrap">
-                        <i class="field-icon bi bi-envelope"></i>
-                        <input type="email" name="email" class="field-input" value="{{ old('email') }}" placeholder="admin@school.com" required autofocus>
+                <div class="fld">
+                    <label class="fld-label">@lang('email')</label>
+                    <div class="fld-wrap">
+                        <i class="fld-ico bi bi-envelope"></i>
+                        <input type="email" name="email" class="fld-input" value="{{ old('email') }}" placeholder="admin@school.com" required autofocus>
                     </div>
                 </div>
-                <div class="field-group">
-                    <label class="field-label">@lang('password')</label>
-                    <div class="field-input-wrap">
-                        <i class="field-icon bi bi-lock"></i>
-                        <input type="password" name="password" class="field-input" placeholder="••••••••" required>
+                <div class="fld">
+                    <label class="fld-label">@lang('password')</label>
+                    <div class="fld-wrap">
+                        <i class="fld-ico bi bi-lock"></i>
+                        <input type="password" name="password" class="fld-input" placeholder="••••••••" required>
                     </div>
                 </div>
 
-                <div class="form-options">
-                    <label class="remember-check">
+                <div class="fld-opts">
+                    <label class="chk">
                         <input type="checkbox" name="remember" id="remember">
-                        <span class="check-visual"></span>
-                        <span class="check-label">@lang('remember_me')</span>
+                        <span class="chk-box"></span>
+                        <span class="chk-text">@lang('remember_me')</span>
                     </label>
-                    <a href="#" class="forgot-link">@lang('forgot_password')</a>
+                    <a href="#" class="forgot">@lang('forgot_password')</a>
                 </div>
 
-                <button type="submit" class="btn-submit" id="submitBtn">
-                    <span class="btn-text">@lang('login')</span>
+                <button type="submit" class="btn-go" id="submitBtn">
+                    <span class="btn-label">@lang('login')</span>
                     <i class="bi bi-arrow-right btn-arrow"></i>
-                    <span class="btn-spinner" style="display:none"></span>
+                    <span class="btn-spin" style="display:none"></span>
                 </button>
             </form>
 
-            <div class="demo-info">
+            <div class="demo-pill">
                 <i class="bi bi-info-circle"></i>
                 @lang('demo_account'): <code>admin@edubba.test</code> / <code>password</code>
             </div>
         </div>
     </div>
 
+    <ul class="lang-popup" id="langPopup">
+        <li>
+            <a href="{{ route('language.switch', 'ar') }}">
+                <span class="lang-active">{{ app()->getLocale() === 'ar' ? '✓' : '' }}</span>
+                @lang('arabic')
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('language.switch', 'en') }}">
+                <span class="lang-active">{{ app()->getLocale() === 'en' ? '✓' : '' }}</span>
+                @lang('english')
+            </a>
+        </li>
+    </ul>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function toggleLangMenu(e) {
+        var langOpen = false;
+        function toggleLang(e) {
             e.stopPropagation();
-            var menu = document.getElementById('langMenu');
-            if (menu.style.display === 'none' || !menu.style.display) {
-                var btn = e.currentTarget;
-                var rect = btn.getBoundingClientRect();
-                menu.style.display = 'block';
-                menu.style.top = (rect.bottom + 8) + 'px';
-                menu.style.insetInlineEnd = (window.innerWidth - rect.right) + 'px';
-                document.addEventListener('click', closeLangMenu, { once: true });
+            var m = document.getElementById('langPopup');
+            if (langOpen) {
+                m.style.display = 'none';
+                langOpen = false;
+                document.removeEventListener('click', closeLang);
             } else {
-                menu.style.display = 'none';
+                var r = e.currentTarget.getBoundingClientRect();
+                m.style.display = 'flex';
+                m.style.top = (r.bottom + 8) + 'px';
+                m.style.right = '';
+                m.style.left = r.left + 'px';
+                langOpen = true;
+                setTimeout(function() {
+                    document.addEventListener('click', closeLang);
+                }, 0);
             }
         }
-        function closeLangMenu() {
-            var menu = document.getElementById('langMenu');
-            if (menu) menu.style.display = 'none';
+        function closeLang(e) {
+            var m = document.getElementById('langPopup');
+            if (m) m.style.display = 'none';
+            langOpen = false;
+            document.removeEventListener('click', closeLang);
         }
-
-        // Submit loading state
         document.getElementById('loginForm').addEventListener('submit', function() {
-            var btn = document.getElementById('submitBtn');
-            btn.classList.add('loading');
-            btn.querySelector('.btn-text').style.opacity = '0';
-            btn.querySelector('.btn-arrow').style.display = 'none';
-            btn.querySelector('.btn-spinner').style.display = 'block';
+            var b = document.getElementById('submitBtn');
+            b.classList.add('loading');
+            b.querySelector('.btn-label').style.opacity = '0';
+            b.querySelector('.btn-arrow').style.display = 'none';
+            b.querySelector('.btn-spin').style.display = 'block';
         });
     </script>
 </body>
