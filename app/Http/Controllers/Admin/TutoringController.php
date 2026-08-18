@@ -14,7 +14,7 @@ class TutoringController extends Controller
 {
     public function index(): View
     {
-        $groups = StudyGroup::with('subject', 'tutor', 'students')->withCount('students')->paginate(15);
+        $groups = StudyGroup::with('subject', 'tutor', 'students')->withCount('students')->paginate(15)->onEachSide(1);
         $subscriptions = Subscription::with('student', 'tutor', 'package')->orderByDesc('id')->limit(25)->get();
         $packages = TutoringPackage::all();
 

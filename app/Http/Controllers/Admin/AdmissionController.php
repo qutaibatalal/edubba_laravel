@@ -21,6 +21,7 @@ class AdmissionController extends Controller
             ->when($request->state, fn ($q, $v) => $q->where('state', $v))
             ->orderByDesc('id')
             ->paginate(20)
+            ->onEachSide(1)
             ->withQueryString();
 
         return view('admin.admissions.index', compact('admissions'));

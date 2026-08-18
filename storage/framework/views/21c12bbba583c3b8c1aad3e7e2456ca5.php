@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap<?php echo e(app()->getLocale() === 'ar' ? '.rtl' : ''); ?>.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/font/lucide.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
@@ -77,12 +77,16 @@
 
         /* ============ Sidebar — refined, modern ============ */
         .edb-sidebar {
-            position: fixed; top: 0; right: 0; bottom: 0; z-index: 1045;
             width: var(--edb-sidebar-w); display: flex; flex-direction: column;
             background: #0c0e14;
             border-inline-start: 1px solid rgba(255,255,255,.04);
-            transition: width var(--transition-smooth), transform var(--transition-smooth);
+            transition: width var(--transition-smooth);
             overflow: hidden;
+            flex-shrink: 0;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            z-index: 1045;
         }
         [data-bs-theme="dark"] .edb-sidebar { background: #080a0f; border-inline-start-color: rgba(255,255,255,.03); }
         .edb-sidebar .brand { display: flex; align-items: center; gap: 14px; padding: 24px 22px 20px; color: #fff; text-decoration: none; white-space: nowrap; }
@@ -110,8 +114,8 @@
         .edb-sidebar .nav-footer .user-chip:hover { background: rgba(255,255,255,.05); }
         .edb-sidebar .nav-footer .avatar { width: 36px; height: 36px; flex-shrink: 0; border-radius: 11px; background: var(--edb-primary); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: .85rem; box-shadow: 0 2px 8px rgba(var(--edb-primary-rgb), .3); }
 
-        body.sidebar-collapsed .edb-sidebar { width: var(--edb-sidebar-collapsed-w); }
-        body.sidebar-collapsed .edb-sidebar .brand { padding: 24px 18px; justify-content: center; }
+        body.sidebar-collapsed .edb-sidebar { width: var(--edb-sidebar-collapsed-w); transition: width var(--transition-smooth); }
+        body.sidebar-collapsed .edb-sidebar .brand { padding: 20px 0; justify-content: center; }
         body.sidebar-collapsed .edb-sidebar .brand-name,
         body.sidebar-collapsed .edb-sidebar .brand-sub,
         body.sidebar-collapsed .edb-sidebar .brand .brand-logo,
@@ -119,12 +123,34 @@
         body.sidebar-collapsed .edb-sidebar .nav-link span,
         body.sidebar-collapsed .edb-sidebar .nav-footer .user-chip .u-txt { display: none; }
         body.sidebar-collapsed .edb-sidebar .brand .brand-logo-mini { display: block; }
-        body.sidebar-collapsed .edb-sidebar .nav-link { justify-content: center; padding: 12px; }
-        body.sidebar-collapsed .edb-sidebar .nav-footer .user-chip { justify-content: center; }
+        body.sidebar-collapsed .edb-sidebar .nav-scroll { padding: 6px 10px 20px; }
+        body.sidebar-collapsed .edb-sidebar .nav-link { justify-content: center; padding: 10px; margin: 2px 0; border-radius: 10px; position: relative; }
+        body.sidebar-collapsed .edb-sidebar .nav-link i { min-width: auto; }
+        body.sidebar-collapsed .edb-sidebar .nav-footer { padding: 14px 10px; }
+        body.sidebar-collapsed .edb-sidebar .nav-footer .user-chip { justify-content: center; padding: 6px; }
+        body.sidebar-collapsed .edb-sidebar .nav-footer .user-chip .avatar { margin: 0; }
+
+        /* Tooltip for collapsed sidebar */
+        body.sidebar-collapsed .edb-sidebar .nav-link[data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute; top: 50%; transform: translateY(-50%);
+            left: calc(100% + 12px); right: auto;
+            background: #1e2230; color: #e2e8f0; padding: 6px 12px; border-radius: 8px;
+            font-size: .78rem; font-weight: 600; white-space: nowrap; z-index: 1060;
+            box-shadow: 0 4px 16px rgba(0,0,0,.25); pointer-events: none;
+            opacity: 0; animation: tooltipIn .15s ease forwards;
+        }
+        [dir="rtl"] body.sidebar-collapsed .edb-sidebar .nav-link[data-tooltip]:hover::after {
+            left: auto; right: calc(100% + 12px);
+        }
+        body.sidebar-collapsed .edb-sidebar .nav-link[data-tooltip]:hover { background: rgba(255,255,255,.08); }
+        @keyframes tooltipIn { from { opacity: 0; transform: translateY(-50%) translateX(-4px); } to { opacity: 1; transform: translateY(-50%) translateX(0); } }
+
+        /* ============ Layout ============ */
+        .edb-layout { display: flex; min-height: 100vh; }
 
         /* ============ Main / topbar ============ */
-        .edb-main { margin-inline-start: var(--edb-sidebar-w); margin-inline-end: 0; transition: margin var(--transition-smooth); min-height: 100vh; display: flex; flex-direction: column; }
-        body.sidebar-collapsed .edb-main { margin-inline-start: var(--edb-sidebar-collapsed-w); }
+        .edb-main { flex: 1; min-width: 0; transition: none; display: flex; flex-direction: column; }
 
         .edb-topbar {
             position: sticky; top: 0; z-index: 1030; display: flex; align-items: center; gap: 14px;
@@ -149,15 +175,16 @@
         .edb-search { position: relative; }
         .edb-search input {
             width: min(320px, 36vw); border-radius: 12px; border: 1px solid var(--edb-border-strong);
-            background: var(--edb-bg-elevated); padding: 9px 16px 9px 40px; font-size: .84rem; color: var(--edb-text-1);
+            background: var(--edb-bg-elevated); padding: 9px 16px; padding-inline-start: 40px; font-size: .84rem; color: var(--edb-text-1);
             transition: all var(--transition-fast);
         }
         .edb-search input::placeholder { color: var(--edb-text-3); }
         .edb-search input:focus { outline: none; border-color: var(--edb-primary); box-shadow: 0 0 0 3px rgba(var(--edb-primary-rgb), .12); }
         .edb-search i { position: absolute; inset-inline-start: 14px; top: 50%; transform: translateY(-50%); color: var(--edb-text-3); font-size: .88rem; }
 
-        .edb-content { flex: 1; padding: 30px 32px; animation: edbFade .4s var(--transition-spring); }
-        @keyframes edbFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+        .edb-content { flex: 1; width: 100%; padding: 30px 32px; }
+        .edb-content.edb-page-enter { animation: edbPageEnter .35s var(--transition-spring) both; }
+        @keyframes edbPageEnter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
         @media (max-width: 1199px) { .edb-content { padding: 20px; } }
 
         /* ============ Components — modern, refined ============ */
@@ -251,7 +278,7 @@
 
         /* KPI cards — modern, refined */
         .stat-card { position: relative; overflow: hidden; }
-        .stat-card::before { content: ''; position: absolute; inset-inline-start: 0; top: 0; bottom: 0; width: 3px; border-radius: 0 3px 3px 0; }
+        .stat-card::before { content: ''; position: absolute; inset-inline-start: 0; top: 0; bottom: 0; width: 3px; border-radius: 0 var(--edb-radius-xs) var(--edb-radius-xs) 0; }
         .stat-card.st-1::before { background: #4f46e5; } .stat-card.st-2::before { background: #0d9488; }
         .stat-card.st-3::before { background: #0284c7; } .stat-card.st-4::before { background: #d97706; }
         .stat-card.st-5::before { background: #dc2626; } .stat-card.st-6::before { background: #7c3aed; }
@@ -279,7 +306,8 @@
         .empty-state small { color: var(--edb-text-3); display: block; margin-bottom: 16px; }
 
         /* Pagination */
-        .pagination { margin: 14px 0; display: flex; gap: 6px; flex-wrap: wrap; }
+        .pagination { margin: 14px 0; display: flex; gap: 4px; flex-wrap: wrap; list-style: none; padding: 0; }
+        .pagination .page-item { margin: 0; }
         .pagination .page-link {
             border-radius: var(--edb-radius-xs) !important; padding: 7px 14px !important; margin: 0;
             font-weight: 700 !important; font-size: .82rem !important; color: var(--edb-text-2) !important;
@@ -291,9 +319,12 @@
             color: var(--edb-primary) !important; border-color: var(--edb-primary) !important;
             background: rgba(var(--edb-primary-rgb), .06) !important; transform: translateY(-1px); box-shadow: var(--edb-shadow-sm);
         }
-        .pagination .page-link.active {
+        .pagination .page-item.active .page-link {
             color: #fff !important; background: var(--edb-primary) !important; border-color: var(--edb-primary) !important;
             box-shadow: 0 4px 12px -4px rgba(var(--edb-primary-rgb), .4) !important;
+        }
+        .pagination .page-item.disabled .page-link {
+            color: var(--edb-text-3) !important; background: var(--edb-bg-elevated) !important; border-color: var(--edb-border) !important; opacity: .6;
         }
 
         /* Dropdowns */
@@ -412,10 +443,11 @@
         .table-striped > tbody > tr:nth-of-type(odd) > td { background: rgba(var(--edb-primary-rgb), .015); }
 
         @media (max-width: 991px) {
-            .edb-sidebar { transform: translateX(100%); width: var(--edb-sidebar-w) !important; }
-            body.sidebar-mobile-open .edb-sidebar { transform: translateX(0); box-shadow: var(--edb-shadow-xl); }
+            .edb-sidebar { position: fixed; top: 0; bottom: 0; z-index: 1045; height: 100vh; }
+            [dir="rtl"] .edb-sidebar { right: 0; transform: translateX(100%); width: var(--edb-sidebar-w) !important; }
+            [dir="ltr"] .edb-sidebar { left: 0; transform: translateX(-100%); width: var(--edb-sidebar-w) !important; }
+            body.sidebar-mobile-open .edb-sidebar { transform: translateX(0) !important; box-shadow: var(--edb-shadow-xl); }
             body.sidebar-mobile-open::after { content: ''; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 1044; backdrop-filter: blur(4px); }
-            .edb-main, body.sidebar-collapsed .edb-main { margin-inline-start: 0; }
             body.sidebar-collapsed .edb-sidebar .brand-name, body.sidebar-collapsed .edb-sidebar .nav-section, body.sidebar-collapsed .edb-sidebar .nav-link span { display: initial; }
             body.sidebar-collapsed .edb-sidebar .brand .brand-logo { display: block; }
             body.sidebar-collapsed .edb-sidebar .brand .brand-logo-mini { display: none; }
@@ -431,6 +463,7 @@
     <span class="orb orb-2"></span>
     <span class="orb orb-3"></span>
 </div>
+<div class="edb-layout">
 <div class="edb-sidebar">
     <a href="<?php echo e(route('admin.dashboard')); ?>" class="brand">
         <img class="brand-logo" src="<?php echo e(asset('images/edubba_app.png')); ?>" alt="<?php echo e($schoolName); ?>">
@@ -440,29 +473,29 @@
 
     <div class="nav-scroll">
         <div class="nav-section"><?php echo app('translator')->get('main'); ?></div>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.dashboard') ? 'active' : ''); ?>" href="<?php echo e(route('admin.dashboard')); ?>"><i class="bi bi-grid-1x2-fill"></i><span><?php echo app('translator')->get('stats_dashboard'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.dashboard') ? 'active' : ''); ?>" href="<?php echo e(route('admin.dashboard')); ?>" data-tooltip="<?php echo app('translator')->get('stats_dashboard'); ?>"><i class="bi bi-grid-1x2-fill"></i><span><?php echo app('translator')->get('stats_dashboard'); ?></span></a>
 
         <div class="nav-section"><?php echo app('translator')->get('school_management'); ?></div>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.students.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.students.index')); ?>"><i class="bi bi-people-fill"></i><span><?php echo app('translator')->get('students'); ?></span></a>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.admissions.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.admissions.index')); ?>"><i class="bi bi-clipboard2-check-fill"></i><span><?php echo app('translator')->get('admissions'); ?></span></a>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.parents.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.parents.index')); ?>"><i class="bi bi-person-hearts"></i><span><?php echo app('translator')->get('parents'); ?></span></a>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.faculty.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.faculty.index')); ?>"><i class="bi bi-person-video3"></i><span><?php echo app('translator')->get('teaching_staff'); ?></span></a>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.courses.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.courses.index')); ?>"><i class="bi bi-book-fill"></i><span><?php echo app('translator')->get('subjects'); ?></span></a>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.batches.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.batches.index')); ?>"><i class="bi bi-diagram-3-fill"></i><span><?php echo app('translator')->get('classes'); ?></span></a>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.programs.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.programs.index')); ?>"><i class="bi bi-award-fill"></i><span><?php echo app('translator')->get('programs'); ?></span></a>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.academic-years.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.academic-years.index')); ?>"><i class="bi bi-calendar-range-fill"></i><span><?php echo app('translator')->get('academic_years'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.students.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.students.index')); ?>" data-tooltip="<?php echo app('translator')->get('students'); ?>"><i class="bi bi-people-fill"></i><span><?php echo app('translator')->get('students'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.admissions.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.admissions.index')); ?>" data-tooltip="<?php echo app('translator')->get('admissions'); ?>"><i class="bi bi-clipboard2-check-fill"></i><span><?php echo app('translator')->get('admissions'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.parents.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.parents.index')); ?>" data-tooltip="<?php echo app('translator')->get('parents'); ?>"><i class="bi bi-person-hearts"></i><span><?php echo app('translator')->get('parents'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.faculty.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.faculty.index')); ?>" data-tooltip="<?php echo app('translator')->get('teaching_staff'); ?>"><i class="bi bi-person-video3"></i><span><?php echo app('translator')->get('teaching_staff'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.courses.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.courses.index')); ?>" data-tooltip="<?php echo app('translator')->get('subjects'); ?>"><i class="bi bi-book-fill"></i><span><?php echo app('translator')->get('subjects'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.batches.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.batches.index')); ?>" data-tooltip="<?php echo app('translator')->get('classes'); ?>"><i class="bi bi-diagram-3-fill"></i><span><?php echo app('translator')->get('classes'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.programs.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.programs.index')); ?>" data-tooltip="<?php echo app('translator')->get('programs'); ?>"><i class="bi bi-award-fill"></i><span><?php echo app('translator')->get('programs'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.academic-years.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.academic-years.index')); ?>" data-tooltip="<?php echo app('translator')->get('academic_years'); ?>"><i class="bi bi-calendar-range-fill"></i><span><?php echo app('translator')->get('academic_years'); ?></span></a>
 
         <div class="nav-section"><?php echo app('translator')->get('operations'); ?></div>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.fees.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.fees.structures')); ?>"><i class="bi bi-cash-stack"></i><span><?php echo app('translator')->get('fees_invoices'); ?></span></a>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.attendance.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.attendance.index')); ?>"><i class="bi bi-clipboard2-check-fill"></i><span><?php echo app('translator')->get('attendance'); ?></span></a>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.timetable.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.timetable.index')); ?>"><i class="bi bi-calendar2-week-fill"></i><span><?php echo app('translator')->get('timetable'); ?></span></a>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.calendar.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.calendar.index')); ?>"><i class="bi bi-calendar-heart-fill"></i><span><?php echo app('translator')->get('calendar_holidays'); ?></span></a>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.tutoring.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.tutoring.index')); ?>"><i class="bi bi-lightning-charge-fill"></i><span><?php echo app('translator')->get('private_tutoring'); ?></span></a>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.exams.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.exams.index')); ?>"><i class="bi bi-journal-bookmark-fill"></i><span><?php echo app('translator')->get('exams'); ?></span></a>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.reports.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.reports.index')); ?>"><i class="bi bi-graph-up-arrow"></i><span><?php echo app('translator')->get('ministry_reports'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.fees.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.fees.structures')); ?>" data-tooltip="<?php echo app('translator')->get('fees_invoices'); ?>"><i class="bi bi-cash-stack"></i><span><?php echo app('translator')->get('fees_invoices'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.attendance.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.attendance.index')); ?>" data-tooltip="<?php echo app('translator')->get('attendance'); ?>"><i class="bi bi-clipboard2-check-fill"></i><span><?php echo app('translator')->get('attendance'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.timetable.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.timetable.index')); ?>" data-tooltip="<?php echo app('translator')->get('timetable'); ?>"><i class="bi bi-calendar2-week-fill"></i><span><?php echo app('translator')->get('timetable'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.calendar.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.calendar.index')); ?>" data-tooltip="<?php echo app('translator')->get('calendar_holidays'); ?>"><i class="bi bi-calendar-heart-fill"></i><span><?php echo app('translator')->get('calendar_holidays'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.tutoring.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.tutoring.index')); ?>" data-tooltip="<?php echo app('translator')->get('private_tutoring'); ?>"><i class="bi bi-lightning-charge-fill"></i><span><?php echo app('translator')->get('private_tutoring'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.exams.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.exams.index')); ?>" data-tooltip="<?php echo app('translator')->get('exams'); ?>"><i class="bi bi-journal-bookmark-fill"></i><span><?php echo app('translator')->get('exams'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.reports.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.reports.index')); ?>" data-tooltip="<?php echo app('translator')->get('ministry_reports'); ?>"><i class="bi bi-graph-up-arrow"></i><span><?php echo app('translator')->get('ministry_reports'); ?></span></a>
 
         <div class="nav-section"><?php echo app('translator')->get('system'); ?></div>
-        <a class="nav-link <?php echo e(request()->routeIs('admin.settings.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.settings.index')); ?>"><i class="bi bi-gear-fill"></i><span><?php echo app('translator')->get('settings'); ?></span></a>
+        <a class="nav-link <?php echo e(request()->routeIs('admin.settings.*') ? 'active' : ''); ?>" href="<?php echo e(route('admin.settings.index')); ?>" data-tooltip="<?php echo app('translator')->get('settings'); ?>"><i class="bi bi-gear-fill"></i><span><?php echo app('translator')->get('settings'); ?></span></a>
     </div>
 
     <div class="nav-footer">
@@ -545,6 +578,7 @@
         <?php echo e($schoolName); ?> © <?php echo e(date('Y')); ?> — <?php echo app('translator')->get('school_management_system'); ?>
     </footer>
 </div>
+</div><!-- /.edb-layout -->
 
 <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
 
@@ -571,6 +605,25 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+    /* ——— Page transitions ——— */
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.edb-content')?.classList.add('edb-page-enter');
+        document.querySelectorAll('.edb-sidebar .nav-link, .edb-topbar a[href]').forEach(a => {
+            a.addEventListener('click', e => {
+                const url = a.getAttribute('href');
+                if (!url || url.startsWith('#') || url.startsWith('javascript:') || e.ctrlKey || e.metaKey || e.shiftKey) return;
+                e.preventDefault();
+                const content = document.querySelector('.edb-content');
+                if (content) {
+                    content.style.transition = 'opacity .2s ease, transform .2s ease';
+                    content.style.opacity = '0';
+                    content.style.transform = 'translateY(8px)';
+                }
+                setTimeout(() => { window.location.href = url; }, 180);
+            });
+        });
+    });
+
     const root = document.documentElement;
     const mqDark = window.matchMedia('(prefers-color-scheme: dark)');
 

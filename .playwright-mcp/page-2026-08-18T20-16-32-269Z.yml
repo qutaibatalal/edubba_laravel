@@ -1,0 +1,152 @@
+- generic [active] [ref=f44e1]:
+  - generic [ref=f44e2]:
+    - generic [ref=f44e3]:
+      - link "مدرسة إدبة مدرسة إدبة صف جديد" [ref=f44e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - img "مدرسة إدبة" [ref=f44e5]
+        - generic [ref=f44e6]:
+          - text: مدرسة إدبة
+          - generic [ref=f44e7]: صف جديد
+      - generic [ref=f44e8]:
+        - generic [ref=f44e9]: الرئيسية
+        - link " لوحة الإحصائيات" [ref=f44e10] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin
+          - generic [ref=f44e11]: 
+          - generic [ref=f44e12]: لوحة الإحصائيات
+        - generic [ref=f44e13]: إدارة المدرسة
+        - link " الطلاب" [ref=f44e14] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/students
+          - generic [ref=f44e15]: 
+          - generic [ref=f44e16]: الطلاب
+        - link " القبول" [ref=f44e17] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/admissions
+          - generic [ref=f44e18]: 
+          - generic [ref=f44e19]: القبول
+        - link " أولياء الأمور" [ref=f44e20] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/parents
+          - generic [ref=f44e21]: 
+          - generic [ref=f44e22]: أولياء الأمور
+        - link " الهيئة التدريسية" [ref=f44e23] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/faculty
+          - generic [ref=f44e24]: 
+          - generic [ref=f44e25]: الهيئة التدريسية
+        - link " المقررات" [ref=f44e26] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/courses
+          - generic [ref=f44e27]: 
+          - generic [ref=f44e28]: المقررات
+        - link " الصفوف الدراسية" [ref=f44e29] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/batches
+          - generic [ref=f44e30]: 
+          - generic [ref=f44e31]: الصفوف الدراسية
+        - link " البرامج الدراسية" [ref=f44e32] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/programs
+          - generic [ref=f44e33]: 
+          - generic [ref=f44e34]: البرامج الدراسية
+        - link " السنوات الدراسية" [ref=f44e35] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/academic-years
+          - generic [ref=f44e36]: 
+          - generic [ref=f44e37]: السنوات الدراسية
+        - generic [ref=f44e38]: العمليات
+        - link " الرسوم والفواتير" [ref=f44e39] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/fees/structures
+          - generic [ref=f44e40]: 
+          - generic [ref=f44e41]: الرسوم والفواتير
+        - link " الحضور" [ref=f44e42] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/attendance
+          - generic [ref=f44e43]: 
+          - generic [ref=f44e44]: الحضور
+        - link " الجدول الدراسي" [ref=f44e45] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/timetable
+          - generic [ref=f44e46]: 
+          - generic [ref=f44e47]: الجدول الدراسي
+        - link " التقويم والعطل" [ref=f44e48] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/calendar
+          - generic [ref=f44e49]: 
+          - generic [ref=f44e50]: التقويم والعطل
+        - link " التدريس الخصوصي" [ref=f44e51] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/tutoring
+          - generic [ref=f44e52]: 
+          - generic [ref=f44e53]: التدريس الخصوصي
+        - link " الامتحانات" [ref=f44e54] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/exams
+          - generic [ref=f44e55]: 
+          - generic [ref=f44e56]: الامتحانات
+        - link " تقارير الوزارة" [ref=f44e57] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/reports
+          - generic [ref=f44e58]: 
+          - generic [ref=f44e59]: تقارير الوزارة
+        - generic [ref=f44e60]: النظام
+        - link " الإعدادات" [ref=f44e61] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/settings
+          - generic [ref=f44e62]: 
+          - generic [ref=f44e63]: الإعدادات
+      - generic [ref=f44e65]:
+        - generic [ref=f44e66]: S
+        - generic [ref=f44e67]:
+          - generic [ref=f44e68]: System Admin
+          - generic [ref=f44e69]: مدير النظام
+    - generic [ref=f44e70]:
+      - navigation [ref=f44e71]:
+        - text: 
+        - button "" [ref=f44e72] [cursor=pointer]
+        - navigation "breadcrumb" [ref=f44e75]:
+          - list [ref=f44e76]:
+            - listitem [ref=f44e77]:
+              - link " الرئيسية" [ref=f44e78] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin
+                - generic [ref=f44e79]: 
+                - text: الرئيسية
+            - listitem [ref=f44e80]: / إضافة صف
+        - generic [ref=f44e81]:
+          - generic [ref=f44e82]:
+            - generic [ref=f44e83]: 
+            - textbox "ابحث في النظام..." [ref=f44e84]
+          - button "" [ref=f44e86] [cursor=pointer]
+          - button "" [ref=f44e88] [cursor=pointer]
+          - generic [ref=f44e90]:
+            - button "" [ref=f44e91] [cursor=pointer]
+            - text: 
+          - generic [ref=f44e94]:
+            - button "S" [ref=f44e95] [cursor=pointer]
+            - text:  
+      - generic [ref=f44e97]:
+        - generic [ref=f44e99]:
+          - heading "إضافة صف" [level=1] [ref=f44e100]
+          - paragraph [ref=f44e101]: أدخل بيانات الصف الدراسي
+        - generic [ref=f44e104]:
+          - generic [ref=f44e105]:
+            - generic [ref=f44e106]:
+              - generic [ref=f44e107]: الاسم *
+              - textbox [ref=f44e108]
+            - generic [ref=f44e109]:
+              - generic [ref=f44e110]: السعة
+              - spinbutton [ref=f44e111]
+            - generic [ref=f44e112]:
+              - generic [ref=f44e113]: البرنامج *
+              - combobox [ref=f44e114]:
+                - option "—" [selected]
+                - option "Primary"
+            - generic [ref=f44e115]:
+              - generic [ref=f44e116]: السنة الدراسية *
+              - combobox [ref=f44e117]:
+                - option "—" [selected]
+                - option "2025-2026"
+            - generic [ref=f44e118]:
+              - generic [ref=f44e119]: المعلم المسؤول
+              - combobox [ref=f44e120]:
+                - option "—" [selected]
+                - option "Demo"
+            - generic [ref=f44e122]:
+              - checkbox "نشط" [checked] [ref=f44e123]
+              - generic [ref=f44e124]: نشط
+          - generic [ref=f44e125]:
+            - button " حفظ" [ref=f44e126] [cursor=pointer]:
+              - generic [ref=f44e127]: 
+              - text: حفظ
+            - link "إلغاء" [ref=f44e128] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/batches
+      - contentinfo [ref=f44e129]: مدرسة إدبة © 2026 — نظام إدارة المدارس
+  - text: 
+  - generic [ref=f44e130]:
+    - text:    
+    - button "" [ref=f44e131] [cursor=pointer]

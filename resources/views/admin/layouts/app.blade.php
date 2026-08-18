@@ -306,7 +306,8 @@
         .empty-state small { color: var(--edb-text-3); display: block; margin-bottom: 16px; }
 
         /* Pagination */
-        .pagination { margin: 14px 0; display: flex; gap: 6px; flex-wrap: wrap; }
+        .pagination { margin: 14px 0; display: flex; gap: 4px; flex-wrap: wrap; list-style: none; padding: 0; }
+        .pagination .page-item { margin: 0; }
         .pagination .page-link {
             border-radius: var(--edb-radius-xs) !important; padding: 7px 14px !important; margin: 0;
             font-weight: 700 !important; font-size: .82rem !important; color: var(--edb-text-2) !important;
@@ -318,9 +319,12 @@
             color: var(--edb-primary) !important; border-color: var(--edb-primary) !important;
             background: rgba(var(--edb-primary-rgb), .06) !important; transform: translateY(-1px); box-shadow: var(--edb-shadow-sm);
         }
-        .pagination .page-link.active {
+        .pagination .page-item.active .page-link {
             color: #fff !important; background: var(--edb-primary) !important; border-color: var(--edb-primary) !important;
             box-shadow: 0 4px 12px -4px rgba(var(--edb-primary-rgb), .4) !important;
+        }
+        .pagination .page-item.disabled .page-link {
+            color: var(--edb-text-3) !important; background: var(--edb-bg-elevated) !important; border-color: var(--edb-border) !important; opacity: .6;
         }
 
         /* Dropdowns */

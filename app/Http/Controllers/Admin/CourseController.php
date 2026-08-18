@@ -21,6 +21,7 @@ class CourseController extends Controller
             ->when($request->batch_id, fn ($q, $v) => $q->where('batch_id', $v))
             ->orderByDesc('id')
             ->paginate(20)
+            ->onEachSide(1)
             ->withQueryString();
 
         $batches = Batch::where('active', true)->get();

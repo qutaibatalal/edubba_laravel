@@ -1,0 +1,160 @@
+- generic [active] [ref=f11e1]:
+  - generic [ref=f11e2]:
+    - generic [ref=f11e3]:
+      - link "مدرسة إدبة مدرسة إدبة Courses" [ref=f11e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - img "مدرسة إدبة" [ref=f11e5]
+        - generic [ref=f11e6]:
+          - text: مدرسة إدبة
+          - generic [ref=f11e7]: Courses
+      - generic [ref=f11e8]:
+        - generic [ref=f11e9]: Main
+        - link " Statistics Dashboard" [ref=f11e10] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin
+          - generic [ref=f11e11]: 
+          - generic [ref=f11e12]: Statistics Dashboard
+        - generic [ref=f11e13]: School Management
+        - link " Students" [ref=f11e14] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/students
+          - generic [ref=f11e15]: 
+          - generic [ref=f11e16]: Students
+        - link " Admissions" [ref=f11e17] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/admissions
+          - generic [ref=f11e18]: 
+          - generic [ref=f11e19]: Admissions
+        - link " Parents" [ref=f11e20] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/parents
+          - generic [ref=f11e21]: 
+          - generic [ref=f11e22]: Parents
+        - link " Teaching Staff" [ref=f11e23] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/faculty
+          - generic [ref=f11e24]: 
+          - generic [ref=f11e25]: Teaching Staff
+        - link " Subjects" [ref=f11e26] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/courses
+          - generic [ref=f11e27]: 
+          - generic [ref=f11e28]: Subjects
+        - link " Classes" [ref=f11e29] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/batches
+          - generic [ref=f11e30]: 
+          - generic [ref=f11e31]: Classes
+        - link " Academic Programs" [ref=f11e32] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/programs
+          - generic [ref=f11e33]: 
+          - generic [ref=f11e34]: Academic Programs
+        - link " Academic Years" [ref=f11e35] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/academic-years
+          - generic [ref=f11e36]: 
+          - generic [ref=f11e37]: Academic Years
+        - generic [ref=f11e38]: Operations
+        - link " Fees & Invoices" [ref=f11e39] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/fees/structures
+          - generic [ref=f11e40]: 
+          - generic [ref=f11e41]: Fees & Invoices
+        - link " Attendance" [ref=f11e42] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/attendance
+          - generic [ref=f11e43]: 
+          - generic [ref=f11e44]: Attendance
+        - link " Timetable" [ref=f11e45] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/timetable
+          - generic [ref=f11e46]: 
+          - generic [ref=f11e47]: Timetable
+        - link " Calendar & Holidays" [ref=f11e48] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/calendar
+          - generic [ref=f11e49]: 
+          - generic [ref=f11e50]: Calendar & Holidays
+        - link " Private Tutoring" [ref=f11e51] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/tutoring
+          - generic [ref=f11e52]: 
+          - generic [ref=f11e53]: Private Tutoring
+        - link " Exams" [ref=f11e54] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/exams
+          - generic [ref=f11e55]: 
+          - generic [ref=f11e56]: Exams
+        - link " Ministry Reports" [ref=f11e57] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/reports
+          - generic [ref=f11e58]: 
+          - generic [ref=f11e59]: Ministry Reports
+        - generic [ref=f11e60]: System
+        - link " Settings" [ref=f11e61] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/settings
+          - generic [ref=f11e62]: 
+          - generic [ref=f11e63]: Settings
+      - generic [ref=f11e65]:
+        - generic [ref=f11e66]: S
+        - generic [ref=f11e67]:
+          - generic [ref=f11e68]: System Admin
+          - generic [ref=f11e69]: System Admin
+    - generic [ref=f11e70]:
+      - navigation [ref=f11e71]:
+        - text: 
+        - button "" [ref=f11e72] [cursor=pointer]
+        - navigation "breadcrumb" [ref=f11e75]:
+          - list [ref=f11e76]:
+            - listitem [ref=f11e77]:
+              - link " Home" [ref=f11e78] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin
+                - generic [ref=f11e79]: 
+                - text: Home
+            - listitem [ref=f11e80]: / Courses Management
+        - generic [ref=f11e81]:
+          - generic [ref=f11e82]:
+            - generic [ref=f11e83]: 
+            - textbox "Search the system..." [ref=f11e84]
+          - button "" [ref=f11e86] [cursor=pointer]
+          - button "" [ref=f11e88] [cursor=pointer]
+          - generic [ref=f11e90]:
+            - button "" [ref=f11e91] [cursor=pointer]
+            - text: 
+          - generic [ref=f11e94]:
+            - button "S" [ref=f11e95] [cursor=pointer]
+            - text:  
+      - generic [ref=f11e97]:
+        - generic [ref=f11e98]:
+          - generic [ref=f11e99]:
+            - heading "Courses" [level=1] [ref=f11e100]
+            - paragraph [ref=f11e101]: Manage courses and link them to classes and teachers
+          - link " New Course" [ref=f11e103] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/courses/create
+            - generic [ref=f11e104]: 
+            - text: New Course
+        - generic [ref=f11e105]:
+          - generic [ref=f11e106]:
+            - combobox [ref=f11e108]:
+              - option "All Classes" [selected]
+              - option "Grade 6 A"
+            - link " New" [ref=f11e109] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/courses/create
+              - generic [ref=f11e110]: 
+              - text: New
+          - table [ref=f11e112]:
+            - rowgroup [ref=f11e113]:
+              - row [ref=f11e114]:
+                - columnheader "Name" [ref=f11e115]
+                - columnheader "Code" [ref=f11e116]
+                - columnheader "Subject" [ref=f11e117]
+                - columnheader "Class" [ref=f11e118]
+                - columnheader "Year" [ref=f11e119]
+                - columnheader "Teacher" [ref=f11e120]
+                - columnheader [ref=f11e121]
+            - rowgroup [ref=f11e122]:
+              - row [ref=f11e123]:
+                - cell "E English Grade 6 A" [ref=f11e124]:
+                  - generic [ref=f11e125]:
+                    - generic [ref=f11e126]: E
+                    - generic [ref=f11e127]: English Grade 6 A
+                - cell "ENG6A" [ref=f11e128]
+                - cell "English" [ref=f11e129]
+                - cell "Grade 6 A" [ref=f11e130]
+                - cell "2025-2026" [ref=f11e131]
+                - cell "Demo A Teacher" [ref=f11e132]
+                - cell [ref=f11e133]:
+                  - generic [ref=f11e134]:
+                    - link "" [ref=f11e135] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/courses/1/edit
+                    - button "" [ref=f11e138] [cursor=pointer]
+      - contentinfo [ref=f11e140]: مدرسة إدبة © 2026 — School Management System
+  - text: 
+  - generic [ref=f11e141]:
+    - text:    
+    - button "" [ref=f11e142] [cursor=pointer]

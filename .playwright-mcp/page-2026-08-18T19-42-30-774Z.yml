@@ -1,0 +1,237 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - link "مدرسة إدبة مدرسة إدبة لوحة الإحصائيات" [ref=f1e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - img "مدرسة إدبة" [ref=f1e5]
+        - generic [ref=f1e6]:
+          - text: مدرسة إدبة
+          - generic [ref=f1e7]: لوحة الإحصائيات
+      - generic [ref=f1e8]:
+        - generic [ref=f1e9]: الرئيسية
+        - link " لوحة الإحصائيات" [ref=f1e10] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin
+          - generic [ref=f1e11]: 
+          - generic [ref=f1e12]: لوحة الإحصائيات
+        - generic [ref=f1e13]: إدارة المدرسة
+        - link " الطلاب" [ref=f1e14] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/students
+          - generic [ref=f1e15]: 
+          - generic [ref=f1e16]: الطلاب
+        - link " القبول" [ref=f1e17] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/admissions
+          - generic [ref=f1e18]: 
+          - generic [ref=f1e19]: القبول
+        - link " أولياء الأمور" [ref=f1e20] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/parents
+          - generic [ref=f1e21]: 
+          - generic [ref=f1e22]: أولياء الأمور
+        - link " الهيئة التدريسية" [ref=f1e23] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/faculty
+          - generic [ref=f1e24]: 
+          - generic [ref=f1e25]: الهيئة التدريسية
+        - link " المقررات" [ref=f1e26] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/courses
+          - generic [ref=f1e27]: 
+          - generic [ref=f1e28]: المقررات
+        - link " الصفوف الدراسية" [ref=f1e29] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/batches
+          - generic [ref=f1e30]: 
+          - generic [ref=f1e31]: الصفوف الدراسية
+        - link " البرامج الدراسية" [ref=f1e32] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/programs
+          - generic [ref=f1e33]: 
+          - generic [ref=f1e34]: البرامج الدراسية
+        - link " السنوات الدراسية" [ref=f1e35] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/academic-years
+          - generic [ref=f1e36]: 
+          - generic [ref=f1e37]: السنوات الدراسية
+        - generic [ref=f1e38]: العمليات
+        - link " الرسوم والفواتير" [ref=f1e39] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/fees/structures
+          - generic [ref=f1e40]: 
+          - generic [ref=f1e41]: الرسوم والفواتير
+        - link " الحضور" [ref=f1e42] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/attendance
+          - generic [ref=f1e43]: 
+          - generic [ref=f1e44]: الحضور
+        - link " الجدول الدراسي" [ref=f1e45] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/timetable
+          - generic [ref=f1e46]: 
+          - generic [ref=f1e47]: الجدول الدراسي
+        - link " التقويم والعطل" [ref=f1e48] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/calendar
+          - generic [ref=f1e49]: 
+          - generic [ref=f1e50]: التقويم والعطل
+        - link " التدريس الخصوصي" [ref=f1e51] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/tutoring
+          - generic [ref=f1e52]: 
+          - generic [ref=f1e53]: التدريس الخصوصي
+        - link " الامتحانات" [ref=f1e54] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/exams
+          - generic [ref=f1e55]: 
+          - generic [ref=f1e56]: الامتحانات
+        - link " تقارير الوزارة" [ref=f1e57] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/reports
+          - generic [ref=f1e58]: 
+          - generic [ref=f1e59]: تقارير الوزارة
+        - generic [ref=f1e60]: النظام
+        - link " الإعدادات" [ref=f1e61] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/settings
+          - generic [ref=f1e62]: 
+          - generic [ref=f1e63]: الإعدادات
+      - generic [ref=f1e65]:
+        - generic [ref=f1e66]: S
+        - generic [ref=f1e67]:
+          - generic [ref=f1e68]: System Admin
+          - generic [ref=f1e69]: مدير النظام
+    - generic [ref=f1e70]:
+      - navigation [ref=f1e71]:
+        - text: 
+        - button "" [ref=f1e72] [cursor=pointer]
+        - navigation "breadcrumb" [ref=f1e75]:
+          - list [ref=f1e76]:
+            - listitem [ref=f1e77]:
+              - link " الرئيسية" [ref=f1e78] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin
+                - generic [ref=f1e79]: 
+                - text: الرئيسية
+            - listitem [ref=f1e80]: / لوحة الإحصائيات
+        - generic [ref=f1e81]:
+          - generic [ref=f1e82]:
+            - generic [ref=f1e83]: 
+            - textbox "ابحث في النظام..." [ref=f1e84]
+          - button "" [ref=f1e86] [cursor=pointer]
+          - button "" [ref=f1e88] [cursor=pointer]
+          - generic [ref=f1e90]:
+            - button "" [ref=f1e91] [cursor=pointer]
+            - text: 
+          - generic [ref=f1e94]:
+            - button "S" [ref=f1e95] [cursor=pointer]
+            - text:  
+      - generic [ref=f1e97]:
+        - generic [ref=f1e98]:
+          - generic [ref=f1e99]:
+            - heading "لوحة الإحصائيات" [level=1] [ref=f1e100]
+            - paragraph [ref=f1e101]: مرحباً، System Admin — إليك أبرز مؤشرات المدرسة اليوم
+          - generic [ref=f1e102]:
+            - link " طلب قبول" [ref=f1e103] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/admissions/create
+              - generic [ref=f1e104]: 
+              - text: طلب قبول
+            - link " طالب جديد" [ref=f1e105] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/students/create
+              - generic [ref=f1e106]: 
+              - text: طالب جديد
+        - generic [ref=f1e107]:
+          - generic [ref=f1e110]:
+            - generic [ref=f1e111]: 
+            - generic [ref=f1e113]:
+              - generic [ref=f1e114]: "0"
+              - generic [ref=f1e115]: الطلاب المقيدون
+          - generic [ref=f1e118]:
+            - generic [ref=f1e119]: 
+            - generic [ref=f1e121]:
+              - generic [ref=f1e122]: "0"
+              - generic [ref=f1e123]: الهيئة التدريسية
+          - generic [ref=f1e126]:
+            - generic [ref=f1e127]: 
+            - generic [ref=f1e129]:
+              - generic [ref=f1e130]: "0"
+              - generic [ref=f1e131]: إجمالي المستحقات
+          - generic [ref=f1e134]:
+            - generic [ref=f1e135]: 
+            - generic [ref=f1e137]:
+              - generic [ref=f1e138]: "0"
+              - generic [ref=f1e139]: قبول قيد الانتظار
+        - generic [ref=f1e140]:
+          - generic [ref=f1e143]:
+            - generic [ref=f1e144]: توزيع الطلاب على الصفوف
+            - generic [ref=f1e145]: 1 صف
+          - generic [ref=f1e148]: ملخص النظام
+          - generic [ref=f1e155]:
+            - generic [ref=f1e156]: إجراءات سريعة
+            - generic [ref=f1e158]:
+              - link " طالب" [ref=f1e159] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/students/create
+                - generic [ref=f1e160]: 
+                - text: طالب
+              - link " قبول" [ref=f1e161] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/admissions/create
+                - generic [ref=f1e162]: 
+                - text: قبول
+              - link " هيكل رسوم" [ref=f1e163] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/fees/structures/create
+                - generic [ref=f1e164]: 
+                - text: هيكل رسوم
+              - link " تقرير" [ref=f1e165] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/reports
+                - generic [ref=f1e166]: 
+                - text: تقرير
+        - generic [ref=f1e167]:
+          - generic [ref=f1e169]:
+            - generic [ref=f1e170]:
+              - generic [ref=f1e171]:
+                - generic [ref=f1e172]: 
+                - text: يحتاج انتباهك
+              - generic [ref=f1e173]: "0"
+            - generic [ref=f1e175]:
+              - generic [ref=f1e176]: 
+              - paragraph [ref=f1e177]: كل شيء على ما يرام
+              - generic [ref=f1e178]: لا توجد تنبيهات حالياً
+          - generic [ref=f1e180]:
+            - generic [ref=f1e182]:
+              - generic [ref=f1e183]: 
+              - text: نشاط اليوم
+            - generic [ref=f1e185]:
+              - generic [ref=f1e186]: 
+              - paragraph [ref=f1e187]: لا نشاط اليوم بعد
+        - generic [ref=f1e188]:
+          - generic [ref=f1e190]:
+            - generic [ref=f1e191]:
+              - generic [ref=f1e192]: أحدث الفواتير
+              - link "إدارة الرسوم" [ref=f1e193] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/fees/structures
+            - table [ref=f1e195]:
+              - rowgroup [ref=f1e196]:
+                - row [ref=f1e197]:
+                  - columnheader "رقم الفاتورة" [ref=f1e198]
+                  - columnheader "الطالب" [ref=f1e199]
+                  - columnheader "الإجمالي" [ref=f1e200]
+                  - columnheader "المتبقي" [ref=f1e201]
+                  - columnheader "الحالة" [ref=f1e202]
+              - rowgroup [ref=f1e203]:
+                - row [ref=f1e204]:
+                  - cell " لا توجد فواتير بعد أنشئ هيكل رسوم وولّد الفواتير لبدء التتبع المالي إنشاء هيكل رسوم" [ref=f1e205]:
+                    - generic [ref=f1e206]:
+                      - generic [ref=f1e207]: 
+                      - paragraph [ref=f1e208]: لا توجد فواتير بعد
+                      - generic [ref=f1e209]: أنشئ هيكل رسوم وولّد الفواتير لبدء التتبع المالي
+                      - link "إنشاء هيكل رسوم" [ref=f1e210] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/fees/structures/create
+          - generic [ref=f1e212]:
+            - generic [ref=f1e213]:
+              - generic [ref=f1e214]: أحدث طلبات القبول
+              - link "الكل" [ref=f1e215] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/admissions
+            - table [ref=f1e217]:
+              - rowgroup [ref=f1e218]:
+                - row [ref=f1e219]:
+                  - columnheader "الرقم" [ref=f1e220]
+                  - columnheader "الاسم" [ref=f1e221]
+                  - columnheader "الصف" [ref=f1e222]
+                  - columnheader "الحالة" [ref=f1e223]
+              - rowgroup [ref=f1e224]:
+                - row [ref=f1e225]:
+                  - cell " لا توجد طلبات قبول ابدأ باستقبال طلبات الالتحاق بالمدرسة طلب جديد" [ref=f1e226]:
+                    - generic [ref=f1e227]:
+                      - generic [ref=f1e228]: 
+                      - paragraph [ref=f1e229]: لا توجد طلبات قبول
+                      - generic [ref=f1e230]: ابدأ باستقبال طلبات الالتحاق بالمدرسة
+                      - link "طلب جديد" [ref=f1e231] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/admissions/create
+      - contentinfo [ref=f1e232]: مدرسة إدبة © 2026 — نظام إدارة المدارس
+  - text: 
+  - generic [ref=f1e233]:
+    - text:    
+    - button "" [ref=f1e234] [cursor=pointer]

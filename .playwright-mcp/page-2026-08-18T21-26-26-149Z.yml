@@ -1,0 +1,567 @@
+- generic [ref=f149e1]:
+  - generic [ref=f149e2]:
+    - generic [ref=f149e3]:
+      - link "مدرسة إدبة مدرسة إدبة الطلاب" [ref=f149e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - img "مدرسة إدبة" [ref=f149e5]
+        - generic [ref=f149e6]:
+          - text: مدرسة إدبة
+          - generic [ref=f149e7]: الطلاب
+      - generic [ref=f149e8]:
+        - generic [ref=f149e9]: الرئيسية
+        - link " لوحة الإحصائيات" [ref=f149e10] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin
+          - generic [ref=f149e11]: 
+          - generic [ref=f149e12]: لوحة الإحصائيات
+        - generic [ref=f149e13]: إدارة المدرسة
+        - link " الطلاب" [ref=f149e14] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/students
+          - generic [ref=f149e15]: 
+          - generic [ref=f149e16]: الطلاب
+        - link " القبول" [ref=f149e17] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/admissions
+          - generic [ref=f149e18]: 
+          - generic [ref=f149e19]: القبول
+        - link " أولياء الأمور" [ref=f149e20] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/parents
+          - generic [ref=f149e21]: 
+          - generic [ref=f149e22]: أولياء الأمور
+        - link " الهيئة التدريسية" [ref=f149e23] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/faculty
+          - generic [ref=f149e24]: 
+          - generic [ref=f149e25]: الهيئة التدريسية
+        - link " المقررات" [ref=f149e26] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/courses
+          - generic [ref=f149e27]: 
+          - generic [ref=f149e28]: المقررات
+        - link " الصفوف الدراسية" [ref=f149e29] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/batches
+          - generic [ref=f149e30]: 
+          - generic [ref=f149e31]: الصفوف الدراسية
+        - link " البرامج الدراسية" [ref=f149e32] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/programs
+          - generic [ref=f149e33]: 
+          - generic [ref=f149e34]: البرامج الدراسية
+        - link " السنوات الدراسية" [ref=f149e35] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/academic-years
+          - generic [ref=f149e36]: 
+          - generic [ref=f149e37]: السنوات الدراسية
+        - generic [ref=f149e38]: العمليات
+        - link " الرسوم والفواتير" [ref=f149e39] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/fees/structures
+          - generic [ref=f149e40]: 
+          - generic [ref=f149e41]: الرسوم والفواتير
+        - link " الحضور" [ref=f149e42] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/attendance
+          - generic [ref=f149e43]: 
+          - generic [ref=f149e44]: الحضور
+        - link " الجدول الدراسي" [ref=f149e45] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/timetable
+          - generic [ref=f149e46]: 
+          - generic [ref=f149e47]: الجدول الدراسي
+        - link " التقويم والعطل" [ref=f149e48] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/calendar
+          - generic [ref=f149e49]: 
+          - generic [ref=f149e50]: التقويم والعطل
+        - link " التدريس الخصوصي" [ref=f149e51] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/tutoring
+          - generic [ref=f149e52]: 
+          - generic [ref=f149e53]: التدريس الخصوصي
+        - link " الامتحانات" [ref=f149e54] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/exams
+          - generic [ref=f149e55]: 
+          - generic [ref=f149e56]: الامتحانات
+        - link " تقارير الوزارة" [ref=f149e57] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/reports
+          - generic [ref=f149e58]: 
+          - generic [ref=f149e59]: تقارير الوزارة
+        - generic [ref=f149e60]: النظام
+        - link " الإعدادات" [ref=f149e61] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/settings
+          - generic [ref=f149e62]: 
+          - generic [ref=f149e63]: الإعدادات
+      - generic [ref=f149e65]:
+        - generic [ref=f149e66]: S
+        - generic [ref=f149e67]:
+          - generic [ref=f149e68]: System Admin
+          - generic [ref=f149e69]: مدير النظام
+    - generic [ref=f149e70]:
+      - navigation [ref=f149e71]:
+        - text: 
+        - button "" [ref=f149e72] [cursor=pointer]
+        - navigation "breadcrumb" [ref=f149e75]:
+          - list [ref=f149e76]:
+            - listitem [ref=f149e77]:
+              - link " الرئيسية" [ref=f149e78] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin
+                - generic [ref=f149e79]: 
+                - text: الرئيسية
+            - listitem [ref=f149e80]: / إدارة الطلاب
+        - generic [ref=f149e81]:
+          - generic [ref=f149e82]:
+            - generic [ref=f149e83]: 
+            - textbox "ابحث في النظام..." [ref=f149e84]
+          - button "" [ref=f149e86] [cursor=pointer]
+          - button "" [ref=f149e88] [cursor=pointer]
+          - generic [ref=f149e90]:
+            - button "" [ref=f149e91] [cursor=pointer]
+            - text: 
+          - generic [ref=f149e94]:
+            - button "S" [ref=f149e95] [cursor=pointer]
+            - text:  
+      - generic [ref=f149e97]:
+        - generic [ref=f149e98]:
+          - generic [ref=f149e99]:
+            - heading "إدارة الطلاب" [level=1] [ref=f149e100]
+            - paragraph [ref=f149e101]: سجّل طلاب المدرسة ومتابعة حالاتهم
+          - link " طالب جديد" [ref=f149e103] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/students/create
+            - generic [ref=f149e104]: 
+            - text: طالب جديد
+        - generic [ref=f149e105]:
+          - generic [ref=f149e107]:
+            - textbox "بحث بالاسم أو الكود..." [ref=f149e108]
+            - combobox [ref=f149e109]:
+              - option "كل الصفوف" [selected]
+              - option "Grade 6 A"
+              - option "الصف الأول أ"
+              - option "الصف الأول ب"
+              - option "الصف الأول ج"
+              - option "الصف الثاني أ"
+              - option "الصف الثاني ب"
+              - option "الصف الثاني ج"
+              - option "الصف الثالث أ"
+              - option "الصف الثالث ب"
+              - option "الصف الثالث ج"
+              - option "الصف الرابع أ"
+              - option "الصف الرابع ب"
+              - option "الصف الرابع ج"
+              - option "الصف الخامس أ"
+              - option "الصف الخامس ب"
+              - option "الصف الخامس ج"
+              - option "الصف السادس أ"
+              - option "الصف السادس ب"
+              - option "الصف السادس ج"
+              - option "الصف السابع أ"
+              - option "الصف السابع ب"
+              - option "الصف السابع ج"
+              - option "الصف الثامن أ"
+              - option "الصف الثامن ب"
+              - option "الصف الثامن ج"
+              - option "الصف التاسع أ"
+              - option "الصف التاسع ب"
+              - option "الصف التاسع ج"
+              - option "الصف العاشر أ"
+              - option "الصف العاشر ب"
+              - option "الصف العاشر ج"
+              - option "الصف الحادي عشر أ"
+              - option "الصف الحادي عشر ب"
+              - option "الصف الحادي عشر ج"
+              - option "الصف الثاني عشر أ"
+              - option "الصف الثاني عشر ب"
+              - option "الصف الثاني عشر ج"
+            - button " بحث" [ref=f149e110] [cursor=pointer]:
+              - generic [ref=f149e111]: 
+              - text: بحث
+          - table [ref=f149e113]:
+            - rowgroup [ref=f149e114]:
+              - row [ref=f149e115]:
+                - columnheader "الكود" [ref=f149e116]
+                - columnheader "الاسم" [ref=f149e117]
+                - columnheader "الصف" [ref=f149e118]
+                - columnheader "السنة" [ref=f149e119]
+                - columnheader "ولي الأمر" [ref=f149e120]
+                - columnheader "الحالة" [ref=f149e121]
+                - columnheader "إجراءات" [ref=f149e122]
+            - rowgroup [ref=f149e123]:
+              - row [ref=f149e124]:
+                - cell "STU02000" [ref=f149e125]
+                - cell "م مصطفى سعد الخالدي" [ref=f149e127]:
+                  - generic [ref=f149e128]:
+                    - generic [ref=f149e129]: م
+                    - generic [ref=f149e130]: مصطفى سعد الخالدي
+                - cell "الصف الثاني عشر ج" [ref=f149e131]
+                - cell "2025-2026" [ref=f149e132]
+                - cell "أنور النعيمي" [ref=f149e133]
+                - cell "admitted" [ref=f149e134]
+                - cell [ref=f149e136]:
+                  - generic [ref=f149e137]:
+                    - link "" [ref=f149e138] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/2001
+                    - link "" [ref=f149e140] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/2001/edit
+                    - button "" [ref=f149e143] [cursor=pointer]
+              - row [ref=f149e145]:
+                - cell "STU01999" [ref=f149e146]
+                - cell "خ خالد ثامر البصرة" [ref=f149e148]:
+                  - generic [ref=f149e149]:
+                    - generic [ref=f149e150]: خ
+                    - generic [ref=f149e151]: خالد ثامر البصرة
+                - cell "الصف الثاني عشر ج" [ref=f149e152]
+                - cell "2025-2026" [ref=f149e153]
+                - cell "عبدالله الهلالي" [ref=f149e154]
+                - cell "admitted" [ref=f149e155]
+                - cell [ref=f149e157]:
+                  - generic [ref=f149e158]:
+                    - link "" [ref=f149e159] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/2000
+                    - link "" [ref=f149e161] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/2000/edit
+                    - button "" [ref=f149e164] [cursor=pointer]
+              - row [ref=f149e166]:
+                - cell "STU01998" [ref=f149e167]
+                - cell "ه هلا عبير الموسوي" [ref=f149e169]:
+                  - generic [ref=f149e170]:
+                    - generic [ref=f149e171]: ه
+                    - generic [ref=f149e172]: هلا عبير الموسوي
+                - cell "الصف الثاني عشر ج" [ref=f149e173]
+                - cell "2025-2026" [ref=f149e174]
+                - cell "سلام الجبوري" [ref=f149e175]
+                - cell "admitted" [ref=f149e176]
+                - cell [ref=f149e178]:
+                  - generic [ref=f149e179]:
+                    - link "" [ref=f149e180] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1999
+                    - link "" [ref=f149e182] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1999/edit
+                    - button "" [ref=f149e185] [cursor=pointer]
+              - row [ref=f149e187]:
+                - cell "STU01997" [ref=f149e188]
+                - cell "ه هند أمل الجبوري" [ref=f149e190]:
+                  - generic [ref=f149e191]:
+                    - generic [ref=f149e192]: ه
+                    - generic [ref=f149e193]: هند أمل الجبوري
+                - cell "الصف الثاني عشر ج" [ref=f149e194]
+                - cell "2025-2026" [ref=f149e195]
+                - cell "خالد الحسني" [ref=f149e196]
+                - cell "admitted" [ref=f149e197]
+                - cell [ref=f149e199]:
+                  - generic [ref=f149e200]:
+                    - link "" [ref=f149e201] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1998
+                    - link "" [ref=f149e203] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1998/edit
+                    - button "" [ref=f149e206] [cursor=pointer]
+              - row [ref=f149e208]:
+                - cell "STU01996" [ref=f149e209]
+                - cell "ب بلال وليد العمري" [ref=f149e211]:
+                  - generic [ref=f149e212]:
+                    - generic [ref=f149e213]: ب
+                    - generic [ref=f149e214]: بلال وليد العمري
+                - cell "الصف الثاني عشر ج" [ref=f149e215]
+                - cell "2025-2026" [ref=f149e216]
+                - cell "أيمن البغدادي" [ref=f149e217]
+                - cell "admitted" [ref=f149e218]
+                - cell [ref=f149e220]:
+                  - generic [ref=f149e221]:
+                    - link "" [ref=f149e222] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1997
+                    - link "" [ref=f149e224] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1997/edit
+                    - button "" [ref=f149e227] [cursor=pointer]
+              - row [ref=f149e229]:
+                - cell "STU01995" [ref=f149e230]
+                - cell "د دانا مريم الموصلي" [ref=f149e232]:
+                  - generic [ref=f149e233]:
+                    - generic [ref=f149e234]: د
+                    - generic [ref=f149e235]: دانا مريم الموصلي
+                - cell "الصف الثاني عشر ج" [ref=f149e236]
+                - cell "2025-2026" [ref=f149e237]
+                - cell "كريم المحمداوي" [ref=f149e238]
+                - cell "admitted" [ref=f149e239]
+                - cell [ref=f149e241]:
+                  - generic [ref=f149e242]:
+                    - link "" [ref=f149e243] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1996
+                    - link "" [ref=f149e245] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1996/edit
+                    - button "" [ref=f149e248] [cursor=pointer]
+              - row [ref=f149e250]:
+                - cell "STU01994" [ref=f149e251]
+                - cell "ج جواهر فاطمة البصرة" [ref=f149e253]:
+                  - generic [ref=f149e254]:
+                    - generic [ref=f149e255]: ج
+                    - generic [ref=f149e256]: جواهر فاطمة البصرة
+                - cell "الصف الثاني عشر ج" [ref=f149e257]
+                - cell "2025-2026" [ref=f149e258]
+                - cell "زيد الحسني" [ref=f149e259]
+                - cell "admitted" [ref=f149e260]
+                - cell [ref=f149e262]:
+                  - generic [ref=f149e263]:
+                    - link "" [ref=f149e264] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1995
+                    - link "" [ref=f149e266] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1995/edit
+                    - button "" [ref=f149e269] [cursor=pointer]
+              - row [ref=f149e271]:
+                - cell "STU01993" [ref=f149e272]
+                - cell "ن نسرين زينب البصرة" [ref=f149e274]:
+                  - generic [ref=f149e275]:
+                    - generic [ref=f149e276]: ن
+                    - generic [ref=f149e277]: نسرين زينب البصرة
+                - cell "الصف الثاني عشر ج" [ref=f149e278]
+                - cell "2025-2026" [ref=f149e279]
+                - cell "أحمد البغدادي" [ref=f149e280]
+                - cell "admitted" [ref=f149e281]
+                - cell [ref=f149e283]:
+                  - generic [ref=f149e284]:
+                    - link "" [ref=f149e285] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1994
+                    - link "" [ref=f149e287] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1994/edit
+                    - button "" [ref=f149e290] [cursor=pointer]
+              - row [ref=f149e292]:
+                - cell "STU01992" [ref=f149e293]
+                - cell "ج جواهر خلود البغدادي" [ref=f149e295]:
+                  - generic [ref=f149e296]:
+                    - generic [ref=f149e297]: ج
+                    - generic [ref=f149e298]: جواهر خلود البغدادي
+                - cell "الصف الثاني عشر ج" [ref=f149e299]
+                - cell "2025-2026" [ref=f149e300]
+                - cell "عمر الجبارة" [ref=f149e301]
+                - cell "admitted" [ref=f149e302]
+                - cell [ref=f149e304]:
+                  - generic [ref=f149e305]:
+                    - link "" [ref=f149e306] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1993
+                    - link "" [ref=f149e308] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1993/edit
+                    - button "" [ref=f149e311] [cursor=pointer]
+              - row [ref=f149e313]:
+                - cell "STU01991" [ref=f149e314]
+                - cell "ت تامر سلام الحسني" [ref=f149e316]:
+                  - generic [ref=f149e317]:
+                    - generic [ref=f149e318]: ت
+                    - generic [ref=f149e319]: تامر سلام الحسني
+                - cell "الصف الثاني عشر ج" [ref=f149e320]
+                - cell "2025-2026" [ref=f149e321]
+                - cell "مرتضى النعيمي" [ref=f149e322]
+                - cell "admitted" [ref=f149e323]
+                - cell [ref=f149e325]:
+                  - generic [ref=f149e326]:
+                    - link "" [ref=f149e327] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1992
+                    - link "" [ref=f149e329] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1992/edit
+                    - button "" [ref=f149e332] [cursor=pointer]
+              - row [ref=f149e334]:
+                - cell "STU01990" [ref=f149e335]
+                - cell "د دعاء هلا الهلالي" [ref=f149e337]:
+                  - generic [ref=f149e338]:
+                    - generic [ref=f149e339]: د
+                    - generic [ref=f149e340]: دعاء هلا الهلالي
+                - cell "الصف الثاني عشر ج" [ref=f149e341]
+                - cell "2025-2026" [ref=f149e342]
+                - cell "محمد المحمداوي" [ref=f149e343]
+                - cell "admitted" [ref=f149e344]
+                - cell [ref=f149e346]:
+                  - generic [ref=f149e347]:
+                    - link "" [ref=f149e348] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1991
+                    - link "" [ref=f149e350] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1991/edit
+                    - button "" [ref=f149e353] [cursor=pointer]
+              - row [ref=f149e355]:
+                - cell "STU01989" [ref=f149e356]
+                - cell "ل لؤي عبدالله البصرة" [ref=f149e358]:
+                  - generic [ref=f149e359]:
+                    - generic [ref=f149e360]: ل
+                    - generic [ref=f149e361]: لؤي عبدالله البصرة
+                - cell "الصف الثاني عشر ج" [ref=f149e362]
+                - cell "2025-2026" [ref=f149e363]
+                - cell "كرار المطلبي" [ref=f149e364]
+                - cell "admitted" [ref=f149e365]
+                - cell [ref=f149e367]:
+                  - generic [ref=f149e368]:
+                    - link "" [ref=f149e369] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1990
+                    - link "" [ref=f149e371] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1990/edit
+                    - button "" [ref=f149e374] [cursor=pointer]
+              - row [ref=f149e376]:
+                - cell "STU01988" [ref=f149e377]
+                - cell "س سامح أمير ال成都市" [ref=f149e379]:
+                  - generic [ref=f149e380]:
+                    - generic [ref=f149e381]: س
+                    - generic [ref=f149e382]: سامح أمير ال成都市
+                - cell "الصف الثاني عشر ج" [ref=f149e383]
+                - cell "2025-2026" [ref=f149e384]
+                - cell "خالد الخالدي" [ref=f149e385]
+                - cell "admitted" [ref=f149e386]
+                - cell [ref=f149e388]:
+                  - generic [ref=f149e389]:
+                    - link "" [ref=f149e390] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1989
+                    - link "" [ref=f149e392] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1989/edit
+                    - button "" [ref=f149e395] [cursor=pointer]
+              - row [ref=f149e397]:
+                - cell "STU01987" [ref=f149e398]
+                - cell "ه هند سحر المحمداوي" [ref=f149e400]:
+                  - generic [ref=f149e401]:
+                    - generic [ref=f149e402]: ه
+                    - generic [ref=f149e403]: هند سحر المحمداوي
+                - cell "الصف الثاني عشر ج" [ref=f149e404]
+                - cell "2025-2026" [ref=f149e405]
+                - cell "وليد البغدادي" [ref=f149e406]
+                - cell "admitted" [ref=f149e407]
+                - cell [ref=f149e409]:
+                  - generic [ref=f149e410]:
+                    - link "" [ref=f149e411] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1988
+                    - link "" [ref=f149e413] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1988/edit
+                    - button "" [ref=f149e416] [cursor=pointer]
+              - row [ref=f149e418]:
+                - cell "STU01986" [ref=f149e419]
+                - cell "س سحر هبة الموسوي" [ref=f149e421]:
+                  - generic [ref=f149e422]:
+                    - generic [ref=f149e423]: س
+                    - generic [ref=f149e424]: سحر هبة الموسوي
+                - cell "الصف الثاني عشر ج" [ref=f149e425]
+                - cell "2025-2026" [ref=f149e426]
+                - cell "زيد الشمري" [ref=f149e427]
+                - cell "admitted" [ref=f149e428]
+                - cell [ref=f149e430]:
+                  - generic [ref=f149e431]:
+                    - link "" [ref=f149e432] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1987
+                    - link "" [ref=f149e434] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1987/edit
+                    - button "" [ref=f149e437] [cursor=pointer]
+              - row [ref=f149e439]:
+                - cell "STU01985" [ref=f149e440]
+                - cell "س سعد كامل الخالدي" [ref=f149e442]:
+                  - generic [ref=f149e443]:
+                    - generic [ref=f149e444]: س
+                    - generic [ref=f149e445]: سعد كامل الخالدي
+                - cell "الصف الثاني عشر ج" [ref=f149e446]
+                - cell "2025-2026" [ref=f149e447]
+                - cell "كرار العجمي" [ref=f149e448]
+                - cell "admitted" [ref=f149e449]
+                - cell [ref=f149e451]:
+                  - generic [ref=f149e452]:
+                    - link "" [ref=f149e453] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1986
+                    - link "" [ref=f149e455] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1986/edit
+                    - button "" [ref=f149e458] [cursor=pointer]
+              - row [ref=f149e460]:
+                - cell "STU01984" [ref=f149e461]
+                - cell "ل لمى تسنيم الخالدي" [ref=f149e463]:
+                  - generic [ref=f149e464]:
+                    - generic [ref=f149e465]: ل
+                    - generic [ref=f149e466]: لمى تسنيم الخالدي
+                - cell "الصف الثاني عشر ج" [ref=f149e467]
+                - cell "2025-2026" [ref=f149e468]
+                - cell "إبراهيم المطلبي" [ref=f149e469]
+                - cell "admitted" [ref=f149e470]
+                - cell [ref=f149e472]:
+                  - generic [ref=f149e473]:
+                    - link "" [ref=f149e474] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1985
+                    - link "" [ref=f149e476] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1985/edit
+                    - button "" [ref=f149e479] [cursor=pointer]
+              - row [ref=f149e481]:
+                - cell "STU01983" [ref=f149e482]
+                - cell "ف فيصل عبدالله العبيدي" [ref=f149e484]:
+                  - generic [ref=f149e485]:
+                    - generic [ref=f149e486]: ف
+                    - generic [ref=f149e487]: فيصل عبدالله العبيدي
+                - cell "الصف الثاني عشر ج" [ref=f149e488]
+                - cell "2025-2026" [ref=f149e489]
+                - cell "بلال الزيدي" [ref=f149e490]
+                - cell "admitted" [ref=f149e491]
+                - cell [ref=f149e493]:
+                  - generic [ref=f149e494]:
+                    - link "" [ref=f149e495] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1984
+                    - link "" [ref=f149e497] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1984/edit
+                    - button "" [ref=f149e500] [cursor=pointer]
+              - row [ref=f149e502]:
+                - cell "STU01982" [ref=f149e503]
+                - cell "ت تسنيم سارة الكردي" [ref=f149e505]:
+                  - generic [ref=f149e506]:
+                    - generic [ref=f149e507]: ت
+                    - generic [ref=f149e508]: تسنيم سارة الكردي
+                - cell "الصف الثاني عشر ج" [ref=f149e509]
+                - cell "2025-2026" [ref=f149e510]
+                - cell "شريف المحمداوي" [ref=f149e511]
+                - cell "admitted" [ref=f149e512]
+                - cell [ref=f149e514]:
+                  - generic [ref=f149e515]:
+                    - link "" [ref=f149e516] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1983
+                    - link "" [ref=f149e518] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1983/edit
+                    - button "" [ref=f149e521] [cursor=pointer]
+              - row [ref=f149e523]:
+                - cell "STU01981" [ref=f149e524]
+                - cell "ف فاطمة دعاء الزيدي" [ref=f149e526]:
+                  - generic [ref=f149e527]:
+                    - generic [ref=f149e528]: ف
+                    - generic [ref=f149e529]: فاطمة دعاء الزيدي
+                - cell "الصف الثاني عشر ج" [ref=f149e530]
+                - cell "2025-2026" [ref=f149e531]
+                - cell "جمال المطلبي" [ref=f149e532]
+                - cell "admitted" [ref=f149e533]
+                - cell [ref=f149e535]:
+                  - generic [ref=f149e536]:
+                    - link "" [ref=f149e537] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1982
+                    - link "" [ref=f149e539] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8000/admin/students/1982/edit
+                    - button "" [ref=f149e542] [cursor=pointer]
+          - navigation "Pagination Navigation" [ref=f149e545]:
+            - generic [ref=f149e546]:
+              - text: pagination.previous
+              - link "pagination.next" [ref=f149e547] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/students?page=2
+            - generic [ref=f149e548]:
+              - paragraph [ref=f149e550]: Showing 1 to 20 of 2000 results
+              - generic [ref=f149e552]:
+                - generic "pagination.previous" [ref=f149e553]
+                - generic [ref=f149e557]: "1"
+                - link "Go to page 2" [ref=f149e558] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/students?page=2
+                  - text: "2"
+                - link "Go to page 3" [ref=f149e559] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/students?page=3
+                  - text: "3"
+                - link "Go to page 4" [ref=f149e560] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/students?page=4
+                  - text: "4"
+                - link "Go to page 5" [ref=f149e561] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/students?page=5
+                  - text: "5"
+                - link "Go to page 6" [ref=f149e562] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/students?page=6
+                  - text: "6"
+                - link "Go to page 7" [ref=f149e563] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/students?page=7
+                  - text: "7"
+                - link "Go to page 8" [ref=f149e564] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/students?page=8
+                  - text: "8"
+                - link "Go to page 9" [ref=f149e565] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/students?page=9
+                  - text: "9"
+                - link "Go to page 10" [ref=f149e566] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/students?page=10
+                  - text: "10"
+                - generic [ref=f149e567]: ...
+                - link "Go to page 99" [ref=f149e568] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/students?page=99
+                  - text: "99"
+                - link "Go to page 100" [ref=f149e569] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/students?page=100
+                  - text: "100"
+                - link "pagination.next" [ref=f149e570] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/students?page=2
+      - contentinfo [ref=f149e573]: مدرسة إدبة © 2026 — نظام إدارة المدارس
+  - text: 
+  - generic [ref=f149e574]:
+    - text:    
+    - button "" [ref=f149e575] [cursor=pointer]

@@ -18,6 +18,7 @@ class ParentController extends Controller
             }))
             ->orderByDesc('id')
             ->paginate(20)
+            ->onEachSide(1)
             ->withQueryString();
 
         return view('admin.parents.index', compact('parents'));

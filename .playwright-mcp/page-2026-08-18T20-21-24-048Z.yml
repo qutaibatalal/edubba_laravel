@@ -1,0 +1,51 @@
+- generic [ref=f47e4]:
+  - generic [ref=f47e5]:
+    - img "مدرسة إدبة" [ref=f47e6]
+    - generic [ref=f47e7]:
+      - heading "نظام إدارة المدارس" [level=2] [ref=f47e8]
+      - paragraph [ref=f47e9]: منصة متكاملة لإدارة الطلاب والكوادر والرسوم والجداول الدراسية من مكان واحد.
+      - generic [ref=f47e10]:
+        - generic [ref=f47e11]: 
+        - text: إدارة الطلاب والقبول
+      - generic [ref=f47e12]:
+        - generic [ref=f47e13]: 
+        - text: الرسوم والفواتير
+      - generic [ref=f47e14]:
+        - generic [ref=f47e15]: 
+        - text: الجدول الدراسي الذكي
+      - generic [ref=f47e16]:
+        - generic [ref=f47e17]: 
+        - text: تقارير الوزارة
+    - generic [ref=f47e18]: © 2026 مدرسة إدبة
+  - generic [ref=f47e19]:
+    - generic [ref=f47e20]:
+      - generic [ref=f47e21]:
+        - heading "مرحباً بعودتك" [level=1] [ref=f47e22]
+        - paragraph [ref=f47e23]: سجّل الدخول للوصول إلى لوحة التحكم
+      - button "" [ref=f47e25] [cursor=pointer]
+    - generic [ref=f47e27]:
+      - generic [ref=f47e28]:
+        - generic [ref=f47e29]: البريد الإلكتروني
+        - generic [ref=f47e30]:
+          - generic [ref=f47e31]: 
+          - textbox "admin@school.com" [active] [ref=f47e32]
+      - generic [ref=f47e33]:
+        - generic [ref=f47e34]: كلمة المرور
+        - generic [ref=f47e35]:
+          - generic [ref=f47e36]: 
+          - textbox "••••••••" [ref=f47e37]
+      - generic [ref=f47e38]:
+        - generic [ref=f47e39]:
+          - checkbox "تذكرني" [ref=f47e40]
+          - generic [ref=f47e41]: تذكرني
+        - link "نسيت كلمة المرور؟" [ref=f47e42] [cursor=pointer]:
+          - /url: "#"
+      - button " تسجيل الدخول" [ref=f47e43] [cursor=pointer]:
+        - generic [ref=f47e44]: 
+        - text: تسجيل الدخول
+    - generic [ref=f47e45]:
+      - generic [ref=f47e46]: 
+      - text: "حساب تجريبي:"
+      - code [ref=f47e47]: admin@edubba.test
+      - text: /
+      - code [ref=f47e48]: password

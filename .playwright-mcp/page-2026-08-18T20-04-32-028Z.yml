@@ -1,0 +1,152 @@
+- generic [active] [ref=f31e1]:
+  - generic [ref=f31e2]:
+    - generic [ref=f31e3]:
+      - link "مدرسة إدبة مدرسة إدبة Ministry Reports" [ref=f31e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - img "مدرسة إدبة" [ref=f31e5]
+        - generic [ref=f31e6]:
+          - text: مدرسة إدبة
+          - generic [ref=f31e7]: Ministry Reports
+      - generic [ref=f31e8]:
+        - generic [ref=f31e9]: Main
+        - link " Statistics Dashboard" [ref=f31e10] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin
+          - generic [ref=f31e11]: 
+          - generic [ref=f31e12]: Statistics Dashboard
+        - generic [ref=f31e13]: School Management
+        - link " Students" [ref=f31e14] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/students
+          - generic [ref=f31e15]: 
+          - generic [ref=f31e16]: Students
+        - link " Admissions" [ref=f31e17] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/admissions
+          - generic [ref=f31e18]: 
+          - generic [ref=f31e19]: Admissions
+        - link " Parents" [ref=f31e20] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/parents
+          - generic [ref=f31e21]: 
+          - generic [ref=f31e22]: Parents
+        - link " Teaching Staff" [ref=f31e23] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/faculty
+          - generic [ref=f31e24]: 
+          - generic [ref=f31e25]: Teaching Staff
+        - link " Subjects" [ref=f31e26] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/courses
+          - generic [ref=f31e27]: 
+          - generic [ref=f31e28]: Subjects
+        - link " Classes" [ref=f31e29] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/batches
+          - generic [ref=f31e30]: 
+          - generic [ref=f31e31]: Classes
+        - link " Academic Programs" [ref=f31e32] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/programs
+          - generic [ref=f31e33]: 
+          - generic [ref=f31e34]: Academic Programs
+        - link " Academic Years" [ref=f31e35] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/academic-years
+          - generic [ref=f31e36]: 
+          - generic [ref=f31e37]: Academic Years
+        - generic [ref=f31e38]: Operations
+        - link " Fees & Invoices" [ref=f31e39] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/fees/structures
+          - generic [ref=f31e40]: 
+          - generic [ref=f31e41]: Fees & Invoices
+        - link " Attendance" [ref=f31e42] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/attendance
+          - generic [ref=f31e43]: 
+          - generic [ref=f31e44]: Attendance
+        - link " Timetable" [ref=f31e45] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/timetable
+          - generic [ref=f31e46]: 
+          - generic [ref=f31e47]: Timetable
+        - link " Calendar & Holidays" [ref=f31e48] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/calendar
+          - generic [ref=f31e49]: 
+          - generic [ref=f31e50]: Calendar & Holidays
+        - link " Private Tutoring" [ref=f31e51] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/tutoring
+          - generic [ref=f31e52]: 
+          - generic [ref=f31e53]: Private Tutoring
+        - link " Exams" [ref=f31e54] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/exams
+          - generic [ref=f31e55]: 
+          - generic [ref=f31e56]: Exams
+        - link " Ministry Reports" [ref=f31e57] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/reports
+          - generic [ref=f31e58]: 
+          - generic [ref=f31e59]: Ministry Reports
+        - generic [ref=f31e60]: System
+        - link " Settings" [ref=f31e61] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/settings
+          - generic [ref=f31e62]: 
+          - generic [ref=f31e63]: Settings
+      - generic [ref=f31e65]:
+        - generic [ref=f31e66]: S
+        - generic [ref=f31e67]:
+          - generic [ref=f31e68]: System Admin
+          - generic [ref=f31e69]: System Admin
+    - generic [ref=f31e70]:
+      - navigation [ref=f31e71]:
+        - text: 
+        - button "" [ref=f31e72] [cursor=pointer]
+        - navigation "breadcrumb" [ref=f31e75]:
+          - list [ref=f31e76]:
+            - listitem [ref=f31e77]:
+              - link " Home" [ref=f31e78] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin
+                - generic [ref=f31e79]: 
+                - text: Home
+            - listitem [ref=f31e80]: / Ministry Reports
+        - generic [ref=f31e81]:
+          - generic [ref=f31e82]:
+            - generic [ref=f31e83]: 
+            - textbox "Search the system..." [ref=f31e84]
+          - button "" [ref=f31e86] [cursor=pointer]
+          - button "" [ref=f31e88] [cursor=pointer]
+          - generic [ref=f31e90]:
+            - button "" [ref=f31e91] [cursor=pointer]
+            - text: 
+          - generic [ref=f31e94]:
+            - button "S" [ref=f31e95] [cursor=pointer]
+            - text:  
+      - generic [ref=f31e97]:
+        - generic [ref=f31e99]:
+          - heading "Ministry Reports" [level=1] [ref=f31e100]
+          - paragraph [ref=f31e101]: Generate and track Ministry of Education reports
+        - generic [ref=f31e104]:
+          - generic [ref=f31e105]:
+            - generic [ref=f31e106]: Academic Year
+            - combobox [ref=f31e107]:
+              - option "Select..." [selected]
+              - option "2025-2026"
+          - generic [ref=f31e108]:
+            - generic [ref=f31e109]: Report Type
+            - combobox [ref=f31e110]:
+              - option "Student Counts" [selected]
+              - option "Staff Counts"
+              - option "Pass Rates"
+          - button " Generate" [ref=f31e112] [cursor=pointer]:
+            - generic [ref=f31e113]: 
+            - text: Generate
+        - generic [ref=f31e114]:
+          - generic [ref=f31e115]:
+            - generic [ref=f31e116]: 
+            - text: Previous Reports
+          - table [ref=f31e118]:
+            - rowgroup [ref=f31e119]:
+              - row [ref=f31e120]:
+                - columnheader "Year" [ref=f31e121]
+                - columnheader "Type" [ref=f31e122]
+                - columnheader "Data" [ref=f31e123]
+                - columnheader "Generated At" [ref=f31e124]
+            - rowgroup [ref=f31e125]:
+              - row [ref=f31e126]:
+                - cell " No reports found" [ref=f31e127]:
+                  - generic [ref=f31e128]:
+                    - generic [ref=f31e129]: 
+                    - paragraph [ref=f31e130]: No reports found
+      - contentinfo [ref=f31e131]: مدرسة إدبة © 2026 — School Management System
+  - text: 
+  - generic [ref=f31e132]:
+    - text:    
+    - button "" [ref=f31e133] [cursor=pointer]

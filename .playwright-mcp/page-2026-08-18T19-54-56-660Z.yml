@@ -1,0 +1,207 @@
+- generic [active] [ref=f19e1]:
+  - generic [ref=f19e2]:
+    - generic [ref=f19e3]:
+      - link "مدرسة إدبة مدرسة إدبة Exams" [ref=f19e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/admin
+        - img "مدرسة إدبة" [ref=f19e5]
+        - generic [ref=f19e6]:
+          - text: مدرسة إدبة
+          - generic [ref=f19e7]: Exams
+      - generic [ref=f19e8]:
+        - generic [ref=f19e9]: Main
+        - link " Statistics Dashboard" [ref=f19e10] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin
+          - generic [ref=f19e11]: 
+          - generic [ref=f19e12]: Statistics Dashboard
+        - generic [ref=f19e13]: School Management
+        - link " Students" [ref=f19e14] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/students
+          - generic [ref=f19e15]: 
+          - generic [ref=f19e16]: Students
+        - link " Admissions" [ref=f19e17] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/admissions
+          - generic [ref=f19e18]: 
+          - generic [ref=f19e19]: Admissions
+        - link " Parents" [ref=f19e20] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/parents
+          - generic [ref=f19e21]: 
+          - generic [ref=f19e22]: Parents
+        - link " Teaching Staff" [ref=f19e23] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/faculty
+          - generic [ref=f19e24]: 
+          - generic [ref=f19e25]: Teaching Staff
+        - link " Subjects" [ref=f19e26] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/courses
+          - generic [ref=f19e27]: 
+          - generic [ref=f19e28]: Subjects
+        - link " Classes" [ref=f19e29] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/batches
+          - generic [ref=f19e30]: 
+          - generic [ref=f19e31]: Classes
+        - link " Academic Programs" [ref=f19e32] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/programs
+          - generic [ref=f19e33]: 
+          - generic [ref=f19e34]: Academic Programs
+        - link " Academic Years" [ref=f19e35] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/academic-years
+          - generic [ref=f19e36]: 
+          - generic [ref=f19e37]: Academic Years
+        - generic [ref=f19e38]: Operations
+        - link " Fees & Invoices" [ref=f19e39] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/fees/structures
+          - generic [ref=f19e40]: 
+          - generic [ref=f19e41]: Fees & Invoices
+        - link " Attendance" [ref=f19e42] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/attendance
+          - generic [ref=f19e43]: 
+          - generic [ref=f19e44]: Attendance
+        - link " Timetable" [ref=f19e45] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/timetable
+          - generic [ref=f19e46]: 
+          - generic [ref=f19e47]: Timetable
+        - link " Calendar & Holidays" [ref=f19e48] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/calendar
+          - generic [ref=f19e49]: 
+          - generic [ref=f19e50]: Calendar & Holidays
+        - link " Private Tutoring" [ref=f19e51] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/tutoring
+          - generic [ref=f19e52]: 
+          - generic [ref=f19e53]: Private Tutoring
+        - link " Exams" [ref=f19e54] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/exams
+          - generic [ref=f19e55]: 
+          - generic [ref=f19e56]: Exams
+        - link " Ministry Reports" [ref=f19e57] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/reports
+          - generic [ref=f19e58]: 
+          - generic [ref=f19e59]: Ministry Reports
+        - generic [ref=f19e60]: System
+        - link " Settings" [ref=f19e61] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/settings
+          - generic [ref=f19e62]: 
+          - generic [ref=f19e63]: Settings
+      - generic [ref=f19e65]:
+        - generic [ref=f19e66]: S
+        - generic [ref=f19e67]:
+          - generic [ref=f19e68]: System Admin
+          - generic [ref=f19e69]: System Admin
+    - generic [ref=f19e70]:
+      - navigation [ref=f19e71]:
+        - text: 
+        - button "" [ref=f19e72] [cursor=pointer]
+        - navigation "breadcrumb" [ref=f19e75]:
+          - list [ref=f19e76]:
+            - listitem [ref=f19e77]:
+              - link " Home" [ref=f19e78] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin
+                - generic [ref=f19e79]: 
+                - text: Home
+            - listitem [ref=f19e80]: / Manage Exams
+        - generic [ref=f19e81]:
+          - generic [ref=f19e82]:
+            - generic [ref=f19e83]: 
+            - textbox "Search the system..." [ref=f19e84]
+          - button "" [ref=f19e86] [cursor=pointer]
+          - button "" [ref=f19e88] [cursor=pointer]
+          - generic [ref=f19e90]:
+            - button "" [ref=f19e91] [cursor=pointer]
+            - text: 
+          - generic [ref=f19e94]:
+            - button "S" [ref=f19e95] [cursor=pointer]
+            - text:  
+      - generic [ref=f19e97]:
+        - generic [ref=f19e99]:
+          - heading "Exams" [level=1] [ref=f19e100]
+          - paragraph [ref=f19e101]: Create exams, schedule sessions, distribute rooms and track attendance
+        - generic [ref=f19e102]:
+          - generic [ref=f19e104]:
+            - generic [ref=f19e105]:
+              - generic [ref=f19e106]:
+                - generic [ref=f19e107]: 
+                - text: Exam List
+              - generic [ref=f19e108]: 0 exams
+            - table [ref=f19e110]:
+              - rowgroup [ref=f19e111]:
+                - row [ref=f19e112]:
+                  - columnheader "Exam" [ref=f19e113]
+                  - columnheader "Type" [ref=f19e114]
+                  - columnheader "Class" [ref=f19e115]
+                  - columnheader "Duration" [ref=f19e116]
+                  - columnheader "Status" [ref=f19e117]
+                  - columnheader [ref=f19e118]
+              - rowgroup [ref=f19e119]:
+                - row [ref=f19e120]:
+                  - cell " No exams yet Create your first exam from the form below" [ref=f19e121]:
+                    - generic [ref=f19e122]:
+                      - generic [ref=f19e123]: 
+                      - paragraph [ref=f19e124]: No exams yet
+                      - generic [ref=f19e125]: Create your first exam from the form below
+          - generic [ref=f19e127]:
+            - generic [ref=f19e128]:
+              - generic [ref=f19e129]: 
+              - text: New Exam
+            - generic [ref=f19e131]:
+              - generic [ref=f19e132]:
+                - generic [ref=f19e133]: Exam Name
+                - textbox "e.g. First-term test" [ref=f19e134]
+              - generic [ref=f19e135]:
+                - generic [ref=f19e136]: Type
+                - combobox [ref=f19e137]:
+                  - option "—" [selected]
+              - generic [ref=f19e138]:
+                - generic [ref=f19e139]: Class
+                - combobox [ref=f19e140]:
+                  - option "All Classes" [selected]
+                  - option "Grade 6 A"
+              - generic [ref=f19e141]:
+                - generic [ref=f19e142]: Academic Year
+                - combobox [ref=f19e143]:
+                  - option "—" [selected]
+                  - option "2025-2026"
+              - generic [ref=f19e144]:
+                - generic [ref=f19e145]: Term
+                - combobox [ref=f19e146]:
+                  - option "—" [selected]
+                  - option "Term 1"
+                  - option "Term 2"
+              - generic [ref=f19e147]:
+                - generic [ref=f19e148]: Start
+                - textbox [ref=f19e149]
+              - generic [ref=f19e150]:
+                - generic [ref=f19e151]: End
+                - textbox [ref=f19e152]
+              - button "Create Exam " [ref=f19e154] [cursor=pointer]:
+                - text: Create Exam
+                - generic [ref=f19e155]: 
+        - generic [ref=f19e156]:
+          - generic [ref=f19e157]:
+            - generic [ref=f19e158]:
+              - generic [ref=f19e159]: 
+              - text: Exam Rooms
+            - generic [ref=f19e160]: 0 rooms
+          - generic [ref=f19e161]:
+            - generic [ref=f19e162]:
+              - generic [ref=f19e163]:
+                - generic [ref=f19e164]: Room Name
+                - textbox "e.g. Main hall" [ref=f19e165]
+              - generic [ref=f19e166]:
+                - generic [ref=f19e167]: Code
+                - textbox "A1" [ref=f19e168]
+              - generic [ref=f19e169]:
+                - generic [ref=f19e170]: Capacity
+                - spinbutton [ref=f19e171]: "30"
+              - generic [ref=f19e172]:
+                - generic [ref=f19e173]: Location
+                - textbox "Building A" [ref=f19e174]
+              - button " Add" [ref=f19e176] [cursor=pointer]:
+                - generic [ref=f19e177]: 
+                - text: Add
+            - generic [ref=f19e178]:
+              - generic [ref=f19e179]: 
+              - paragraph [ref=f19e180]: No rooms
+              - generic [ref=f19e181]: Add a room to be able to distribute students
+      - contentinfo [ref=f19e182]: مدرسة إدبة © 2026 — School Management System
+  - text: 
+  - generic [ref=f19e183]:
+    - text:    
+    - button "" [ref=f19e184] [cursor=pointer]

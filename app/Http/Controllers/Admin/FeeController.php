@@ -81,6 +81,7 @@ class FeeController extends Controller
             ->when($request->state, fn ($q, $v) => $q->where('state', $v))
             ->orderByDesc('id')
             ->paginate(25)
+            ->onEachSide(1)
             ->withQueryString();
 
         return view('admin.fees.invoices', compact('invoices'));
