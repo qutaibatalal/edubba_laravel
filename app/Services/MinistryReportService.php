@@ -8,6 +8,8 @@ use App\Models\Faculty;
 use App\Models\Marksheet;
 use App\Models\MinistryReport;
 use App\Models\Student;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class MinistryReportService
 {
@@ -64,5 +66,80 @@ class MinistryReportService
         );
 
         return $report;
+    }
+
+    /**
+     * Generate monthly attendance PDF for a batch (ministry format).
+     */
+    public static function generateAttendancePdf($batch, string $month): string
+    {
+        $start = Carbon::parse($month.'-01');
+        $end = $start->copy()->endOfMonth();
+
+        $students = Student::where('batch_id', $batch->id)
+            ->where('state', Student::STATE_ADMITTED)
+            ->with(['attendanceLines' => fn ($q) =>
+                $q->whereBetween('created_at', [$start->toDateTimeString(), $end->toDateTimeString()])
+            ])
+            ->get()
+            ->map(fn ($s) => (object) [
+                'student' => $s,
+                'batch' => $batch->name,
+                'total' => $s->attendanceLines->count(),
+                'present' => $s->attendanceLines->where('state', 'present')->count(),
+                'late' => $s->attendanceLines->where('state', 'late')->count(),
+                'absent' => $s->attendanceLines->where('state', 'absent')->count(),
+                'leave' => $s->attendanceLines->where('state', 'leave')->count(),
+                'percentage' => $s->attendanceLines->count() > 0
+                    ? round(($s->attendanceLines->where('state', 'present')->count() / $s->attendanceLines->count()) * 100, 1)
+                    : 0,
+            ]);
+
+        $html = PdfService::html('pdf.attendance-report', [
+            'data' => $students,
+            'batch' => $batch,
+            'month' => $start,
+        ]);
+
+        $pdf = PdfService::mpdf();
+        $pdf->WriteHTML($html);
+
+        $path = "reports/attendance_{$batch->id}_{$month}.pdf";
+        Storage::put($path, $pdf->Output('', 'S'));
+
+        return $path;
+    }
+
+    /**
+     * Generate results PDF for a batch + term (ministry format).
+     */
+    public static function generateResultsPdf($batch, $term): string
+    {
+        $marksheets = Marksheet::where('batch_id', $batch->id)
+            ->where('state', Marksheet::STATE_DONE)
+            ->with(['lines.student', 'subject'])
+            ->get();
+
+        $students = $marksheets->flatMap(fn ($m) => $m->lines->pluck('student')->flatten())
+            ->unique('id')
+            ->map(fn ($s) => (object) [
+                'student' => $s,
+                'batch' => $batch->name,
+                'marksheets' => $marksheets->filter(fn ($m) => $m->lines->contains('student_id', $s->id)),
+            ]);
+
+        $html = PdfService::html('pdf.result-card', [
+            'data' => $students,
+            'batch' => $batch,
+            'term' => $term,
+        ]);
+
+        $pdf = PdfService::mpdf();
+        $pdf->WriteHTML($html);
+
+        $path = "reports/results_{$batch->id}_{$term->id}.pdf";
+        Storage::put($path, $pdf->Output('', 'S'));
+
+        return $path;
     }
 }

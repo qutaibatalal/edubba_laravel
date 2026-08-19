@@ -8,6 +8,7 @@ use App\Http\Resources\ParentResource;
 use App\Http\Resources\StudentResource;
 use App\Models\ApiUser;
 use App\Models\Faculty;
+use App\Models\LoginAttempt;
 use App\Models\ParentModel;
 use App\Models\Student;
 use App\Support\UploadPolicy;
@@ -31,11 +32,25 @@ class AuthController extends Controller
         $user = ApiUser::where('username', $request->username)->first();
 
         if (! $user || ! $user->active || ! Hash::check($request->password, $user->password)) {
+            LoginAttempt::create([
+                'ip_address' => $request->ip(),
+                'username' => $request->username,
+                'success' => false,
+                'attempted_at' => now(),
+            ]);
+
             return response()->json([
                 'status' => 'error',
                 'message' => 'Invalid credentials',
             ], 401);
         }
+
+        LoginAttempt::create([
+            'ip_address' => $request->ip(),
+            'username' => $request->username,
+            'success' => true,
+            'attempted_at' => now(),
+        ]);
 
         $token = $user->createToken('mobile')->plainTextToken;
 

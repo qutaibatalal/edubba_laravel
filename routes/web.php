@@ -68,7 +68,7 @@ Route::prefix('admin')->middleware(['auth', 'admin.web'])->group(function () {
     Route::post('admissions/{admission}/admit', [AdmissionController::class, 'admit'])->name('admin.admissions.admit');
 
     // Parents
-    Route::resource('parents', ParentController::class)->except('show')->names('admin.parents');
+    Route::resource('parents', ParentController::class)->names('admin.parents');
 
     // Faculty
     Route::resource('faculty', FacultyController::class)->except('show')->names('admin.faculty');
@@ -82,6 +82,7 @@ Route::prefix('admin')->middleware(['auth', 'admin.web'])->group(function () {
     Route::get('batches/{batch}/edit', [SchoolController::class, 'batchesEdit'])->name('admin.batches.edit');
     Route::put('batches/{batch}', [SchoolController::class, 'batchesUpdate'])->name('admin.batches.update');
     Route::delete('batches/{batch}', [SchoolController::class, 'batchesDestroy'])->name('admin.batches.destroy');
+    Route::get('batches/{batch}', [SchoolController::class, 'batchesShow'])->name('admin.batches.show');
 
     Route::get('programs', [SchoolController::class, 'programsIndex'])->name('admin.programs.index');
     Route::get('programs/create', [SchoolController::class, 'programsCreate'])->name('admin.programs.create');
@@ -89,6 +90,7 @@ Route::prefix('admin')->middleware(['auth', 'admin.web'])->group(function () {
     Route::get('programs/{program}/edit', [SchoolController::class, 'programsEdit'])->name('admin.programs.edit');
     Route::put('programs/{program}', [SchoolController::class, 'programsUpdate'])->name('admin.programs.update');
     Route::delete('programs/{program}', [SchoolController::class, 'programsDestroy'])->name('admin.programs.destroy');
+    Route::get('programs/{program}', [SchoolController::class, 'programsShow'])->name('admin.programs.show');
 
     Route::get('academic-years', [SchoolController::class, 'yearsIndex'])->name('admin.academic-years.index');
     Route::get('academic-years/create', [SchoolController::class, 'yearsCreate'])->name('admin.academic-years.create');
@@ -96,9 +98,10 @@ Route::prefix('admin')->middleware(['auth', 'admin.web'])->group(function () {
     Route::get('academic-years/{year}/edit', [SchoolController::class, 'yearsEdit'])->name('admin.academic-years.edit');
     Route::put('academic-years/{year}', [SchoolController::class, 'yearsUpdate'])->name('admin.academic-years.update');
     Route::delete('academic-years/{year}', [SchoolController::class, 'yearsDestroy'])->name('admin.academic-years.destroy');
+    Route::get('academic-years/{year}', [SchoolController::class, 'yearsShow'])->name('admin.academic-years.show');
 
     // Courses
-    Route::resource('courses', CourseController::class)->except('show')->names('admin.courses');
+    Route::resource('courses', CourseController::class)->names('admin.courses');
 
     // Fees
     Route::get('fees/structures', [FeeController::class, 'structures'])->name('admin.fees.structures');
@@ -140,9 +143,12 @@ Route::prefix('admin')->middleware(['auth', 'admin.web'])->group(function () {
 
     // Tutoring
     Route::get('tutoring', [TutoringController::class, 'index'])->name('admin.tutoring.index');
+    Route::get('tutoring/create', [TutoringController::class, 'create'])->name('admin.tutoring.create');
+    Route::post('tutoring', [TutoringController::class, 'store'])->name('admin.tutoring.store');
 
     // Exams
     Route::get('exams', [ExamController::class, 'index'])->name('admin.exams.index');
+    Route::get('exams/create', [ExamController::class, 'create'])->name('admin.exams.create');
     Route::post('exams', [ExamController::class, 'store'])->name('admin.exams.store');
     Route::get('exams/{exam}', [ExamController::class, 'show'])->name('admin.exams.show');
     Route::post('exams/{exam}/schedule', [ExamController::class, 'scheduleStore'])->name('admin.exams.schedule.store');

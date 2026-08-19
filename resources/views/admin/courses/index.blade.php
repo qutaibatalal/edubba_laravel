@@ -45,6 +45,7 @@
                         <td>{{ $c->faculty?->full_name ?? '—' }}</td>
                         <td class="text-start">
                             <div class="d-flex gap-1">
+                                <a href="{{ route('admin.courses.show', $c) }}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-eye"></i></a>
                                 <a href="{{ route('admin.courses.edit', $c) }}" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></a>
                                 <form method="POST" action="{{ route('admin.courses.destroy', $c) }}" class="d-inline" onsubmit="return confirm('{{ __('courses.index.confirm_delete') }}')">
                                     @csrf @method('DELETE')

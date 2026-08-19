@@ -41,13 +41,13 @@ class ParentController extends Controller
     }
 
     /**
-     * GET /parent/child/{id}/attendance
+     * GET /parent/child/{id}/attendance — eager loaded.
      */
     public function childAttendance(Request $request, int $childId): JsonResponse
     {
         $student = $this->verifyChild($request, $childId);
 
-        $lines = $student->attendances()->with('sheet')->latest('id')->paginate(50);
+        $lines = $student->attendances()->with(['sheet.course', 'sheet.subject', 'sheet.faculty'])->latest('id')->paginate(50);
 
         return response()->json([
             'status' => 'success',

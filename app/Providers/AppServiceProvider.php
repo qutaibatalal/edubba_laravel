@@ -2,13 +2,17 @@
 
 namespace App\Providers;
 
+use App\Models\AcademicYear;
 use App\Models\LibraryBook;
 use App\Models\LibraryIssue;
 use App\Models\Marksheet;
+use App\Models\MobileAppConfig;
 use App\Models\Payment;
+use App\Observers\AcademicYearObserver;
 use App\Observers\InvoiceObserver;
 use App\Observers\LibraryObserver;
 use App\Observers\MarksheetObserver;
+use App\Observers\MobileAppConfigObserver;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
@@ -27,6 +31,8 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrapFive();
         // ===== Observers =====
         Marksheet::observe(MarksheetObserver::class);
+        AcademicYear::observe(AcademicYearObserver::class);
+        MobileAppConfig::observe(MobileAppConfigObserver::class);
 
         // Wire the invoice recompute to payment lifecycle events.
         $observer = new InvoiceObserver;

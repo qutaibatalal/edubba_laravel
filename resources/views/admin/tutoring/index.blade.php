@@ -9,6 +9,9 @@
         <h1 class="fw-bold">@lang('tutoring.index.title')</h1>
         <p>@lang('tutoring.index.subtitle')</p>
     </div>
+    <div class="d-flex gap-2">
+        <a href="{{ route('admin.tutoring.create') }}" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i> @lang('tutoring.create.create')</a>
+    </div>
 </div>
 
 <div class="row g-3">

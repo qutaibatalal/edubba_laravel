@@ -47,25 +47,30 @@ class BusTrackingController extends Controller
     /**
      * GET /v1/parent/bus-tracking
      *
-     * Parents/students receive every active vehicle with its latest point,
+     * Parents/students receive only their assigned route with its latest point,
      * the route name and ordered stops so the app can render Google Maps.
+     * If no assignment exists, return all active routes (fallback).
      */
     public function tracking(Request $request): JsonResponse
     {
         $user = $request->user();
         $student = $user->student;
 
-        $routes = TransportRoute::with('vehicle', 'stops')
-            ->where('active', true)
-            ->get();
-
         $assignments = $student
             ? TransportAssignment::where('student_id', $student->id)->pluck('route_id')
             : collect([]);
 
-        $vehicles = $routes->pluck('vehicle_id')->filter()->unique();
+        $query = TransportRoute::with('vehicle', 'stops')->where('active', true);
 
-        $locations = BusLocation::whereIn('vehicle_id', $vehicles)
+        // Filter to assigned routes only (if the student has any)
+        if ($assignments->isNotEmpty()) {
+            $query->whereIn('id', $assignments);
+        }
+
+        $routes = $query->get();
+        $vehicleIds = $routes->pluck('vehicle_id')->filter()->unique();
+
+        $locations = BusLocation::whereIn('vehicle_id', $vehicleIds)
             ->get()
             ->groupBy('vehicle_id')
             ->mapWithKeys(fn ($group, $vid) => [

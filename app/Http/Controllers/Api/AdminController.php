@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\InvoiceResource;
 use App\Http\Resources\MinistryReportResource;
 use App\Models\AcademicYear;
+use App\Models\Batch;
 use App\Models\FeeStructure;
 use App\Models\MinistryReport;
 use App\Models\Subscription;
 use App\Services\FeeService;
 use App\Services\MinistryReportService;
 use App\Services\NotificationService;
+use App\Services\PdfService;
 use App\Services\SubscriptionService;
 use App\Services\TimetableService;
 use Illuminate\Http\JsonResponse;
@@ -182,6 +184,47 @@ class AdminController extends Controller
             'status' => 'success',
             'message' => "Sent {$count} absence alerts",
             'data' => ['count' => $count],
+        ]);
+    }
+
+    /**
+     * GET /admin/ministry-reports/attendance-pdf?batch_id=X&month=2026-09
+     */
+    public function ministryAttendancePdf(Request $request)
+    {
+        $validated = $request->validate([
+            'batch_id' => 'required|integer|exists:batches,id',
+            'month' => 'required|date_format:Y-m',
+        ]);
+
+        $batch = Batch::findOrFail($validated['batch_id']);
+        $path = MinistryReportService::generateAttendancePdf($batch, $validated['month']);
+
+        $filename = "attendance_{$batch->name}_{$validated['month']}.pdf";
+
+        return response()->disk('local')->download($path, $filename, [
+            'Content-Type' => 'application/pdf',
+        ]);
+    }
+
+    /**
+     * GET /admin/ministry-reports/results-pdf?batch_id=X&term_id=X
+     */
+    public function ministryResultsPdf(Request $request)
+    {
+        $validated = $request->validate([
+            'batch_id' => 'required|integer|exists:batches,id',
+            'term_id' => 'required|integer|exists:terms,id',
+        ]);
+
+        $batch = Batch::findOrFail($validated['batch_id']);
+        $term = \App\Models\Term::findOrFail($validated['term_id']);
+        $path = MinistryReportService::generateResultsPdf($batch, $term);
+
+        $filename = "results_{$batch->name}_{$term->name}.pdf";
+
+        return response()->disk('local')->download($path, $filename, [
+            'Content-Type' => 'application/pdf',
         ]);
     }
 }

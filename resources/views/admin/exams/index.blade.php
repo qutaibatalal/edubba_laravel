@@ -9,6 +9,9 @@
         <h1 class="fw-bold">@lang('exams.index.heading')</h1>
         <p class="text-secondary mb-0">@lang('exams.index.subtitle')</p>
     </div>
+    <div class="d-flex gap-2">
+        <a href="{{ route('admin.exams.create') }}" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i> @lang('exams.index.create')</a>
+    </div>
 </div>
 
 @if ($errors->any())

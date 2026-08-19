@@ -42,6 +42,16 @@ class ExamController extends Controller
         ]);
     }
 
+    public function create(): View
+    {
+        return view('admin.exams.create', [
+            'types' => ExamType::where('active', true)->get(),
+            'years' => AcademicYear::where('active', true)->get(),
+            'terms' => Term::all(),
+            'batches' => Batch::where('active', true)->get(),
+        ]);
+    }
+
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([

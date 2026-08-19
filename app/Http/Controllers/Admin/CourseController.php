@@ -48,6 +48,13 @@ class CourseController extends Controller
         return redirect()->route('admin.courses.index')->with('success', 'تم إضافة المقرر.');
     }
 
+    public function show(Course $course): View
+    {
+        $course->load('subject', 'batch', 'academicYear', 'faculty', 'program');
+
+        return view('admin.courses.show', compact('course'));
+    }
+
     public function edit(Course $course): View
     {
         return view('admin.courses.form', [

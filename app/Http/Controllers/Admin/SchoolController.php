@@ -40,6 +40,13 @@ class SchoolController extends Controller
         return redirect()->route('admin.batches.index')->with('success', 'تم إضافة الصف.');
     }
 
+    public function batchesShow(Batch $batch): View
+    {
+        $batch->load('program', 'academicYear', 'classTeacher', 'students', 'courses');
+
+        return view('admin.batches.show', compact('batch'));
+    }
+
     public function batchesEdit(Batch $batch): View
     {
         return view('admin.batches.form', [
@@ -97,6 +104,13 @@ class SchoolController extends Controller
         return redirect()->route('admin.programs.index')->with('success', 'تم إضافة البرنامج.');
     }
 
+    public function programsShow(Program $program): View
+    {
+        $program->load('department', 'batches', 'courses');
+
+        return view('admin.programs.show', compact('program'));
+    }
+
     public function programsEdit(Program $program): View
     {
         return view('admin.programs.form', ['program' => $program, 'departments' => Department::all()]);
@@ -147,6 +161,13 @@ class SchoolController extends Controller
         AcademicYear::create($this->yearData($request));
 
         return redirect()->route('admin.academic-years.index')->with('success', 'تم إضافة السنة الدراسية.');
+    }
+
+    public function yearsShow(AcademicYear $year): View
+    {
+        $year->load('batches', 'admissions');
+
+        return view('admin.years.show', compact('year'));
     }
 
     public function yearsEdit(AcademicYear $year): View

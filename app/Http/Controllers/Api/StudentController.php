@@ -23,8 +23,10 @@ use App\Models\ExamSchedule;
 use App\Models\Feedback;
 use App\Models\Marksheet;
 use App\Models\MarksheetLine;
+use App\Models\NotificationLog;
 use App\Models\StudentExcuse;
 use App\Services\AttendanceService;
+use App\Services\GamificationService;
 use App\Support\UploadPolicy;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -48,25 +50,78 @@ class StudentController extends Controller
     }
 
     /**
-     * GET /student/dashboard
+     * GET /student/dashboard — rich response for mobile app.
      */
     public function dashboard(Request $request): JsonResponse
     {
         $student = $this->resolveStudent($request);
+        $student->load('batch', 'program', 'academicYear', 'invoices', 'courses.subject');
 
         $attendance = AttendanceService::attendancePercentage($student);
+
+        $todaySchedule = ClassSession::with('course', 'subject', 'faculty', 'classroom')
+            ->where('batch_id', $student->batch_id)
+            ->whereDate('date', now()->toDateString())
+            ->orderBy('start_time')
+            ->get()
+            ->map(fn ($s) => [
+                'id' => $s->id,
+                'subject' => $s->subject?->name ?? '—',
+                'faculty' => $s->faculty?->full_name ?? '—',
+                'time' => $s->start_time.'-'.$s->end_time,
+                'classroom' => $s->classroom?->name ?? '—',
+            ]);
+
+        $recentGrades = MarksheetLine::with('subject', 'marksheet.exam')
+            ->whereHas('marksheet', fn ($q) => $q->where('student_id', $student->id)->where('state', 'done'))
+            ->orderByDesc('id')
+            ->limit(3)
+            ->get()
+            ->map(fn ($l) => [
+                'subject' => $l->subject?->name ?? '—',
+                'marks' => $l->marks,
+                'max_marks' => $l->max_marks,
+                'percentage' => $l->percentage,
+                'exam' => $l->marksheet?->exam?->name ?? '—',
+            ]);
+
+        $upcomingExams = Exam::with('examType')
+            ->where('batch_id', $student->batch_id)
+            ->where('state', '!=', 'cancel')
+            ->where('date_start', '>=', now()->toDateString())
+            ->orderBy('date_start')
+            ->limit(3)
+            ->get()
+            ->map(fn ($e) => [
+                'id' => $e->id,
+                'name' => $e->name,
+                'type' => $e->examType?->name ?? '—',
+                'date_start' => $e->date_start?->toDateString(),
+                'date_end' => $e->date_end?->toDateString(),
+            ]);
+
+        $totalFees = (float) $student->invoices->sum('amount');
+        $paidFees = (float) $student->invoices->sum('amount') - (float) $student->invoices->sum('balance');
 
         return response()->json([
             'status' => 'success',
             'data' => [
-                'student' => new StudentResource($student->load('batch', 'program', 'academicYear')),
-                'summary' => [
-                    'courses' => $student->courses()->count(),
+                'student' => new StudentResource($student),
+                'stats' => [
                     'attendance_percentage' => $attendance,
-                    'fees_balance' => (float) $student->invoices()->where('state', '!=', 'paid')->sum('balance'),
-                    'marksheets' => $student->marksheets()->where('state', 'done')->count(),
-                    'subscriptions' => $student->subscriptions()->where('state', 'active')->count(),
+                    'total_subjects' => $student->courses->count(),
+                    'pending_assignments' => $student->assignments()->where('state', 'published')->count(),
+                    'unread_notifications' => NotificationLog::where('student_id', $student->id)->whereNull('read_at')->count(),
                 ],
+                'today_schedule' => $todaySchedule,
+                'recent_grades' => $recentGrades,
+                'fee_status' => [
+                    'total' => $totalFees,
+                    'paid' => $paidFees,
+                    'remaining' => $totalFees - $paidFees,
+                    'status' => $totalFees - $paidFees > 0 ? 'unpaid' : 'paid',
+                ],
+                'upcoming_exams' => $upcomingExams,
             ],
         ]);
     }
@@ -85,13 +140,13 @@ class StudentController extends Controller
     }
 
     /**
-     * GET /student/courses
+     * GET /student/courses — eager loaded to prevent N+1.
      */
     public function courses(Request $request): JsonResponse
     {
         $student = $this->resolveStudent($request);
 
-        $courses = $student->courses()->with('subject', 'faculty')->get();
+        $courses = $student->courses()->with(['subject', 'faculty.department'])->get();
 
         return response()->json([
             'status' => 'success',
@@ -121,14 +176,14 @@ class StudentController extends Controller
     }
 
     /**
-     * GET /student/attendance
+     * GET /student/attendance — eager loaded.
      */
     public function attendance(Request $request): JsonResponse
     {
         $student = $this->resolveStudent($request);
 
         $lines = $student->attendances()
-            ->with('sheet')
+            ->with(['sheet.course', 'sheet.subject', 'sheet.faculty'])
             ->latest('id')
             ->paginate(50);
 
@@ -186,13 +241,13 @@ class StudentController extends Controller
     }
 
     /**
-     * GET /student/fees
+     * GET /student/fees — eager loaded.
      */
     public function fees(Request $request): JsonResponse
     {
         $student = $this->resolveStudent($request);
 
-        $invoices = $student->invoices()->with('lines')->orderByDesc('date')->get();
+        $invoices = $student->invoices()->with(['lines', 'payments'])->orderByDesc('date')->get();
 
         return response()->json([
             'status' => 'success',
@@ -613,6 +668,21 @@ class StudentController extends Controller
             'message' => 'Feedback submitted',
             'data' => ['id' => $feedback->id],
         ], 201);
+    }
+
+    /**
+     * GET /student/points — Gamification stats (points, rank, badges).
+     */
+    public function points(Request $request): JsonResponse
+    {
+        $student = $this->resolveStudent($request);
+
+        $stats = app(GamificationService::class)->getStudentStats($student);
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $stats,
+        ]);
     }
 
     protected function gpaLetter(float $percentage): string

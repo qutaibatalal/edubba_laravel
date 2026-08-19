@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\FacultyController;
 use App\Http\Controllers\Api\FeedbackController;
 use App\Http\Controllers\Api\LibraryController;
 use App\Http\Controllers\Api\NotificationController;
+use App\Http\Controllers\Api\OnboardingController;
 use App\Http\Controllers\Api\ParentController;
 use App\Http\Controllers\Api\PaymentWebhookController;
 use App\Http\Controllers\Api\QuestionBankController;
@@ -46,58 +47,65 @@ Route::prefix('v1')->group(function () {
         Route::post('/change-password', [AuthController::class, 'changePassword']);
         Route::post('/upload-photo', [AuthController::class, 'uploadPhoto'])->middleware('throttle:api.upload');
 
-        // 17.2 Student
-        Route::get('/student/dashboard', [StudentController::class, 'dashboard']);
-        Route::get('/student/profile', [StudentController::class, 'profile']);
-        Route::get('/student/courses', [StudentController::class, 'courses']);
-        Route::get('/student/timetable', [StudentController::class, 'timetable']);
-        Route::get('/student/attendance', [StudentController::class, 'attendance']);
-        Route::get('/student/qr-token', [AttendanceController::class, 'qrToken']);
-        Route::get('/student/exams', [StudentController::class, 'exams']);
-        Route::get('/student/grades', [StudentController::class, 'grades']);
-        Route::get('/student/exam-conflicts', [StudentController::class, 'examConflicts']);
-        Route::get('/student/results', [StudentController::class, 'results']);
-        Route::get('/student/fees', [StudentController::class, 'fees']);
-        Route::get('/student/payments', [StudentController::class, 'payments']);
-        Route::get('/student/excuses', [StudentController::class, 'excuses']);
-        Route::post('/student/excuse/request', [StudentController::class, 'requestExcuse']);
-        Route::post('/student/assignments/submit', [StudentController::class, 'submitAssignment'])->middleware('throttle:api.upload');
-        Route::get('/student/id-card', [StudentController::class, 'idCard']);
-        Route::get('/student/certificate', [StudentController::class, 'certificate']);
-        Route::get('/student/syllabus', [StudentController::class, 'syllabus']);
-        Route::get('/student/chat', [StudentController::class, 'chatList']);
-        Route::get('/student/chat/{facultyId}', [StudentController::class, 'chatShow']);
-        Route::post('/student/chat/send', [StudentController::class, 'chatSend']);
-        Route::post('/student/feedback', [StudentController::class, 'feedback']);
+        // 17.2 Student — ownership middleware enforces data isolation
+        Route::middleware('ownership')->group(function () {
+            Route::get('/student/dashboard', [StudentController::class, 'dashboard']);
+            Route::get('/student/profile', [StudentController::class, 'profile']);
+            Route::get('/student/courses', [StudentController::class, 'courses']);
+            Route::get('/student/timetable', [StudentController::class, 'timetable']);
+            Route::get('/student/attendance', [StudentController::class, 'attendance']);
+            Route::get('/student/qr-token', [AttendanceController::class, 'qrToken']);
+            Route::get('/student/exams', [StudentController::class, 'exams']);
+            Route::get('/student/grades', [StudentController::class, 'grades']);
+            Route::get('/student/exam-conflicts', [StudentController::class, 'examConflicts']);
+            Route::get('/student/results', [StudentController::class, 'results']);
+            Route::get('/student/fees', [StudentController::class, 'fees']);
+            Route::get('/student/payments', [StudentController::class, 'payments']);
+            Route::get('/student/excuses', [StudentController::class, 'excuses']);
+            Route::post('/student/excuse/request', [StudentController::class, 'requestExcuse']);
+            Route::post('/student/assignments/submit', [StudentController::class, 'submitAssignment'])->middleware('throttle:api.upload');
+            Route::get('/student/id-card', [StudentController::class, 'idCard']);
+            Route::get('/student/certificate', [StudentController::class, 'certificate']);
+            Route::get('/student/syllabus', [StudentController::class, 'syllabus']);
+            Route::get('/student/chat', [StudentController::class, 'chatList']);
+            Route::get('/student/chat/{facultyId}', [StudentController::class, 'chatShow']);
+            Route::post('/student/chat/send', [StudentController::class, 'chatSend']);
+            Route::post('/student/feedback', [StudentController::class, 'feedback']);
+            Route::get('/student/points', [StudentController::class, 'points']);
 
-        // 17.2 Parent
-        Route::get('/parent/children', [ParentController::class, 'children']);
-        Route::get('/parent/child/{id}/dashboard', [ParentController::class, 'childDashboard']);
-        Route::get('/parent/child/{id}/attendance', [ParentController::class, 'childAttendance']);
-        Route::get('/parent/child/{id}/grades', [ParentController::class, 'childGrades']);
-        Route::get('/parent/child/{id}/results', [ParentController::class, 'childResults']);
-        Route::get('/parent/child/{id}/fees', [ParentController::class, 'childFees']);
-        Route::post('/parent/payments/zaincash/initiate', [ParentController::class, 'initiateZainCash']);
-        Route::get('/parent/payments/receipts/{id}', [ParentController::class, 'paymentReceipt']);
+            // 17.2 Parent — ownership ensures only their children's data is visible
+            Route::get('/parent/children', [ParentController::class, 'children']);
+            Route::get('/parent/child/{id}/dashboard', [ParentController::class, 'childDashboard']);
+            Route::get('/parent/child/{id}/attendance', [ParentController::class, 'childAttendance']);
+            Route::get('/parent/child/{id}/grades', [ParentController::class, 'childGrades']);
+            Route::get('/parent/child/{id}/results', [ParentController::class, 'childResults']);
+            Route::get('/parent/child/{id}/fees', [ParentController::class, 'childFees']);
+            Route::post('/parent/payments/zaincash/initiate', [ParentController::class, 'initiateZainCash']);
+            Route::get('/parent/payments/receipts/{id}', [ParentController::class, 'paymentReceipt']);
 
-        // 17.3 Faculty
-        Route::get('/faculty/dashboard', [FacultyController::class, 'dashboard']);
-        Route::get('/faculty/courses', [FacultyController::class, 'courses']);
-        Route::get('/faculty/batch/{id}/students', [FacultyController::class, 'batchStudents']);
-        Route::get('/faculty/timetable', [FacultyController::class, 'timetable']);
-        Route::get('/faculty/timetable/conflicts', [FacultyController::class, 'timetableConflicts']);
-        Route::post('/faculty/session/{id}/attendance', [AttendanceController::class, 'mark']);
-        Route::post('/faculty/session/{id}/attendance/qr', [AttendanceController::class, 'markByQr']);
-        Route::post('/faculty/attendance/face-mark', [AttendanceController::class, 'markByFace']);
-        Route::post('/faculty/attendance/face-enroll', [AttendanceController::class, 'faceEnroll']);
-        Route::get('/faculty/exams', [FacultyController::class, 'exams']);
-        Route::get('/faculty/grade-entry', [FacultyController::class, 'gradeEntry']);
-        Route::post('/faculty/grade-entry/save', [FacultyController::class, 'gradeEntrySave']);
-        Route::post('/faculty/marksheet/{id}/line', [ExamController::class, 'enterMarks']);
-        Route::post('/faculty/marksheet/{id}/finalize', [ExamController::class, 'finalize']);
-        Route::post('/faculty/assignments/create', [FacultyController::class, 'createAssignment']);
-        Route::post('/faculty/notifications/send', [FacultyController::class, 'sendNotification'])->middleware('throttle:api.whatsapp');
-        Route::get('/faculty/study-groups', [TutoringController::class, 'myGroups']);
+            // 17.3 Faculty — ownership ensures only their batches are accessible
+            Route::get('/faculty/dashboard', [FacultyController::class, 'dashboard']);
+            Route::get('/faculty/courses', [FacultyController::class, 'courses']);
+            Route::get('/faculty/batch/{id}/students', [FacultyController::class, 'batchStudents']);
+            Route::get('/faculty/timetable', [FacultyController::class, 'timetable']);
+            Route::get('/faculty/timetable/conflicts', [FacultyController::class, 'timetableConflicts']);
+            Route::post('/faculty/session/{id}/attendance', [AttendanceController::class, 'mark']);
+            Route::post('/faculty/session/{id}/attendance/qr', [AttendanceController::class, 'markByQr']);
+            Route::post('/faculty/attendance/face-mark', [AttendanceController::class, 'markByFace']);
+            Route::post('/faculty/attendance/face-enroll', [AttendanceController::class, 'faceEnroll']);
+            Route::get('/faculty/exams', [FacultyController::class, 'exams']);
+            Route::get('/faculty/grade-entry', [FacultyController::class, 'gradeEntry']);
+            Route::post('/faculty/grade-entry/save', [FacultyController::class, 'gradeEntrySave']);
+            Route::post('/faculty/marksheet/{id}/line', [ExamController::class, 'enterMarks']);
+            Route::post('/faculty/marksheet/{id}/finalize', [ExamController::class, 'finalize']);
+            Route::post('/faculty/assignments/create', [FacultyController::class, 'createAssignment']);
+            Route::post('/faculty/notifications/send', [FacultyController::class, 'sendNotification'])->middleware('throttle:api.whatsapp');
+            Route::get('/faculty/study-groups', [TutoringController::class, 'myGroups']);
+            Route::get('/faculty/attendance/qr-session/start', [AttendanceController::class, 'startQrSession']);
+        });
+
+        // Student QR attendance (scans the session QR)
+        Route::post('/attendance/qr-mark/{token}', [AttendanceController::class, 'qrMark'])->name('api.attendance.qr-mark');
 
         // 17.4 Tutoring
         Route::get('/tutoring/subscriptions', [TutoringController::class, 'subscriptions']);
@@ -117,6 +125,7 @@ Route::prefix('v1')->group(function () {
 
         // 17.5 Common / System
         Route::get('/academic-years', [CommonController::class, 'academicYears']);
+        Route::get('/calendar', [CommonController::class, 'calendar']);
         Route::get('/notifications', [NotificationController::class, 'index']);
         Route::post('/notifications/register-device', [NotificationController::class, 'registerDevice']);
         Route::post('/notifications/{id}/read', [NotificationController::class, 'markRead']);
@@ -159,10 +168,20 @@ Route::prefix('v1')->group(function () {
 
             Route::get('/ministry-reports', [AdminController::class, 'ministryReports']);
             Route::post('/ministry-reports/generate', [AdminController::class, 'generateMinistryReport']);
+            Route::get('/ministry-reports/attendance-pdf', [AdminController::class, 'ministryAttendancePdf']);
+            Route::get('/ministry-reports/results-pdf', [AdminController::class, 'ministryResultsPdf']);
 
             Route::post('/timetable/generate', [AdminController::class, 'generateSessions']);
             Route::post('/subscriptions/{id}/renew', [AdminController::class, 'renewSubscription']);
             Route::post('/notifications/absence-alerts', [AdminController::class, 'sendAbsenceAlerts']);
+
+            // Onboarding Wizard (5-step setup)
+            Route::get('/onboarding/status', [OnboardingController::class, 'status']);
+            Route::post('/onboarding/step/1', [OnboardingController::class, 'stepSchoolInfo']);
+            Route::post('/onboarding/step/2', [OnboardingController::class, 'stepAcademicYear']);
+            Route::post('/onboarding/step/3', [OnboardingController::class, 'stepDepartmentsBatches']);
+            Route::post('/onboarding/step/4', [OnboardingController::class, 'stepSubjectsFaculty']);
+            Route::get('/onboarding/step/5', [OnboardingController::class, 'stepReview']);
         });
     });
 });

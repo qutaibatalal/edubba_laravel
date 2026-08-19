@@ -22,4 +22,18 @@ return [
         'th_remaining' => 'Remaining',
         'no_subscriptions' => 'No subscriptions',
     ],
+    'create' => [
+        'title' => 'New Study Group',
+        'page' => 'Create Study Group',
+        'heading' => 'Create New Study Group',
+        'subtitle' => 'Set up a new study group with tutor and subject',
+        'form_name' => 'Group Name',
+        'form_subject' => 'Subject',
+        'form_tutor' => 'Tutor',
+        'form_max_students' => 'Max Students',
+        'form_level' => 'Level',
+        'create' => 'Create Group',
+        'cancel' => 'Cancel',
+        'back_to_list' => 'Back to list',
+    ],
 ];

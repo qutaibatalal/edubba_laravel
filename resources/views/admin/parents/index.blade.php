@@ -46,6 +46,7 @@
                             @endif
                         </td>
                         <td class="text-start">
+                            <a href="{{ route('admin.parents.show', $p) }}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-eye"></i></a>
                             <a href="{{ route('admin.parents.edit', $p) }}" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></a>
                             <form method="POST" action="{{ route('admin.parents.destroy', $p) }}" class="d-inline" onsubmit="return confirm('{{ __('parents.index.delete_confirm') }}')">
                                 @csrf @method('DELETE')

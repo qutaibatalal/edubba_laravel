@@ -29,6 +29,13 @@ class ParentController extends Controller
         return view('admin.parents.form', ['parent' => null]);
     }
 
+    public function show(ParentModel $parent): View
+    {
+        $parent->load('students');
+
+        return view('admin.parents.show', compact('parent'));
+    }
+
     public function store(Request $request): RedirectResponse
     {
         ParentModel::create($this->validated($request));

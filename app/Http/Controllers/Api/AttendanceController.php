@@ -11,6 +11,8 @@ use App\Services\AttendanceService;
 use App\Services\FaceRecognitionService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Str;
 
 class AttendanceController extends Controller
 {
@@ -189,5 +191,89 @@ class AttendanceController extends Controller
         }
 
         return Student::findOrFail((int) $id);
+    }
+
+    /**
+     * GET /faculty/attendance/qr-session/start
+     * Faculty starts a QR session. Returns a QR code valid for 10 minutes.
+     * Students scan this QR to mark their own attendance.
+     */
+    public function startQrSession(Request $request): JsonResponse
+    {
+        $faculty = $request->user()->faculty;
+
+        if (! $faculty) {
+            abort(404, 'Faculty profile not found');
+        }
+
+        $request->validate(['session_id' => 'required|integer|exists:class_sessions,id']);
+
+        $session = ClassSession::findOrFail($request->session_id);
+
+        if ($session->faculty_id !== $faculty->id) {
+            abort(403, 'Not allowed');
+        }
+
+        $token = Str::uuid()->toString();
+
+        Cache::put("qr_session_{$token}", [
+            'session_id' => $session->id,
+            'faculty_id' => $faculty->id,
+            'expires_at' => now()->addMinutes(10)->toIso8601String(),
+        ], 600);
+
+        return response()->json([
+            'status' => 'success',
+            'data' => [
+                'qr_token' => $token,
+                'qr_url' => route('api.attendance.qr-mark', $token),
+                'expires_at' => now()->addMinutes(10)->toDateTimeString(),
+            ],
+        ]);
+    }
+
+    /**
+     * POST /attendance/qr-mark/{token}
+     * Student scans the QR code to mark their attendance for the session.
+     */
+    public function qrMark(Request $request, string $token): JsonResponse
+    {
+        $session = Cache::get("qr_session_{$token}");
+
+        if (! $session) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'انتهت صلاحية رمز QR أو غير موجود',
+            ], 410);
+        }
+
+        if (now()->gt($session['expires_at'])) {
+            Cache::forget("qr_session_{$token}");
+
+            return response()->json([
+                'status' => 'error',
+                'message' => 'انتهت صلاحية رمز QR',
+            ], 410);
+        }
+
+        $student = $request->user()->student;
+
+        if (! $student) {
+            abort(404, 'Student profile not found');
+        }
+
+        $classSession = ClassSession::findOrFail($session['session_id']);
+
+        $sheet = AttendanceService::createSheetForSession($classSession);
+        AttendanceService::markSheet($sheet, [(string) $student->id => 'present']);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => "تم تسجيل حضور {$student->full_name}",
+            'data' => [
+                'student_name' => $student->full_name,
+                'marked_at' => now()->format('H:i'),
+            ],
+        ]);
     }
 }

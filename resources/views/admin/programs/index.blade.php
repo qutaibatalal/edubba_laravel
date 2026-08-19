@@ -37,6 +37,7 @@
                         <td><span class="badge badge-soft">{{ $p->batches_count }}</span></td>
                         <td class="text-start">
                             <div class="d-flex gap-1">
+                                <a href="{{ route('admin.programs.show', $p) }}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-eye"></i></a>
                                 <a href="{{ route('admin.programs.edit', $p) }}" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></a>
                                 <form method="POST" action="{{ route('admin.programs.destroy', $p) }}" class="d-inline" onsubmit="return confirm('{{ __('programs.index.confirm_delete') }}')">
                                     @csrf @method('DELETE')

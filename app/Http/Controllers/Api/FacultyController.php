@@ -33,27 +33,37 @@ class FacultyController extends Controller
     }
 
     /**
-     * GET /faculty/dashboard
+     * GET /faculty/dashboard — rich response with eager loading.
      */
     public function dashboard(Request $request): JsonResponse
     {
         $faculty = $this->resolveFaculty($request);
+        $faculty->load('department');
 
         $today = now()->toDateString();
+        $todaySessions = ClassSession::with('course', 'subject', 'batch', 'classroom')
+            ->where('faculty_id', $faculty->id)
+            ->where('date', $today)
+            ->orderBy('start_time')
+            ->get();
 
         return response()->json([
             'status' => 'success',
             'data' => [
-                'faculty' => new FacultyResource($faculty->load('department')),
+                'faculty' => new FacultyResource($faculty),
+                'today_sessions' => $todaySessions->map(fn ($s) => [
+                    'id' => $s->id,
+                    'subject' => $s->subject?->name ?? '—',
+                    'batch' => $s->batch?->name ?? '—',
+                    'time' => $s->start_time.'-'.$s->end_time,
+                    'classroom' => $s->classroom?->name ?? '—',
+                ]),
                 'summary' => [
                     'courses' => $faculty->courses()->count(),
-                    'sessions_today' => ClassSession::where('faculty_id', $faculty->id)
-                        ->where('date', $today)
-                        ->count(),
-                    'sessions_done' => ClassSession::where('faculty_id', $faculty->id)
-                        ->where('state', 'done')
-                        ->count(),
+                    'sessions_today' => $todaySessions->count(),
+                    'sessions_done' => ClassSession::where('faculty_id', $faculty->id)->where('state', 'done')->count(),
                     'batches' => $faculty->batches()->count(),
+                    'pending_marksheets' => Marksheet::whereHas('exam', fn ($q) => $q->where('batch_id', $faculty->batches()->pluck('batches.id')))->where('state', 'draft')->count(),
                 ],
             ],
         ]);

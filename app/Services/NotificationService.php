@@ -72,11 +72,13 @@ class NotificationService
 
     /**
      * Send absence alerts for students below the attendance threshold.
+     * Only sends to students who haven't been alerted today.
      * Dispatches push/whatsapp/sms in one call per student.
      */
     public static function sendAbsenceAlerts(float $threshold = 75): int
     {
         $count = 0;
+        $today = now()->toDateString();
 
         $students = Student::where('state', Student::STATE_ADMITTED)
             ->whereHas('attendances')
@@ -85,6 +87,17 @@ class NotificationService
         foreach ($students as $student) {
             $percentage = AttendanceService::attendancePercentage($student);
             if ($percentage < $threshold) {
+                // Prevent duplicate: skip if already alerted today
+                $alreadyAlerted = NotificationLog::where('student_id', $student->id)
+                    ->where('channel', 'whatsapp')
+                    ->whereDate('created_at', $today)
+                    ->where('body', 'LIKE', '%نسبة حضور%')
+                    ->exists();
+
+                if ($alreadyAlerted) {
+                    continue;
+                }
+
                 $recipient = $student->parent?->mobile ?? $student->mobile;
                 if ($recipient) {
                     $body = "تنبيه: نسبة حضور الطالب {$student->full_name} هي {$percentage}% وهي أقل من الحد المسموح ({$threshold}%).";
