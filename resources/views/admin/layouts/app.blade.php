@@ -69,8 +69,8 @@
         .edb-sidebar {
             width: var(--edb-sidebar-w); display: flex; flex-direction: column;
             background: rgba(10,11,18,.92);
-            backdrop-filter: blur(24px) saturate(1.2); -webkit-backdrop-filter: blur(24px) saturate(1.2);
-            border-inline-start: 1px solid var(--edb-glass-border);
+            backdrop-filter: blur(24px) saturate(1.3); -webkit-backdrop-filter: blur(24px) saturate(1.3);
+            border-inline-start: 1px solid rgba(255,255,255,0.06);
             transition: width var(--transition-smooth);
             overflow: hidden;
             flex-shrink: 0;
@@ -88,21 +88,21 @@
         .edb-sidebar .nav-scroll { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 6px 14px 20px; }
         .edb-sidebar .nav-scroll::-webkit-scrollbar { width: 3px; }
         .edb-sidebar .nav-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,.08); }
-        .edb-sidebar .nav-section { padding: 22px 12px 8px; font-size: .6rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #3d4559; white-space: nowrap; }
+        .edb-sidebar .nav-section { padding: 22px 12px 8px; font-size: .56rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--edb-text-3); white-space: nowrap; }
         .edb-sidebar .nav-link {
-            display: flex; align-items: center; gap: 13px; padding: 10px 13px; margin: 1px 0;
-            color: #7a849b; border-radius: var(--edb-radius-xs); font-weight: 600; font-size: .84rem;
+            display: flex; align-items: center; gap: 13px; padding: 10px 14px; margin: 1px 0;
+            color: rgba(255,255,255,.4); border-radius: var(--edb-radius-xs); font-weight: 600; font-size: .82rem;
             transition: all var(--transition-fast); position: relative; white-space: nowrap; text-decoration: none;
         }
-        .edb-sidebar .nav-link i { font-size: 1.05rem; min-width: 20px; text-align: center; opacity: .75; transition: opacity var(--transition-fast); }
-        .edb-sidebar .nav-link:hover { background: rgba(255,255,255,.06); color: #c8cfd9; }
-        .edb-sidebar .nav-link:hover i { opacity: 1; }
-        .edb-sidebar .nav-link.active { background: var(--edb-primary); color: #fff; font-weight: 700; box-shadow: 0 4px 16px -4px rgba(var(--edb-primary-rgb), .5); }
+        .edb-sidebar .nav-link i { font-size: 1rem; min-width: 20px; text-align: center; opacity: .6; transition: opacity var(--transition-fast); }
+        .edb-sidebar .nav-link:hover { background: rgba(255,255,255,.05); color: rgba(255,255,255,.8); }
+        .edb-sidebar .nav-link:hover i { opacity: .9; }
+        .edb-sidebar .nav-link.active { background: linear-gradient(135deg, var(--edb-primary), rgba(124,58,237,.8)); color: #fff; font-weight: 700; box-shadow: 0 4px 20px -4px rgba(var(--edb-primary-rgb),.45); }
         .edb-sidebar .nav-link.active i { opacity: 1; }
-        .edb-sidebar .nav-footer { padding: 14px 14px; border-top: 1px solid rgba(255,255,255,.05); }
-        .edb-sidebar .nav-footer .user-chip { display: flex; align-items: center; gap: 11px; color: #c8cfd9; white-space: nowrap; padding: 6px 8px; border-radius: var(--edb-radius-xs); transition: background var(--transition-fast); }
-        .edb-sidebar .nav-footer .user-chip:hover { background: rgba(255,255,255,.05); }
-        .edb-sidebar .nav-footer .avatar { width: 36px; height: 36px; flex-shrink: 0; border-radius: 11px; background: var(--edb-primary); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: .85rem; box-shadow: 0 2px 8px rgba(var(--edb-primary-rgb), .3); }
+        .edb-sidebar .nav-footer { padding: 14px; border-top: 1px solid rgba(255,255,255,.04); }
+        .edb-sidebar .nav-footer .user-chip { display: flex; align-items: center; gap: 11px; color: rgba(255,255,255,.7); white-space: nowrap; padding: 6px 8px; border-radius: var(--edb-radius-xs); transition: background var(--transition-fast); }
+        .edb-sidebar .nav-footer .user-chip:hover { background: rgba(255,255,255,.04); }
+        .edb-sidebar .nav-footer .avatar { width: 36px; height: 36px; flex-shrink: 0; border-radius: 10px; background: linear-gradient(135deg, var(--edb-primary), rgba(124,58,237,.8)); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: .82rem; box-shadow: 0 2px 10px rgba(var(--edb-primary-rgb),.3); }
 
         body.sidebar-collapsed .edb-sidebar { width: var(--edb-sidebar-collapsed-w); transition: width var(--transition-smooth); }
         body.sidebar-collapsed .edb-sidebar .brand { padding: 20px 0; justify-content: center; }
@@ -145,9 +145,9 @@
         .edb-topbar {
             position: sticky; top: 0; z-index: 1030; display: flex; align-items: center; gap: 14px;
             padding: 14px 32px; min-height: 68px;
-            background: var(--edb-glass);
-            backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4);
-            border-bottom: 1px solid var(--edb-border);
+            background: rgba(12, 13, 20, 0.75);
+            backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
         .edb-topbar .breadcrumb { margin: 0; font-size: .8rem; }
         .edb-topbar .breadcrumb-item a { color: var(--edb-text-3); text-decoration: none; font-weight: 500; transition: color var(--transition-fast); }
@@ -179,13 +179,13 @@
 
         /* ============ Components — modern, refined ============ */
         .card {
-            border: 1px solid var(--edb-border); border-radius: var(--edb-radius);
+            border: 1px solid rgba(255,255,255,0.06); border-radius: var(--edb-radius);
             box-shadow: var(--edb-shadow); background: var(--edb-bg-elevated);
             transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
         }
-        .card.hoverable:hover { box-shadow: var(--edb-shadow-lg); transform: translateY(-3px); border-color: var(--edb-border-strong); }
+        .card.hoverable:hover { box-shadow: var(--edb-shadow-lg); transform: translateY(-3px); border-color: rgba(255,255,255,0.1); }
         .card-header {
-            background: transparent; border-bottom: 1px solid var(--edb-border); padding: 18px 24px; font-weight: 700; font-size: .92rem;
+            background: transparent; border-bottom: 1px solid rgba(255,255,255,0.06); padding: 18px 24px; font-weight: 700; font-size: .92rem;
             display: flex; align-items: center; gap: 8px;
         }
         .card-body { padding: 24px; }
@@ -198,8 +198,8 @@
         .btn { border-radius: 12px; font-weight: 700; transition: all var(--transition-fast); font-size: .88rem; letter-spacing: -.01em; }
         .btn:hover { transform: translateY(-1px); }
         .btn:active { transform: translateY(0); }
-        .btn-primary { background: var(--edb-primary); border-color: var(--edb-primary); box-shadow: 0 2px 8px -2px rgba(var(--edb-primary-rgb), .4); }
-        .btn-primary:hover { background: var(--edb-primary); filter: brightness(1.08); box-shadow: 0 4px 16px -4px rgba(var(--edb-primary-rgb), .5); }
+        .btn-primary { background: linear-gradient(135deg, var(--edb-primary), rgba(124,58,237,.85)); border-color: transparent; color: #fff; box-shadow: 0 4px 16px -4px rgba(var(--edb-primary-rgb),.4); }
+        .btn-primary:hover { background: linear-gradient(135deg, var(--edb-primary), rgba(124,58,237,.85)); filter: brightness(1.08); box-shadow: 0 8px 28px -4px rgba(var(--edb-primary-rgb),.5); }
         .btn-outline-primary { color: var(--edb-primary); border-color: rgba(var(--edb-primary-rgb), .25); }
         .btn-outline-primary:hover { background: var(--edb-primary); border-color: var(--edb-primary); color: #fff; }
         .btn-outline-secondary { color: var(--edb-text-2); border-color: var(--edb-border-strong); }
@@ -358,13 +358,54 @@
         @keyframes edbScaleIn { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: none; } }
         @keyframes edbGlow { 0%, 100% { box-shadow: 0 0 20px rgba(var(--edb-primary-rgb), .1); } 50% { box-shadow: 0 0 30px rgba(var(--edb-primary-rgb), .2); } }
 
-        .edb-bg-orbs { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
-        .edb-bg-orbs .orb { position: absolute; border-radius: 50%; filter: blur(100px); will-change: transform; }
-        .edb-bg-orbs .orb-1 { width: 500px; height: 500px; top: -160px; inset-inline-end: -120px; background: radial-gradient(circle, rgba(var(--edb-primary-rgb), .22), transparent 70%); animation: edbFloat 18s ease-in-out infinite; }
-        .edb-bg-orbs .orb-2 { width: 400px; height: 400px; bottom: -140px; inset-inline-start: -100px; background: radial-gradient(circle, rgba(14,165,233,.12), transparent 70%); animation: edbOrbDrift 24s ease-in-out infinite; }
-        .edb-bg-orbs .orb-3 { width: 300px; height: 300px; top: 40%; inset-inline-start: 35%; background: radial-gradient(circle, rgba(124,58,237,.09), transparent 70%); animation: edbFloat 28s ease-in-out infinite reverse; }
-        [data-bs-theme="dark"] .edb-bg-orbs .orb-1 { background: radial-gradient(circle, rgba(var(--edb-primary-rgb), .16), transparent 70%); }
-        [data-bs-theme="dark"] .edb-bg-orbs .orb-2 { background: radial-gradient(circle, rgba(14,165,233,.07), transparent 70%); }
+        /* ============ Atmosphere — Login-matching ambient background ============ */
+        .atmo { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: var(--edb-bg); }
+        .atmo-grad {
+            position: absolute; width: 160%; height: 160%; top: -30%; left: -30%;
+            background:
+                radial-gradient(ellipse 900px 700px at 18% 28%, rgba(var(--edb-primary-rgb), 0.18), transparent 70%),
+                radial-gradient(ellipse 700px 900px at 82% 72%, rgba(124, 58, 237, 0.12), transparent 70%),
+                radial-gradient(ellipse 600px 600px at 55% 45%, rgba(236, 72, 153, 0.06), transparent 60%);
+            animation: atmoDrift 30s ease-in-out infinite alternate;
+        }
+        @keyframes atmoDrift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(2%, -1.5%) rotate(0.5deg); }
+            100% { transform: translate(-1%, 1%) rotate(-0.3deg); }
+        }
+        .atmo-grid {
+            position: absolute; inset: 0; opacity: 0.025;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
+            background-size: 72px 72px;
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+        }
+        .atmo-orb { position: absolute; border-radius: 50%; filter: blur(100px); will-change: transform; }
+        .atmo-orb--a {
+            width: 600px; height: 600px; top: -18%; left: -8%;
+            background: rgba(var(--edb-primary-rgb), 0.22);
+            animation: orbA 22s ease-in-out infinite;
+        }
+        .atmo-orb--b {
+            width: 480px; height: 480px; bottom: -12%; right: -4%;
+            background: rgba(124, 58, 237, 0.18);
+            animation: orbB 26s ease-in-out infinite;
+        }
+        .atmo-orb--c {
+            width: 320px; height: 320px; top: 45%; left: 55%;
+            background: rgba(236, 72, 153, 0.08);
+            animation: orbC 20s ease-in-out infinite;
+        }
+        @keyframes orbA { 0%,100% { transform: translate(0,0); } 50% { transform: translate(30px,25px); } }
+        @keyframes orbB { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-25px,-35px); } }
+        @keyframes orbC { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-15px,20px) scale(1.08); } }
+        .atmo-noise {
+            position: absolute; inset: 0; opacity: 0.018; pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+        }
 
         .edb-content { position: relative; z-index: 1; }
         .edb-content > * { animation: edbRise .5s cubic-bezier(.22,.68,.31,1) both; }
@@ -448,10 +489,13 @@
     </style>
 </head>
 <body>
-<div class="edb-bg-orbs" aria-hidden="true">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-    <span class="orb orb-3"></span>
+<div class="atmo" aria-hidden="true">
+    <div class="atmo-grad"></div>
+    <div class="atmo-grid"></div>
+    <div class="atmo-orb atmo-orb--a"></div>
+    <div class="atmo-orb atmo-orb--b"></div>
+    <div class="atmo-orb atmo-orb--c"></div>
+    <div class="atmo-noise"></div>
 </div>
 <div class="edb-layout">
 <div class="edb-sidebar">
