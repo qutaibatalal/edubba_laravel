@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <style>
-        * { font-family: 'Tajawal', sans-serif; box-sizing: border-box; }
+        * { font-family: 'xbriyaz', sans-serif; box-sizing: border-box; }
         body { margin: 0; padding: 24px 30px; color: #111827; font-size: 11px; }
         .doc-head { display: flex; align-items: center; justify-content: space-between; border-bottom: 3px solid {{ $primaryColor }}; padding-bottom: 12px; margin-bottom: 16px; }
         .school { display: flex; align-items: center; gap: 10px; }

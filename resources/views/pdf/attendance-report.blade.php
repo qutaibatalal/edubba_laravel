@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <style>
-        * { font-family: 'Tajawal', sans-serif; box-sizing: border-box; }
+        * { font-family: 'xbriyaz', sans-serif; box-sizing: border-box; }
         body { margin: 0; padding: 30px 34px; color: #111827; font-size: 11px; }
         .doc-head { display: flex; align-items: center; justify-content: space-between; border-bottom: 3px solid {{ $primaryColor }}; padding-bottom: 12px; margin-bottom: 18px; }
         .doc-head h1 { margin: 0; font-size: 16px; font-weight: 800; }

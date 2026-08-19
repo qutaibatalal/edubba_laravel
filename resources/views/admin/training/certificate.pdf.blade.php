@@ -13,7 +13,7 @@
                             <i class="bi bi-trophy bi-3x text-primary" style="line-height:100px;"></i>
                         </div>
                     </div>
-                    <h2 class="text-center fw-bold mb-3" style="font-family: 'Tajawal', serif;">@lang('training.certificate.heading')</h2>
+                    <h2 class="text-center fw-bold mb-3" style="font-family: 'xbriyaz', 'Amiri', 'Tajawal', serif;">@lang('training.certificate.heading')</h2>
                     <hr class="my-4" style="border-color:#2c3e50;">
                     
                     <div class="mb-3">

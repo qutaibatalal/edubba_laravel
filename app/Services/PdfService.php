@@ -20,7 +20,7 @@ class PdfService
         return new Mpdf([
             'mode' => 'utf-8',
             'format' => 'A4',
-            'default_font' => 'tajawal',
+            'default_font' => 'xbriyaz',
             'autoScriptToLang' => true,
             'autoLangToFont' => true,
             'margin_top' => 20,
@@ -30,9 +30,11 @@ class PdfService
             'tempDir' => $tempDir,
             'fontDir' => [storage_path('fonts')],
             'fontdata' => [
-                'tajawal' => [
-                    'R' => 'Tajawal-Regular.ttf',
-                    'B' => 'Tajawal-Bold.ttf',
+                'xbriyaz' => [
+                    'R' => 'XB Riyaz.ttf',
+                    'B' => 'XB RiyazBd.ttf',
+                    'useOTL' => 0x80,
+                    'useKashida' => 75,
                 ],
             ],
         ]);

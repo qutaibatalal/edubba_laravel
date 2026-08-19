@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <style>
-        * { font-family: 'Tajawal', sans-serif; box-sizing: border-box; }
+        * { font-family: 'xbriyaz', sans-serif; box-sizing: border-box; }
         body { margin: 0; padding: 26px 32px; color: #111827; font-size: 11px; }
         .card { page-break-after: always; }
         .card:last-child { page-break-after: auto; }

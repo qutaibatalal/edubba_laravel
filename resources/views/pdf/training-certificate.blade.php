@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <style>
-        * { font-family: 'Tajawal', sans-serif; box-sizing: border-box; }
+        * { font-family: 'xbriyaz', sans-serif; box-sizing: border-box; }
         body { margin: 0; padding: 0; }
         .cert { width: 100%; min-height: 700px; padding: 60px 70px; border: 4px double #2c3e50; border-radius: 18px; text-align: center; position: relative; }
         .logo { width: 96px; height: 96px; margin: 0 auto 18px; border: 4px double #2c3e50; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 42px; color: {{ $primaryColor }}; }
