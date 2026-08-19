@@ -7,7 +7,7 @@
     $primaryRgb = $primaryRgb[0] . ',' . $primaryRgb[1] . ',' . $primaryRgb[2];
 @endphp
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}" data-bs-theme="light">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}" data-bs-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,58 +16,48 @@
     <link rel="icon" type="image/png" href="{{ asset('images/edubba_app_icon.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap{{ app()->getLocale() === 'ar' ? '.rtl' : '' }}.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/font/lucide.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Noto+Kufi+Arabic:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    @if(app()->getLocale() === 'ar')
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+    @else
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    @endif
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --edb-primary: {{ $primaryColor }};
             --edb-primary-rgb: {{ $primaryRgb }};
-            --edb-sidebar-w: 272px;
-            --edb-sidebar-collapsed-w: 78px;
+            --edb-sidebar-w: 264px;
+            --edb-sidebar-collapsed-w: 76px;
             --edb-radius: 16px;
-            --edb-radius-sm: 10px;
-            --edb-radius-xs: 8px;
-            --edb-bg: #f8f9fc;
-            --edb-bg-elevated: #ffffff;
-            --edb-border: rgba(0, 0, 0, .06);
-            --edb-border-strong: rgba(0, 0, 0, .10);
-            --edb-text-1: #0f1729;
-            --edb-text-2: #475569;
-            --edb-text-3: #94a3b8;
-            --edb-shadow-sm: 0 1px 2px rgba(0,0,0,.03), 0 1px 3px rgba(0,0,0,.04);
-            --edb-shadow: 0 1px 3px rgba(0,0,0,.04), 0 2px 8px rgba(0,0,0,.04);
-            --edb-shadow-md: 0 4px 12px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.04);
-            --edb-shadow-lg: 0 12px 40px -8px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.04);
-            --edb-shadow-xl: 0 24px 64px -16px rgba(0,0,0,.18);
-            --edb-glass: rgba(255,255,255,.72);
-            --edb-glass-border: rgba(255,255,255,.5);
+            --edb-radius-sm: 12px;
+            --edb-radius-xs: 10px;
+            --edb-bg: #08080d;
+            --edb-bg-elevated: #0e0f16;
+            --edb-border: rgba(255,255,255,.06);
+            --edb-border-strong: rgba(255,255,255,.10);
+            --edb-text-1: #f0f0f6;
+            --edb-text-2: rgba(255,255,255,.55);
+            --edb-text-3: rgba(255,255,255,.30);
+            --edb-shadow-sm: 0 1px 3px rgba(0,0,0,.3);
+            --edb-shadow: 0 2px 8px rgba(0,0,0,.3);
+            --edb-shadow-md: 0 4px 16px rgba(0,0,0,.4);
+            --edb-shadow-lg: 0 12px 40px rgba(0,0,0,.5);
+            --edb-shadow-xl: 0 24px 64px rgba(0,0,0,.6);
+            --edb-glass: rgba(12,13,20,.75);
+            --edb-glass-border: rgba(255,255,255,.06);
             --transition-fast: 150ms cubic-bezier(.4,0,.2,1);
             --transition-base: 200ms cubic-bezier(.4,0,.2,1);
             --transition-smooth: 300ms cubic-bezier(.4,0,.2,1);
             --transition-spring: 500ms cubic-bezier(.22,.68,.31,1);
         }
-        [data-bs-theme="dark"] {
-            --edb-bg: #0c0e14;
-            --edb-bg-elevated: #13161f;
-            --edb-border: rgba(255,255,255,.06);
-            --edb-border-strong: rgba(255,255,255,.10);
-            --edb-text-1: #e2e8f0;
-            --edb-text-2: #94a3b8;
-            --edb-text-3: #64748b;
-            --edb-shadow-sm: 0 1px 2px rgba(0,0,0,.2);
-            --edb-shadow: 0 1px 3px rgba(0,0,0,.3), 0 2px 8px rgba(0,0,0,.2);
-            --edb-shadow-md: 0 4px 12px rgba(0,0,0,.4);
-            --edb-shadow-lg: 0 12px 40px -8px rgba(0,0,0,.6);
-            --edb-shadow-xl: 0 24px 64px -16px rgba(0,0,0,.7);
-            --edb-glass: rgba(12,14,20,.82);
-            --edb-glass-border: rgba(255,255,255,.06);
-        }
-
-        * { font-family: 'Plus Jakarta Sans', 'Tajawal', system-ui, sans-serif; }
-        [dir="rtl"] * { font-family: 'Tajawal', 'Plus Jakarta Sans', system-ui, sans-serif; }
-        body { background: var(--edb-bg); min-height: 100vh; transition: background var(--transition-smooth); color: var(--edb-text-1); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        html { height: 100%; }
+        * { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        [dir="rtl"] * { font-family: 'Noto Kufi Arabic', 'Inter', system-ui, sans-serif; }
+        body { background: var(--edb-bg); min-height: 100%; transition: background var(--transition-smooth); color: var(--edb-text-1); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .text-muted { color: var(--edb-text-3) !important; }
+        .text-secondary { color: var(--edb-text-2) !important; }
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: rgba(120,130,150,.22); border-radius: 8px; }
@@ -78,8 +68,9 @@
         /* ============ Sidebar — refined, modern ============ */
         .edb-sidebar {
             width: var(--edb-sidebar-w); display: flex; flex-direction: column;
-            background: #0c0e14;
-            border-inline-start: 1px solid rgba(255,255,255,.04);
+            background: rgba(10,11,18,.92);
+            backdrop-filter: blur(24px) saturate(1.2); -webkit-backdrop-filter: blur(24px) saturate(1.2);
+            border-inline-start: 1px solid var(--edb-glass-border);
             transition: width var(--transition-smooth);
             overflow: hidden;
             flex-shrink: 0;
@@ -88,13 +79,12 @@
             top: 0;
             z-index: 1045;
         }
-        [data-bs-theme="dark"] .edb-sidebar { background: #080a0f; border-inline-start-color: rgba(255,255,255,.03); }
         .edb-sidebar .brand { display: flex; align-items: center; gap: 14px; padding: 24px 22px 20px; color: #fff; text-decoration: none; white-space: nowrap; }
-        .edb-sidebar .brand .brand-logo { height: 30px; width: auto; max-width: 150px; object-fit: contain; flex-shrink: 0; transition: transform var(--transition-smooth); }
+        .edb-sidebar .brand .brand-logo { height: 28px; width: auto; max-width: 140px; object-fit: contain; flex-shrink: 0; transition: transform var(--transition-smooth); filter: drop-shadow(0 2px 8px rgba(0,0,0,.3)); }
         .edb-sidebar .brand:hover .brand-logo { transform: scale(1.03); }
-        .edb-sidebar .brand .brand-logo-mini { display: none; width: 38px; height: 38px; flex-shrink: 0; border-radius: 12px; object-fit: cover; }
-        .edb-sidebar .brand .brand-name { font-weight: 800; font-size: 1.02rem; line-height: 1.25; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
-        .edb-sidebar .brand .brand-sub { font-size: .62rem; color: #525f7f; font-weight: 600; letter-spacing: .06em; display: block; margin-top: 2px; }
+        .edb-sidebar .brand .brand-logo-mini { display: none; width: 36px; height: 36px; flex-shrink: 0; border-radius: 10px; object-fit: cover; }
+        .edb-sidebar .brand .brand-name { font-weight: 800; font-size: .95rem; line-height: 1.25; min-width: 0; overflow: hidden; text-overflow: ellipsis; color: var(--edb-text-1); }
+        .edb-sidebar .brand .brand-sub { font-size: .58rem; color: var(--edb-text-3); font-weight: 600; letter-spacing: .06em; display: block; margin-top: 2px; }
         .edb-sidebar .nav-scroll { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 6px 14px 20px; }
         .edb-sidebar .nav-scroll::-webkit-scrollbar { width: 3px; }
         .edb-sidebar .nav-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,.08); }
