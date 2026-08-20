@@ -57,6 +57,9 @@
                     <div class="d-flex gap-2">
                         <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('{{ $student->apiUser->username }}')" title="نسخ اسم المستخدم"><i class="bi bi-copy me-1"></i></button>
                         <button class="btn btn-sm btn-outline-primary" onclick="copyToClipboard('{{ $student->apiUser->password }}')" title="نسخ كلمة المرور"><i class="bi bi-copy me-1"></i></button>
+                        @if (auth()->user()->hasRole('admin'))
+                            <button class="btn btn-sm btn-outline-danger" onclick="resetStudentPassword({{ $student->id }})" title="إعادة تعيين كلمة المرور"><i class="bi bi-arrow-counter-clockwise me-1"></i></button>
+                        @endif
                     </div>
                     <small class="text-muted mt-2">يمكنك نسخ بيانات الدخول أو إعادة تعيين كلمة المرور من API</small>
                 @else
@@ -153,6 +156,54 @@ function copyToClipboard(text) {
         setTimeout(function() { btn.innerHTML = originalText; }, 2000);
     }).catch(function(err) {
         console.error('Failed to copy: ', err);
+    });
+}
+
+function resetStudentPassword(studentId) {
+    if (!confirm('هل أنت متأكد من إعادة تعيين كلمة المرور للطالب؟')) {
+        return;
+    }
+
+    // Show loading state on the reset button
+    var buttons = document.querySelectorAll('.btn-outline-danger[onclick*="resetStudentPassword"]');
+    buttons.forEach(function(btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="bi bi-arrow-repeat me-1"></i> جاري المعالجة...';
+    });
+
+    fetch('/api/v1/admin/students/' + studentId + '/reset-password', {
+        method: 'POST',
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            // Update the password field with the new password
+            var passwordInput = document.querySelector('input[value*="password"]');
+            if (passwordInput) {
+                passwordInput.value = data.data.new_password;
+            }
+            // Show success feedback
+            alert('تم إعادة تعيين كلمة المرور successfully');
+            // Refresh the page to show new password
+            location.reload();
+        } else {
+            alert('حدث خطأ: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('حدث خطأ في الاتصال بالخادم');
+    })
+    .finally(function() {
+        // Re-enable buttons
+        var buttons = document.querySelectorAll('.btn-outline-danger[onclick*="resetStudentPassword"]');
+        buttons.forEach(function(btn) {
+            btn.disabled = false;
+            btn.innerHTML = '<i class="bi bi-arrow-counter-clockwise me-1"></i> إعادة تعيين كلمة المرور';
+        });
     });
 }
 </script>

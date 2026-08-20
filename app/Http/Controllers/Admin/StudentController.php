@@ -72,7 +72,7 @@ class StudentController extends Controller
 
     public function show(Student $student): View
     {
-        $student->load('batch', 'program', 'academicYear', 'parent', 'parents', 'courses', 'invoices');
+        $student->load('batch', 'program', 'academicYear', 'parent', 'parents', 'courses', 'invoices', 'apiUser');
 
         $attendancePercentage = AttendanceService::attendancePercentage($student);
 
@@ -158,10 +158,35 @@ class StudentController extends Controller
 
         ApiUser::create([
             'username' => $username,
-            'password' => $password,
+            'password' => bcrypt($password),
             'role' => 'student',
             'student_id' => $student->id,
             'active' => true,
+        ]);
+    }
+
+    public function resetStudentPassword(Student $student): JsonResponse
+    {
+        if (! class_exists(ApiUser::class)) {
+            return response()->json(['status' => 'error', 'message': 'API Users not enabled'], 400);
+        }
+
+        $apiUser = ApiUser::where('student_id', $student->id)->first();
+
+        if (! $apiUser) {
+            return response()->json(['status' => 'error', 'message': 'No API account found for this student'], 404);
+        }
+
+        $newPassword = Str::random(12);
+        $apiUser->update(['password' => bcrypt($newPassword)]);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Password reset successfully',
+            'data' => [
+                'new_password' => $newPassword,
+                'username' => $apiUser->username,
+            ],
         ]);
     }
 

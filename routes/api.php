@@ -153,7 +153,7 @@ Route::prefix('v1')->group(function () {
         Route::get('/library/my-books', [LibraryController::class, 'myBooks']);
 
         // Admin endpoints (role-gated)
-        Route::prefix('admin')->middleware('role.admin')->group(function () {
+Route::prefix('admin')->middleware('role.admin')->group(function () {
             Route::get('/admissions', [AdmissionController::class, 'index']);
             Route::post('/admissions', [AdmissionController::class, 'store']);
             Route::post('/admissions/{id}/submit', [AdmissionController::class, 'submit']);
@@ -182,6 +182,8 @@ Route::prefix('v1')->group(function () {
             Route::post('/onboarding/step/3', [OnboardingController::class, 'stepDepartmentsBatches']);
             Route::post('/onboarding/step/4', [OnboardingController::class, 'stepSubjectsFaculty']);
             Route::get('/onboarding/step/5', [OnboardingController::class, 'stepReview']);
+
+            Route::post('/students/{student}/reset-password', [StudentController::class, 'resetStudentPassword']);
         });
     });
 });
