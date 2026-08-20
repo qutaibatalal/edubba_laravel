@@ -116,6 +116,11 @@ class Student extends Model
         return $this->hasMany(ExamRoomAllocation::class);
     }
 
+    public function apiUser()
+    {
+        return $this->hasOne(ApiUser::class, 'student_id');
+    }
+
     public function assignmentSubmissions()
     {
         return $this->hasMany(AssignmentSubmission::class);
@@ -129,5 +134,10 @@ class Student extends Model
     public function libraryIssues()
     {
         return $this->hasMany(LibraryIssue::class);
+    }
+
+    public function assignments()
+    {
+        return Assignment::whereHas('course', fn ($q) => $q->whereHas('students', fn ($q) => $q->where('student_id', $this->id)));
     }
 }
