@@ -41,6 +41,28 @@
             </div>
         </div>
     </div>
+    <div class="col-lg-4">
+        <div class="card hoverable">
+            <div class="card-body text-center">
+                @if ($student->apiUser)
+                    <h6 class="fw-bold mb-3">@lang('students.show.api_credentials')</h6>
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control-sm" value="{{ $student->apiUser->username }}" readonly>
+                        <small class="text-muted">اسم المستخدم (اسم الطالب)</small>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control form-control-sm" value="{{ $student->apiUser->password }}" readonly>
+                        <small class="text-muted">كلمة المرور</small>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('{{ $student->apiUser->username }}')" title="نسخ اسم المستخدم"><i class="bi bi-copy me-1"></i></button>
+                        <button class="btn btn-sm btn-outline-primary" onclick="copyToClipboard('{{ $student->apiUser->password }}')" title="نسخ كلمة المرور"><i class="bi bi-copy me-1"></i></button>
+                    </div>
+                    <small class="text-muted mt-2">يمكنك نسخ بيانات الدخول أو إعادة تعيين كلمة المرور من API</small>
+                @else
+                    <span class="text-secondary fw-bold">لا يوجد حساب API</span>
+                    <p class="small text-muted">لتفعيل الحساب، عد إلى صفحة إنشاء الطالب وحدد "إنشاء حساب API"</p>
+                @endif
     <div class="col-lg-8">
         <div class="card mb-3 hoverable">
             <div class="card-header fw-bold">@lang('students.show.parents_title')</div>
@@ -121,4 +143,17 @@
         </div>
     </div>
 </div>
-@endsection
+@push('scripts')
+<script>
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        var btn = event.target;
+        var originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="bi bi-check me-1"></i>已复制';
+        setTimeout(function() { btn.innerHTML = originalText; }, 2000);
+    }).catch(function(err) {
+        console.error('Failed to copy: ', err);
+    });
+}
+</script>
+@endpush
