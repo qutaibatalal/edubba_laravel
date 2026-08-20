@@ -13,7 +13,7 @@
 
 <div class="card hoverable" style="max-width:760px">
     <div class="card-body p-4">
-        <form method="POST" action="{{ route('admin.settings.update') }}">
+        <form method="POST" action="{{ route('admin.settings.update') }}" enctype="multipart/form-data">
             @csrf
             <h6 class="fw-bold mb-3"><i class="bi bi-building text-primary me-2"></i> @lang('settings.index.school_info')</h6>
             <div class="row g-3">
@@ -30,6 +30,24 @@
                     <div class="input-group">
                         <input type="color" name="primary_color" class="form-control form-control-color" value="{{ $configs['primary_color']?->value ?? '#1e40af' }}">
                         <input type="text" name="primary_color" class="form-control" value="{{ $configs['primary_color']?->value ?? '#1e40af' }}">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label class="form-label fw-semibold">@lang('settings.index.school_logo')</label>
+                    <div class="d-flex align-items-center gap-3">
+                        <div id="logoPreview" style="width:80px;height:80px;border-radius:14px;background:var(--edb-bg);border:2px dashed var(--edb-border-strong);display:grid;place-items:center;overflow:hidden;flex-shrink:0">
+                            @php $logoUrl = cache()->remember('edubba_admin_logo', 3600, fn() => App\Models\MobileAppConfig::configValue('logo_url', '')); @endphp
+                            @if ($logoUrl)
+                                <img src="{{ $logoUrl }}" alt="" style="width:100%;height:100%;object-fit:contain">
+                            @else
+                                <i class="bi bi-image text-muted" style="font-size:1.6rem"></i>
+                            @endif
+                        </div>
+                        <div>
+                            <input type="file" name="logo" id="logoInput" accept="image/jpeg,image/png" class="d-none" onchange="previewLogo(this)">
+                            <button type="button" class="btn btn-outline-primary btn-sm" onclick="document.getElementById('logoInput').click()"><i class="bi bi-upload me-1"></i> @lang('settings.index.change_logo')</button>
+                            <div class="text-muted small mt-1">JPEG/PNG, max 5MB</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,4 +113,15 @@
         @endif
     </div>
 </div>
+<script>
+function previewLogo(input) {
+    if (input.files && input.files[0]) {
+        var r = new FileReader();
+        r.onload = function(e) {
+            document.getElementById('logoPreview').innerHTML = '<img src="' + e.target.result + '" style="width:100%;height:100%;object-fit:contain">';
+        };
+        r.readAsDataURL(input.files[0]);
+    }
+}
+</script>
 @endsection

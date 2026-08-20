@@ -28,7 +28,7 @@
             <div class="stepper-item" data-step="3"><span class="stepper-num">4</span><span class="stepper-label">@lang('students.form.step_review')</span></div>
         </div>
 
-        <form method="POST" action="{{ $student ? route('admin.students.update', $student) : route('admin.students.store') }}" id="studentWizard">
+        <form method="POST" action="{{ $student ? route('admin.students.update', $student) : route('admin.students.store') }}" id="studentWizard" enctype="multipart/form-data">
             @csrf
             @if ($student) @method('PUT') @endif
 
@@ -46,6 +46,23 @@
             <div class="step-pane">
                 <h6 class="text-primary fw-bold mb-3">@lang('students.form.step_personal')</h6>
                 <div class="row g-3">
+                    <div class="col-12">
+                        <label class="form-label">@lang('students.form.photo')</label>
+                        <div class="d-flex align-items-center gap-3">
+                            <div id="photoPreview" style="width:80px;height:80px;border-radius:14px;background:var(--edb-bg);border:2px dashed var(--edb-border-strong);display:grid;place-items:center;overflow:hidden;flex-shrink:0">
+                                @if ($student?->photo)
+                                    <img src="{{ $student->photo }}" alt="" style="width:100%;height:100%;object-fit:cover">
+                                @else
+                                    <i class="bi bi-person-fill text-muted" style="font-size:1.6rem"></i>
+                                @endif
+                            </div>
+                            <div>
+                                <input type="file" name="photo" id="photoInput" accept="image/jpeg,image/png" class="d-none" onchange="previewPhoto(this)">
+                                <button type="button" class="btn btn-outline-primary btn-sm" onclick="document.getElementById('photoInput').click()"><i class="bi bi-camera me-1"></i> @lang('students.form.choose_photo')</button>
+                                <div class="text-muted small mt-1">JPEG/PNG, max 5MB</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-4">
                         <label class="form-label">@lang('students.form.first_name')</label>
                         <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $student?->name) }}" required>
@@ -259,6 +276,15 @@
             wizardShow(minStep);
         @endif
     })();
+    function previewPhoto(input) {
+        if (input.files && input.files[0]) {
+            var r = new FileReader();
+            r.onload = function(e) {
+                document.getElementById('photoPreview').innerHTML = '<img src="' + e.target.result + '" style="width:100%;height:100%;object-fit:cover">';
+            };
+            r.readAsDataURL(input.files[0]);
+        }
+    }
 </script>
 @endpush
 @endsection

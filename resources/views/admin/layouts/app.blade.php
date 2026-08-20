@@ -2,6 +2,7 @@
     $primaryColor = cache()->remember('edubba_admin_primary', 3600, fn () => App\Models\MobileAppConfig::configValue('primary_color', '#4f46e5'));
     $appName = config('app.name', 'إدبة');
     $schoolName = cache()->remember('edubba_admin_school', 3600, fn () => App\Models\MobileAppConfig::configValue('school_name', 'مدرسة إدبة'));
+    $logoUrl = cache()->remember('edubba_admin_logo', 3600, fn () => App\Models\MobileAppConfig::configValue('logo_url', ''));
     $locale = Session::has('locale') ? session('locale') : 'ar';
     $primaryRgb = sscanf($primaryColor, '#%02x%02x%02x');
     $primaryRgb = $primaryRgb[0] . ',' . $primaryRgb[1] . ',' . $primaryRgb[2];
@@ -646,8 +647,13 @@
 <div class="edb-layout">
 <div class="edb-sidebar">
     <a href="{{ route('admin.dashboard') }}" class="brand">
-        <img class="brand-logo" src="{{ asset('images/edubba_app.png') }}" alt="{{ $schoolName }}">
-        <img class="brand-logo-mini" src="{{ asset('images/edubba_app_icon.png') }}" alt="{{ $schoolName }}">
+        @if ($logoUrl)
+            <img class="brand-logo" src="{{ $logoUrl }}" alt="{{ $schoolName }}">
+            <img class="brand-logo-mini" src="{{ $logoUrl }}" alt="{{ $schoolName }}">
+        @else
+            <img class="brand-logo" src="{{ asset('images/edubba_app.png') }}" alt="{{ $schoolName }}">
+            <img class="brand-logo-mini" src="{{ asset('images/edubba_app_icon.png') }}" alt="{{ $schoolName }}">
+        @endif
         <span class="brand-name">{{ $schoolName }}<span class="brand-sub">@yield('title', __('dashboard'))</span></span>
     </a>
 

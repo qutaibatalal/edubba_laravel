@@ -7,8 +7,10 @@ use App\Models\Department;
 use App\Models\Faculty;
 use App\Services\PdfService;
 use App\Services\SequenceService;
+use App\Support\UploadPolicy;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class FacultyController extends Controller
@@ -43,7 +45,11 @@ class FacultyController extends Controller
         $data['faculty_code'] = $data['faculty_code'] ?? SequenceService::next('faculty_code', 'FAC');
         $data['state'] = $data['state'] ?? Faculty::STATE_JOINED;
 
-        Faculty::create($data);
+        $member = Faculty::create($data);
+
+        if ($request->hasFile('photo')) {
+            $this->handlePhoto($request->file('photo'), $member);
+        }
 
         return redirect()->route('admin.faculty.index')->with('success', 'تم إضافة عضو هيئة تدريسية.');
     }
@@ -78,6 +84,10 @@ class FacultyController extends Controller
     {
         $faculty->update($this->validated($request));
 
+        if ($request->hasFile('photo')) {
+            $this->handlePhoto($request->file('photo'), $faculty);
+        }
+
         return redirect()->route('admin.faculty.index')->with('success', 'تم تحديث البيانات.');
     }
 
@@ -108,6 +118,45 @@ class FacultyController extends Controller
             'department_id' => 'nullable|integer|exists:departments,id',
             'state' => 'nullable|in:draft,joined,left',
             'active' => 'nullable|boolean',
+            'photo' => 'nullable|file|image|mimes:jpeg,png|max:5120',
         ]);
+    }
+
+    private function handlePhoto($file, Faculty $member): void
+    {
+        UploadPolicy::validate($file, 'image');
+        $name = Str::random(24).'.'.$file->getClientOriginalExtension();
+        $file->storeAs('photos', $name, 'public');
+        $thumbName = 'thumbs/'.pathinfo($name, PATHINFO_FILENAME).'_thumb.jpg';
+        $this->makeThumbnail($file->getRealPath(), storage_path('app/public/'.$thumbName));
+        $member->update(['photo' => asset('storage/photos/'.$name)]);
+    }
+
+    private function makeThumbnail(string $sourcePath, string $thumbPath): void
+    {
+        $dir = dirname($thumbPath);
+        if (! is_dir($dir)) {
+            mkdir($dir, 0755, true);
+        }
+        [$width, $height, $type] = @getimagesize($sourcePath);
+        if (! $width || ! $height) {
+            return;
+        }
+        $src = match ($type) {
+            IMAGETYPE_JPEG => imagecreatefromjpeg($sourcePath),
+            IMAGETYPE_PNG => imagecreatefrompng($sourcePath),
+            default => null,
+        };
+        if (! $src) {
+            return;
+        }
+        $size = min($width, $height);
+        $offsetX = (int) (($width - $size) / 2);
+        $offsetY = (int) (($height - $size) / 2);
+        $thumb = imagecreatetruecolor(150, 150);
+        imagecopyresampled($thumb, $src, 0, 0, $offsetX, $offsetY, 150, 150, $size, $size);
+        imagejpeg($thumb, $thumbPath, 85);
+        imagedestroy($src);
+        imagedestroy($thumb);
     }
 }

@@ -16,10 +16,27 @@
 
 <div class="card hoverable" style="max-width:760px">
     <div class="card-body p-4">
-        <form method="POST" action="{{ $member ? route('admin.faculty.update', $member) : route('admin.faculty.store') }}">
+        <form method="POST" action="{{ $member ? route('admin.faculty.update', $member) : route('admin.faculty.store') }}" enctype="multipart/form-data">
             @csrf
             @if ($member) @method('PUT') @endif
             <div class="row g-3">
+                <div class="col-12">
+                    <label class="form-label">@lang('faculty.form.label_photo')</label>
+                    <div class="d-flex align-items-center gap-3">
+                        <div id="facPhotoPreview" style="width:80px;height:80px;border-radius:14px;background:var(--edb-bg);border:2px dashed var(--edb-border-strong);display:grid;place-items:center;overflow:hidden;flex-shrink:0">
+                            @if ($member?->photo)
+                                <img src="{{ $member->photo }}" alt="" style="width:100%;height:100%;object-fit:cover">
+                            @else
+                                <i class="bi bi-person-fill text-muted" style="font-size:1.6rem"></i>
+                            @endif
+                        </div>
+                        <div>
+                            <input type="file" name="photo" id="facPhotoInput" accept="image/jpeg,image/png" class="d-none" onchange="previewFacPhoto(this)">
+                            <button type="button" class="btn btn-outline-primary btn-sm" onclick="document.getElementById('facPhotoInput').click()"><i class="bi bi-camera me-1"></i> @lang('faculty.form.choose_photo')</button>
+                            <div class="text-muted small mt-1">JPEG/PNG, max 5MB</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-4">
                     <label class="form-label">@lang('faculty.form.label_first_name')</label>
                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $member?->name) }}" required>
@@ -97,4 +114,15 @@
         </form>
     </div>
 </div>
+<script>
+function previewFacPhoto(input) {
+    if (input.files && input.files[0]) {
+        var r = new FileReader();
+        r.onload = function(e) {
+            document.getElementById('facPhotoPreview').innerHTML = '<img src="' + e.target.result + '" style="width:100%;height:100%;object-fit:cover">';
+        };
+        r.readAsDataURL(input.files[0]);
+    }
+}
+</script>
 @endsection

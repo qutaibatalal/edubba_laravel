@@ -20,7 +20,11 @@
     <div class="col-lg-4">
         <div class="card hoverable">
             <div class="card-body text-center">
-                <span class="avatar avatar-lg grad-1 mx-auto mb-3">{{ mb_substr($student->full_name, 0, 1) }}</span>
+                @if ($student->photo)
+                    <img src="{{ $student->photo }}" alt="" style="width:80px;height:80px;border-radius:14px;object-fit:cover" class="mx-auto mb-3 d-block">
+                @else
+                    <span class="avatar avatar-lg grad-1 mx-auto mb-3">{{ mb_substr($student->full_name, 0, 1) }}</span>
+                @endif
                 <h5 class="mb-1 fw-bold">{{ $student->full_name }}</h5>
                 <div class="text-secondary small mb-3">{{ $student->student_code }}</div>
                 <span class="badge badge-soft-{{ $student->state === 'admitted' ? 'success' : ($student->state === 'graduated' ? 'primary' : ($student->state === 'alumni' ? 'purple' : 'secondary')) }}">{{ $student->state }}</span>

@@ -12,6 +12,7 @@ use App\Models\Student;
 use App\Services\AttendanceService;
 use App\Services\PdfService;
 use App\Services\SequenceService;
+use App\Support\UploadPolicy;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -58,6 +59,10 @@ class StudentController extends Controller
 
         $student = Student::create($data);
 
+        if ($request->hasFile('photo')) {
+            $this->handlePhoto($request->file('photo'), $student);
+        }
+
         if ($request->boolean('create_api_account')) {
             $this->createApiAccount($student);
         }
@@ -95,6 +100,10 @@ class StudentController extends Controller
     public function update(Request $request, Student $student): RedirectResponse
     {
         $student->update($this->validated($request));
+
+        if ($request->hasFile('photo')) {
+            $this->handlePhoto($request->file('photo'), $student);
+        }
 
         return redirect()->route('admin.students.index')->with('success', 'تم تحديث بيانات الطالب.');
     }
@@ -179,6 +188,45 @@ class StudentController extends Controller
             'admission_date' => 'nullable|date',
             'roll_no' => 'nullable|string|max:30',
             'active' => 'nullable|boolean',
+            'photo' => 'nullable|file|image|mimes:jpeg,png|max:5120',
         ]);
+    }
+
+    private function handlePhoto($file, Student $student): void
+    {
+        UploadPolicy::validate($file, 'image');
+        $name = Str::random(24).'.'.$file->getClientOriginalExtension();
+        $file->storeAs('photos', $name, 'public');
+        $thumbName = 'thumbs/'.pathinfo($name, PATHINFO_FILENAME).'_thumb.jpg';
+        $this->makeThumbnail($file->getRealPath(), storage_path('app/public/'.$thumbName));
+        $student->update(['photo' => asset('storage/photos/'.$name)]);
+    }
+
+    private function makeThumbnail(string $sourcePath, string $thumbPath): void
+    {
+        $dir = dirname($thumbPath);
+        if (! is_dir($dir)) {
+            mkdir($dir, 0755, true);
+        }
+        [$width, $height, $type] = @getimagesize($sourcePath);
+        if (! $width || ! $height) {
+            return;
+        }
+        $src = match ($type) {
+            IMAGETYPE_JPEG => imagecreatefromjpeg($sourcePath),
+            IMAGETYPE_PNG => imagecreatefrompng($sourcePath),
+            default => null,
+        };
+        if (! $src) {
+            return;
+        }
+        $size = min($width, $height);
+        $offsetX = (int) (($width - $size) / 2);
+        $offsetY = (int) (($height - $size) / 2);
+        $thumb = imagecreatetruecolor(150, 150);
+        imagecopyresampled($thumb, $src, 0, 0, $offsetX, $offsetY, 150, 150, $size, $size);
+        imagejpeg($thumb, $thumbPath, 85);
+        imagedestroy($src);
+        imagedestroy($thumb);
     }
 }

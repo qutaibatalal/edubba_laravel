@@ -36,7 +36,11 @@
                         <td><span class="badge badge-soft">{{ $s->student_code }}</span></td>
                         <td>
                             <div class="d-flex align-items-center gap-2">
-                                <span class="avatar grad-{{ $loop->index % 6 + 1 }} avatar-sm">{{ mb_substr($s->name ?? '?', 0, 1) }}</span>
+                                @if ($s->photo)
+                                    <img src="{{ $s->photo }}" alt="" style="width:32px;height:32px;border-radius:8px;object-fit:cover">
+                                @else
+                                    <span class="avatar grad-{{ $loop->index % 6 + 1 }} avatar-sm">{{ mb_substr($s->name ?? '?', 0, 1) }}</span>
+                                @endif
                                 <span class="fw-semibold">{{ $s->full_name }}</span>
                             </div>
                         </td>

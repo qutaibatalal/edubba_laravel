@@ -1,7 +1,13 @@
 @php
     $primaryColor = cache()->remember('edubba_admin_primary', 3600, fn () => App\Models\MobileAppConfig::configValue('primary_color', '#4f46e5'));
     $schoolName = cache()->remember('edubba_admin_school', 3600, fn () => App\Models\MobileAppConfig::configValue('school_name', 'Edubba School'));
-    $logoDataUri = 'data:image/png;base64,' . base64_encode(file_get_contents(public_path('images/edubba_app_icon.png')));
+    $logoUrl = App\Models\MobileAppConfig::configValue('logo_url', '');
+    if ($logoUrl) {
+        $logoContent = @file_get_contents($logoUrl);
+        $logoDataUri = $logoContent ? 'data:image/png;base64,' . base64_encode($logoContent) : 'data:image/png;base64,' . base64_encode(file_get_contents(public_path('images/edubba_app_icon.png')));
+    } else {
+        $logoDataUri = 'data:image/png;base64,' . base64_encode(file_get_contents(public_path('images/edubba_app_icon.png')));
+    }
     $statusText = ['draft' => __('pdf.invoice.status_draft'), 'open' => __('pdf.invoice.status_open'), 'paid' => __('pdf.invoice.status_paid'), 'cancel' => __('pdf.invoice.status_cancel')][$invoice->state] ?? $invoice->state;
 @endphp
 <!DOCTYPE html>

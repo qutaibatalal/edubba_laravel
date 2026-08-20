@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\MobileAppConfig;
 use App\Services\TwoFactorService;
+use App\Support\UploadPolicy;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SettingController extends Controller
 {
@@ -27,6 +29,7 @@ class SettingController extends Controller
             'features.tutoring' => 'nullable|boolean',
             'features.training' => 'nullable|boolean',
             'features.library' => 'nullable|boolean',
+            'logo' => 'nullable|file|image|mimes:jpeg,png|max:5120',
         ]);
 
         $name = MobileAppConfig::where('config_key', 'school_name')->first();
@@ -59,6 +62,19 @@ class SettingController extends Controller
                 'active' => true,
             ]
         );
+
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            UploadPolicy::validate($file, 'image');
+            $name = Str::random(24).'.'.$file->getClientOriginalExtension();
+            $file->storeAs('logos', $name, 'public');
+            $url = asset('storage/logos/'.$name);
+            MobileAppConfig::updateOrCreate(
+                ['config_key' => 'logo_url'],
+                ['label' => 'School Logo', 'value' => $url, 'active' => true]
+            );
+            cache()->forget('edubba_admin_logo');
+        }
 
         return back()->with('success', 'تم حفظ الإعدادات.');
     }
