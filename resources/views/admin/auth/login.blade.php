@@ -104,6 +104,10 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
             background-size: 100px 100px;
         }
+        #particleCanvas {
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            z-index: 1; pointer-events: none;
+        }
 
         /* ═══ Login Shell ═══ */
         .login-shell {
@@ -181,10 +185,8 @@
         .brand-logo {
             width: min(220px, 80%); height: auto; display: block;
             filter: drop-shadow(0 6px 30px rgba(0,0,0,0.4));
-            transition: transform 0.5s var(--ease);
             margin-bottom: 44px;
         }
-        .side-brand:hover .brand-logo { transform: scale(1.03) translateY(-3px); }
         .brand-heading {
             font-size: 1.85rem; font-weight: 800; letter-spacing: -0.03em;
             line-height: 1.2; color: var(--text-primary); margin-bottom: 14px;
@@ -438,6 +440,7 @@
 <body>
     <!-- Atmosphere -->
     <div class="atmosphere">
+        <canvas id="particleCanvas"></canvas>
         <div class="atmo-gradient"></div>
         <div class="atmo-grid"></div>
         <div class="atmo-orb atmo-orb--a"></div>
@@ -602,6 +605,93 @@
             b.querySelector('.btn-arrow').style.display = 'none';
             b.querySelector('.btn-spin').style.display = 'block';
         });
+    </script>
+    <script>
+    (function() {
+        var canvas = document.getElementById('particleCanvas');
+        if (!canvas) return;
+        var ctx = canvas.getContext('2d');
+        var primaryRgb = [{{ $primaryRgb }}];
+        var particles = [];
+        var particleCount = 80;
+        var connectionDist = 150;
+        var mouse = { x: null, y: null };
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        document.addEventListener('mousemove', function(e) {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        function Particle() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = Math.random() * 2 + 1;
+        }
+        Particle.prototype.update = function() {
+            this.x += this.vx;
+            this.y += this.vy;
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            if (mouse.x !== null) {
+                var dx = mouse.x - this.x;
+                var dy = mouse.y - this.y;
+                var dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 200) {
+                    this.x -= dx * 0.002;
+                    this.y -= dy * 0.002;
+                }
+            }
+        };
+        Particle.prototype.draw = function() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(' + primaryRgb[0] + ',' + primaryRgb[1] + ',' + primaryRgb[2] + ', 0.6)';
+            ctx.fill();
+        };
+
+        for (var i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function connectParticles() {
+            for (var a = 0; a < particles.length; a++) {
+                for (var b = a + 1; b < particles.length; b++) {
+                    var dx = particles[a].x - particles[b].x;
+                    var dy = particles[a].y - particles[b].y;
+                    var dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < connectionDist) {
+                        var opacity = 1 - (dist / connectionDist);
+                        ctx.beginPath();
+                        ctx.strokeStyle = 'rgba(' + primaryRgb[0] + ',' + primaryRgb[1] + ',' + primaryRgb[2] + ', ' + (opacity * 0.25) + ')';
+                        ctx.lineWidth = 0.6;
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (var i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+        animate();
+    })();
     </script>
 </body>
 </html>
