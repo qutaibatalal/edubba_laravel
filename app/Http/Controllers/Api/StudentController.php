@@ -183,7 +183,7 @@ class StudentController extends Controller
         $student = $this->resolveStudent($request);
 
         $lines = $student->attendances()
-            ->with(['sheet.course', 'sheet.subject', 'sheet.faculty'])
+            ->with(['sheet.course.subject', 'sheet.faculty'])
             ->latest('id')
             ->paginate(50);
 
@@ -694,5 +694,33 @@ class StudentController extends Controller
             $percentage >= 60 => 'D',
             default => 'F',
         };
+    }
+
+    /**
+     * POST /admin/students/{student}/reset-password
+     */
+    public function resetStudentPassword(\App\Models\Student $student, \Illuminate\Http\Request $request): \Illuminate\Http\JsonResponse
+    {
+        $request->validate([
+            'new_password' => 'required|string|min:6',
+        ]);
+
+        $apiUser = \App\Models\ApiUser::where('student_id', $student->id)->first();
+
+        if (! $apiUser) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'لا يوجد حساب مobile لهذا الطالب',
+            ], 404);
+        }
+
+        $apiUser->password = $request->new_password;
+        $apiUser->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'تم إعادة تعيين كلمة المرور بنجاح',
+            'data' => ['username' => $apiUser->username],
+        ]);
     }
 }

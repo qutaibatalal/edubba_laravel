@@ -24,13 +24,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     @endif
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@8/dist/turbo.min.js" data-turbo-track="reload"></script>
-    <script data-turbo-eval="false">
-        if (window.Turbo) {
-            Turbo.setProgressBarDelay(0);
-            Turbo.session.drive = true;
-        }
-    </script>
+
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -41,7 +35,7 @@
             --edb-radius: 16px;
             --edb-radius-sm: 12px;
             --edb-radius-xs: 10px;
-            --edb-bg: #08080d;
+            /* --edb-bg: #08080d; */
             --edb-bg-elevated: #0e0f16;
             --edb-border: rgba(255,255,255,.06);
             --edb-border-strong: rgba(255,255,255,.10);
@@ -791,39 +785,15 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    /* ——— Turbo Drive page transitions ——— */
     document.addEventListener('DOMContentLoaded', () => {
         const content = document.querySelector('.edb-content');
         if (content) content.classList.add('edb-page-enter');
-    });
 
-    document.addEventListener('turbo:before-render', (e) => {
-        const content = document.querySelector('.edb-content');
-        if (content) {
-            content.classList.add('edb-page-exit');
-        }
-    });
-
-    document.addEventListener('turbo:render', () => {
-        const content = document.querySelector('.edb-content');
-        if (content) {
-            content.classList.remove('edb-page-exit');
-            content.classList.add('edb-page-enter');
-        }
-    });
-
-    document.addEventListener('turbo:load', () => {
-        const content = document.querySelector('.edb-content');
-        if (content) {
-            content.classList.remove('edb-page-exit');
-            content.classList.add('edb-page-enter');
-        }
-        // Re-init scroll reveal for new content
         document.querySelectorAll('.edb-content .card:not(.reveal)').forEach(el => {
             el.classList.add('reveal');
             el.classList.add('is-visible');
         });
-        // Re-init stat counters
+
         function animateCount(el) {
             const target = parseFloat(el.dataset.count);
             if (isNaN(target)) return;
@@ -841,7 +811,6 @@
             el.classList.add('counted');
             animateCount(el);
         });
-        // Re-init stat card mouse tracking
         document.querySelectorAll('.stat-card').forEach(card => {
             card.addEventListener('mousemove', e => {
                 const r = card.getBoundingClientRect();
@@ -909,14 +878,6 @@
     @if (session('error'))
         (function() { showToast({{ Js::from(session('error')) }}, 'error'); })();
     @endif
-    document.addEventListener('turbo:load', function() {
-        @if (session('success'))
-            showToast({{ Js::from(session('success')) }}, 'success');
-        @endif
-        @if (session('error'))
-            showToast({{ Js::from(session('error')) }}, 'error');
-        @endif
-    });
 
     const paletteItems = [
         { label: '@lang('stats_dashboard')', icon: 'bi-grid-1x2-fill', url: '{{ route('admin.dashboard') }}' },

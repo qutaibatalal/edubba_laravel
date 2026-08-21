@@ -62,6 +62,8 @@ class FeeService
      */
     public static function generateInvoicesForBatchWithInvoices(FeeStructure $structure): Collection
     {
+        $structure->load('lines');
+
         $batchId = $structure->batch_id;
         $students = Student::where('state', Student::STATE_ADMITTED)
             ->when($batchId, fn ($q) => $q->where('batch_id', $batchId))

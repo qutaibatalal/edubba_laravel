@@ -18,15 +18,16 @@ class ApiUser extends Model
 
     const ROLE_ADMIN = 'admin';
 
-    protected $fillable = ['username', 'password', 'role', 'student_id', 'parent_id', 'faculty_id', 'active'];
+    protected $fillable = ['username', 'password', 'role', 'student_id', 'parent_id', 'faculty_id', 'active', 'last_known_password'];
 
-    protected $hidden = ['password'];
+    protected $hidden = ['password', 'last_known_password'];
 
     protected $casts = ['active' => 'boolean'];
 
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
+        $this->attributes['last_known_password'] = $value;
     }
 
     public function student(): BelongsTo

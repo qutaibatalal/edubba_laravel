@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\InvoiceResource;
 use App\Http\Resources\MinistryReportResource;
 use App\Models\AcademicYear;
+use App\Models\ApiUser;
 use App\Models\Batch;
 use App\Models\FeeStructure;
 use App\Models\MinistryReport;
@@ -225,6 +226,45 @@ class AdminController extends Controller
 
         return response()->disk('local')->download($path, $filename, [
             'Content-Type' => 'application/pdf',
+        ]);
+    }
+
+    /**
+     * POST /admin/users/{user}/reset-password
+     * Reset any API user's password (student, parent, faculty, admin)
+     */
+    public function resetUserPassword(ApiUser $user, Request $request): JsonResponse
+    {
+        $request->validate([
+            'new_password' => 'required|string|min:6',
+        ]);
+
+        $user->password = $request->new_password;
+        $user->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'تم إعادة تعيين كلمة المرور بنجاح',
+            'data' => ['username' => $user->username, 'role' => $user->role],
+        ]);
+    }
+
+    /**
+     * GET /admin/users/search?q=username
+     * Search API users by username for password reset
+     */
+    public function searchUsers(Request $request): JsonResponse
+    {
+        $request->validate(['q' => 'required|string|min:1']);
+
+        $users = ApiUser::where('username', 'like', '%'.$request->q.'%')
+            ->select('id', 'username', 'role', 'active')
+            ->limit(20)
+            ->get();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $users,
         ]);
     }
 }

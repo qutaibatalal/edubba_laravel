@@ -343,7 +343,6 @@ class ExamController extends Controller
     {
         $results = ExamResult::with('student.batch')
             ->where('exam_id', $exam->id)
-            ->orWhere(fn ($q) => $q->where('academic_year_id', $exam->academic_year_id)->where('batch_id', $exam->batch_id))
             ->orderBy('rank')
             ->get();
 

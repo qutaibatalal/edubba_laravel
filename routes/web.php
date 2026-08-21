@@ -179,6 +179,10 @@ Route::prefix('admin')->middleware(['auth', 'admin.web'])->group(function () {
     Route::get('settings', [SettingController::class, 'index'])->name('admin.settings.index');
     Route::post('settings', [SettingController::class, 'update'])->name('admin.settings.update');
 
+    // User password reset
+    Route::post('users/{user}/reset-password', [SettingController::class, 'resetPassword'])->name('admin.users.reset-password');
+    Route::get('users/search', [SettingController::class, 'searchUsers'])->name('admin.users.search');
+
     // Two-factor auth management
     Route::post('settings/2fa/enable', [TwoFactorController::class, 'enable'])->name('admin.settings.2fa.enable');
     Route::post('settings/2fa/disable', [TwoFactorController::class, 'disable'])->name('admin.settings.2fa.disable');

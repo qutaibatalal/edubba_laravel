@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\ApiUser;
 use App\Models\MobileAppConfig;
 use App\Services\TwoFactorService;
 use App\Support\UploadPolicy;
@@ -77,5 +78,38 @@ class SettingController extends Controller
         }
 
         return back()->with('success', 'تم حفظ الإعدادات.');
+    }
+
+    public function resetPassword(Request $request, $userId): RedirectResponse
+    {
+        $request->validate([
+            'new_password' => 'required|string|min:6',
+        ]);
+
+        // Try as ApiUser ID first, then as Student ID
+        $user = ApiUser::find($userId);
+        if (! $user) {
+            $user = ApiUser::where('student_id', $userId)->first();
+        }
+        if (! $user) {
+            return back()->withErrors(['error' => 'المستخدم غير موجود']);
+        }
+
+        $user->password = $request->new_password;
+        $user->save();
+
+        return back()->with('success', "تم إعادة تعيين كلمة المرور للمستخدم {$user->username} بنجاح.");
+    }
+
+    public function searchUsers(Request $request)
+    {
+        $request->validate(['q' => 'required|string|min:1']);
+
+        $users = ApiUser::where('username', 'like', '%'.$request->q.'%')
+            ->select('id', 'username', 'role', 'active')
+            ->limit(20)
+            ->get();
+
+        return response()->json($users);
     }
 }

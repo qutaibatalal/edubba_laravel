@@ -113,6 +113,78 @@
         @endif
     </div>
 </div>
+
+<div class="card mt-4 hoverable" style="max-width:760px">
+    <div class="card-body p-4">
+        <h6 class="fw-bold mb-1"><i class="bi bi-key text-primary me-2"></i> إعادة تعيين كلمة المرور</h6>
+        <p class="text-muted small mb-3">بحث عن مستخدم (طالب/ولي أمر/هيئة تدريسية) وإعادة تعيين كلمة المرور</p>
+
+        @if (session('success'))
+            <div class="alert alert-success py-2 small"><i class="bi bi-check-circle-fill me-1"></i>{{ session('success') }}</div>
+        @endif
+
+        <div class="row g-2 mb-3">
+            <div class="col-md-8">
+                <input type="text" id="userSearch" class="form-control" placeholder="اكتب اسم المستخدم (مثل: student1)" oninput="searchUsers(this.value)">
+            </div>
+        </div>
+
+        <div id="searchResults" class="mb-3" style="display:none">
+            <div class="list-group" id="userList"></div>
+        </div>
+
+        <div id="resetForm" style="display:none">
+            <form method="POST" id="resetPasswordForm">
+                @csrf
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="row g-2 align-items-center">
+                    <div class="col-md-5">
+                        <div class="form-text text-muted">المستخدم: <strong id="resetUsername"></strong> <span class="badge bg-secondary" id="resetRole"></span></div>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" name="new_password" class="form-control" placeholder="كلمة المرور الجديدة" required minlength="6">
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-warning w-100"><i class="bi bi-key me-1"></i> إعادة التعيين</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+let searchTimeout;
+function searchUsers(q) {
+    clearTimeout(searchTimeout);
+    if (q.length < 2) { document.getElementById('searchResults').style.display = 'none'; return; }
+    searchTimeout = setTimeout(() => {
+        fetch('{{ route("admin.users.search") }}?q=' + encodeURIComponent(q), {
+            headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
+        })
+        .then(r => r.json())
+        .then(users => {
+            const list = document.getElementById('userList');
+            if (!users.length) { document.getElementById('searchResults').style.display = 'none'; return; }
+            list.innerHTML = users.map(u => `
+                <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="selectUser(${u.id}, '${u.username}', '${u.role}')">
+                    <span><i class="bi bi-person me-2"></i>${u.username}</span>
+                    <span class="badge ${u.role === 'student' ? 'bg-info' : u.role === 'faculty' ? 'bg-success' : u.role === 'parent' ? 'bg-warning' : 'bg-primary'}">${u.role}</span>
+                </button>
+            `).join('');
+            document.getElementById('searchResults').style.display = 'block';
+        });
+    }, 300);
+}
+
+function selectUser(id, username, role) {
+    document.getElementById('resetUsername').textContent = username;
+    document.getElementById('resetRole').textContent = role;
+    document.getElementById('resetForm').style.display = 'block';
+    document.getElementById('searchResults').style.display = 'none';
+    document.getElementById('resetPasswordForm').action = '/admin/users/' + id + '/reset-password';
+}
+</script>
 <script>
 function previewLogo(input) {
     if (input.files && input.files[0]) {

@@ -12,7 +12,6 @@ use App\Models\Student;
 use App\Services\AttendanceService;
 use App\Services\PdfService;
 use App\Services\SequenceService;
-use App\Support\UploadPolicy;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -31,7 +30,6 @@ class StudentController extends Controller
             ->when($request->batch_id, fn ($q, $v) => $q->where('batch_id', $v))
             ->orderByDesc('id')
             ->paginate(20)
-            ->onEachSide(1)
             ->withQueryString();
 
         $batches = Batch::where('active', true)->get();
@@ -59,10 +57,6 @@ class StudentController extends Controller
 
         $student = Student::create($data);
 
-        if ($request->hasFile('photo')) {
-            $this->handlePhoto($request->file('photo'), $student);
-        }
-
         if ($request->boolean('create_api_account')) {
             $this->createApiAccount($student);
         }
@@ -72,18 +66,9 @@ class StudentController extends Controller
 
     public function show(Student $student): View
     {
-        $student->load('batch', 'program', 'academicYear', 'parent', 'parents', 'courses', 'invoices', 'apiUser');
+        $student->load('batch', 'program', 'academicYear', 'parent', 'courses');
 
-        $attendancePercentage = AttendanceService::attendancePercentage($student);
-
-        $attendance = $student->attendances()
-            ->with('sheet')
-            ->whereHas('sheet', fn ($q) => $q->where('state', 'done'))
-            ->latest('created_at')
-            ->limit(8)
-            ->get();
-
-        return view('admin.students.show', compact('student', 'attendancePercentage', 'attendance'));
+        return view('admin.students.show', compact('student'));
     }
 
     public function edit(Student $student): View
@@ -100,10 +85,6 @@ class StudentController extends Controller
     public function update(Request $request, Student $student): RedirectResponse
     {
         $student->update($this->validated($request));
-
-        if ($request->hasFile('photo')) {
-            $this->handlePhoto($request->file('photo'), $student);
-        }
 
         return redirect()->route('admin.students.index')->with('success', 'تم تحديث بيانات الطالب.');
     }
@@ -158,35 +139,10 @@ class StudentController extends Controller
 
         ApiUser::create([
             'username' => $username,
-            'password' => bcrypt($password),
+            'password' => $password,
             'role' => 'student',
             'student_id' => $student->id,
             'active' => true,
-        ]);
-    }
-
-    public function resetStudentPassword(Student $student): JsonResponse
-    {
-        if (! class_exists(ApiUser::class)) {
-            return response()->json(['status' => 'error', 'message': 'API Users not enabled'], 400);
-        }
-
-        $apiUser = ApiUser::where('student_id', $student->id)->first();
-
-        if (! $apiUser) {
-            return response()->json(['status' => 'error', 'message': 'No API account found for this student'], 404);
-        }
-
-        $newPassword = Str::random(12);
-        $apiUser->update(['password' => bcrypt($newPassword)]);
-
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Password reset successfully',
-            'data' => [
-                'new_password' => $newPassword,
-                'username' => $apiUser->username,
-            ],
         ]);
     }
 
@@ -213,45 +169,6 @@ class StudentController extends Controller
             'admission_date' => 'nullable|date',
             'roll_no' => 'nullable|string|max:30',
             'active' => 'nullable|boolean',
-            'photo' => 'nullable|file|image|mimes:jpeg,png|max:5120',
         ]);
-    }
-
-    private function handlePhoto($file, Student $student): void
-    {
-        UploadPolicy::validate($file, 'image');
-        $name = Str::random(24).'.'.$file->getClientOriginalExtension();
-        $file->storeAs('photos', $name, 'public');
-        $thumbName = 'thumbs/'.pathinfo($name, PATHINFO_FILENAME).'_thumb.jpg';
-        $this->makeThumbnail($file->getRealPath(), storage_path('app/public/'.$thumbName));
-        $student->update(['photo' => asset('storage/photos/'.$name)]);
-    }
-
-    private function makeThumbnail(string $sourcePath, string $thumbPath): void
-    {
-        $dir = dirname($thumbPath);
-        if (! is_dir($dir)) {
-            mkdir($dir, 0755, true);
-        }
-        [$width, $height, $type] = @getimagesize($sourcePath);
-        if (! $width || ! $height) {
-            return;
-        }
-        $src = match ($type) {
-            IMAGETYPE_JPEG => imagecreatefromjpeg($sourcePath),
-            IMAGETYPE_PNG => imagecreatefrompng($sourcePath),
-            default => null,
-        };
-        if (! $src) {
-            return;
-        }
-        $size = min($width, $height);
-        $offsetX = (int) (($width - $size) / 2);
-        $offsetY = (int) (($height - $size) / 2);
-        $thumb = imagecreatetruecolor(150, 150);
-        imagecopyresampled($thumb, $src, 0, 0, $offsetX, $offsetY, 150, 150, $size, $size);
-        imagejpeg($thumb, $thumbPath, 85);
-        imagedestroy($src);
-        imagedestroy($thumb);
     }
 }

@@ -14,6 +14,7 @@ use App\Models\StudyGroup;
 use App\Models\StudyGroupAttendance;
 use App\Models\StudyGroupSession;
 use App\Models\Subscription;
+use App\Models\TutoringPackage;
 use App\Models\Wallet;
 use App\Services\WalletService;
 use Illuminate\Http\JsonResponse;
@@ -146,6 +147,21 @@ class TutoringController extends Controller
         return response()->json([
             'status' => 'success',
             'data' => new WalletResource($wallet),
+        ]);
+    }
+
+    /**
+     * GET /tutoring/packages
+     */
+    public function packages(): JsonResponse
+    {
+        $packages = TutoringPackage::where('active', true)
+            ->orderByDesc('id')
+            ->get();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $packages,
         ]);
     }
 

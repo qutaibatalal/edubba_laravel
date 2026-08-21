@@ -28,7 +28,7 @@ class TrainingCertificateController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'data' => $certificates->items()->map(fn ($c) => [
+            'data' => $certificates->getCollection()->map(fn ($c) => [
                 'id' => $c->id,
                 'student' => $c->enrollment->student?->full_name,
                 'course' => $c->enrollment->trainingCourse?->name,

@@ -184,6 +184,10 @@ Route::prefix('admin')->middleware('role.admin')->group(function () {
             Route::get('/onboarding/step/5', [OnboardingController::class, 'stepReview']);
 
             Route::post('/students/{student}/reset-password', [StudentController::class, 'resetStudentPassword']);
+
+            // User management (password reset)
+            Route::get('/users/search', [AdminController::class, 'searchUsers']);
+            Route::post('/users/{user}/reset-password', [AdminController::class, 'resetUserPassword']);
         });
     });
 });

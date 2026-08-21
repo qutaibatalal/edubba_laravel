@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">@lang('hostel.active')</label>
-                        <input type="checkbox" name="active" class="form-check-input" checked>
+                        <input type="checkbox" name="active" class="form-check-input" value="1" checked>
                     </div>
                     <div class="col-12">
                         <label class="form-label">@lang('hostel.create.rooms_count')</label>
